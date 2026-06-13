@@ -1,0 +1,150 @@
+vocab:
+  name: Actionstep API Vocabulary
+  description: Key terms and concepts used across the Actionstep legal practice management REST API.
+  url: https://docs.actionstep.com/
+  version: "1.0"
+  updated: "2026-06-13"
+
+terms:
+
+  - term: Action
+    definition: >-
+      A Matter in the Actionstep system. For historical reasons, matters are referred
+      to as "actions" in the API. Represents a legal case or transaction managed by a law firm.
+    endpoints:
+      - /actions
+      - /actions/{id}
+
+  - term: Participant
+    definition: >-
+      A person or organization associated with Actionstep, such as a client, contact, or
+      staff member. Participants can be linked to matters through action participants.
+    endpoints:
+      - /participants
+      - /participants/{id}
+
+  - term: ActionParticipant
+    definition: >-
+      The relationship between a participant and a matter (action), defining the role the
+      participant plays in a given matter.
+    endpoints:
+      - /actionparticipants
+      - /actionparticipants/{id}
+
+  - term: ActionType
+    definition: >-
+      A configurable matter type that defines the workflow, data fields, and billing settings
+      applicable to a class of legal matters.
+    endpoints:
+      - /actiontypes
+      - /actiontypes/{id}
+
+  - term: Bill
+    definition: >-
+      An invoice generated for a matter, capturing fees, disbursements, and trust transactions
+      to be billed to a client.
+    endpoints:
+      - /bills
+      - /bills/{id}
+
+  - term: Disbursement
+    definition: >-
+      An out-of-pocket expense incurred on behalf of a client that is recorded against a matter
+      and included in billing.
+    endpoints:
+      - /disbursements
+      - /disbursements/{id}
+
+  - term: TimeEntry
+    definition: >-
+      A record of billable or non-billable time spent by a staff member on a matter, used for
+      time-keeping and billing purposes.
+    endpoints:
+      - /timeentries
+      - /timeentries/{id}
+
+  - term: Task
+    definition: >-
+      A to-do item or action item assigned to a staff member, optionally linked to a matter,
+      with due dates and completion tracking.
+    endpoints:
+      - /tasks
+      - /tasks/{id}
+
+  - term: FileNote
+    definition: >-
+      A note or memo attached to a matter or contact, used to record communications, observations,
+      or other relevant information.
+    endpoints:
+      - /filenotes
+      - /filenotes/{id}
+
+  - term: DataCollection
+    definition: >-
+      A custom data structure (like a database table) that can be associated with a matter type,
+      enabling firms to capture structured custom data.
+    endpoints:
+      - /datacollections
+      - /datacollections/{id}
+
+  - term: DataCollectionField
+    definition: >-
+      A field definition within a data collection, specifying the name, type, and validation
+      rules for custom data captured on a matter.
+    endpoints:
+      - /datacollectionfields
+      - /datacollectionfields/{id}
+
+  - term: DataCollectionRecord
+    definition: >-
+      An individual record (row) within a data collection, storing the actual custom data for
+      a specific matter.
+    endpoints:
+      - /datacollectionrecords
+      - /datacollectionrecords/{id}
+
+  - term: RestHook
+    definition: >-
+      A webhook registration that enables Actionstep to push event notifications to an external
+      URL when specific events occur within the platform.
+    endpoints:
+      - /resthooks
+      - /resthooks/{id}
+
+  - term: QuickCode
+    definition: >-
+      Short reference codes used for billing items such as activity codes, task codes, and
+      expense codes, often aligned with UTBMS standards.
+    endpoints:
+      - /quickcodes
+      - /quickcodes/{id}
+
+  - term: UTBMSCode
+    definition: >-
+      Uniform Task-Based Management System codes used for legal billing, providing standardized
+      activity and task codes for law firm billing.
+    endpoints:
+      - /utbmscodes
+      - /utbmscodes/{id}
+
+  - term: ActionFolder
+    definition: >-
+      A folder within a matter used to organize documents and files associated with a legal case.
+    endpoints:
+      - /actionfolders
+      - /actionfolders/{id}
+
+  - term: ContactDocument
+    definition: >-
+      A document linked to a contact (participant) in Actionstep, stored within the document
+      management system.
+    endpoints:
+      - /contactdocuments
+      - /contactdocuments/{id}
+
+  - term: PhoneRecord
+    definition: >-
+      A telephone number record associated with a participant, capturing contact phone details.
+    endpoints:
+      - /phonerecords
+      - /phonerecords/{id}

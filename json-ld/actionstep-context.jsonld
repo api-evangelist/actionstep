@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "as": "https://docs.actionstep.com/vocabulary#",
+
+    "Action": {
+      "@id": "as:Action",
+      "@type": "@id",
+      "description": "A legal Matter managed within Actionstep. Historically referred to as 'action' in the API."
+    },
+    "actionId": {
+      "@id": "as:actionId",
+      "@type": "xsd:integer"
+    },
+    "actionName": {
+      "@id": "as:actionName",
+      "@type": "xsd:string"
+    },
+    "actionReference": {
+      "@id": "as:actionReference",
+      "@type": "xsd:string"
+    },
+    "actionStatus": {
+      "@id": "as:actionStatus",
+      "@type": "xsd:string"
+    },
+
+    "Participant": {
+      "@id": "as:Participant",
+      "@type": "@id",
+      "description": "A person or organization in Actionstep, such as a client or staff member."
+    },
+    "participantId": {
+      "@id": "as:participantId",
+      "@type": "xsd:integer"
+    },
+    "firstName": {
+      "@id": "schema:givenName",
+      "@type": "xsd:string"
+    },
+    "lastName": {
+      "@id": "schema:familyName",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "schema:email",
+      "@type": "xsd:string"
+    },
+
+    "Bill": {
+      "@id": "as:Bill",
+      "@type": "@id",
+      "description": "An invoice generated for a matter."
+    },
+    "billId": {
+      "@id": "as:billId",
+      "@type": "xsd:integer"
+    },
+    "billAmount": {
+      "@id": "as:billAmount",
+      "@type": "xsd:decimal"
+    },
+
+    "TimeEntry": {
+      "@id": "as:TimeEntry",
+      "@type": "@id",
+      "description": "A record of time spent on a matter for billing purposes."
+    },
+    "timeEntryId": {
+      "@id": "as:timeEntryId",
+      "@type": "xsd:integer"
+    },
+    "duration": {
+      "@id": "schema:duration",
+      "@type": "xsd:decimal"
+    },
+
+    "Task": {
+      "@id": "as:Task",
+      "@type": "@id",
+      "description": "A to-do item linked to a matter or staff member."
+    },
+    "taskId": {
+      "@id": "as:taskId",
+      "@type": "xsd:integer"
+    },
+    "taskDescription": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "dueDate": {
+      "@id": "schema:endDate",
+      "@type": "xsd:dateTime"
+    },
+
+    "FileNote": {
+      "@id": "as:FileNote",
+      "@type": "@id",
+      "description": "A note or memo attached to a matter or contact."
+    },
+    "fileNoteId": {
+      "@id": "as:fileNoteId",
+      "@type": "xsd:integer"
+    },
+    "noteText": {
+      "@id": "schema:text",
+      "@type": "xsd:string"
+    },
+
+    "DataCollection": {
+      "@id": "as:DataCollection",
+      "@type": "@id",
+      "description": "A custom data structure associated with a matter type."
+    },
+    "DataCollectionRecord": {
+      "@id": "as:DataCollectionRecord",
+      "@type": "@id",
+      "description": "An individual row of custom data within a data collection."
+    },
+
+    "RestHook": {
+      "@id": "as:RestHook",
+      "@type": "@id",
+      "description": "A webhook registration for receiving event notifications from Actionstep."
+    },
+    "restHookUrl": {
+      "@id": "as:restHookUrl",
+      "@type": "xsd:anyURI"
+    },
+
+    "Disbursement": {
+      "@id": "as:Disbursement",
+      "@type": "@id",
+      "description": "An out-of-pocket expense incurred on behalf of a client."
+    },
+
+    "ActionType": {
+      "@id": "as:ActionType",
+      "@type": "@id",
+      "description": "A configurable matter type defining workflow and billing settings."
+    },
+
+    "QuickCode": {
+      "@id": "as:QuickCode",
+      "@type": "@id",
+      "description": "Short reference codes for billing items such as activity or task codes."
+    },
+
+    "UTBMSCode": {
+      "@id": "as:UTBMSCode",
+      "@type": "@id",
+      "description": "Uniform Task-Based Management System code for standardized legal billing."
+    },
+
+    "createdTimestamp": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "modifiedTimestamp": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "isDeleted": {
+      "@id": "as:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "baseURL": {
+      "@id": "as:baseURL",
+      "@type": "xsd:anyURI"
+    }
+  }
+}

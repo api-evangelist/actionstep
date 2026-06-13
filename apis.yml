@@ -56,6 +56,76 @@ apis:
         url: https://docs.actionstep.com/terms-and-conditions/
       - type: Postman
         url: https://docs.actionstep.com/
+      - type: OpenAPI
+        url: openapi/actionstep-actions-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actionbillsettings-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actionfolders-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actionnetdocssettings-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actionparticipants-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actiontypes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-actiontypeparticipanttypes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-bills-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-contactdocuments-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-contactfolders-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-contactnotes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-contactrelationships-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-culturalidentity-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-datacollections-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-datacollectionfields-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-datacollectionfielddropdownchoices-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-datacollectionrecords-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-datacollectionrecordvalues-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-disabilitystatus-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-disbursements-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-filenotes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-gendertypes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participants-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participantadditionalnotificationmethods-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participantdatafielddropdownchoices-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participantrelationshiptypes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participantdefaulttypes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-participanttypedatafields-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-phonerecords-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-primarylanguage-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-quickcodes-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-resthooks-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-timeentries-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-tasks-openapi.yml
+      - type: OpenAPI
+        url: openapi/actionstep-utbmscodes-openapi.yml
 common:
   - type: Website
     url: https://www.actionstep.com
@@ -81,6 +151,12 @@ common:
     url: rate-limits/actionstep-rate-limits.yml
   - type: FinOps
     url: finops/actionstep-finops.yml
+  - type: BlogRSS
+    url: https://www.actionstep.com/blog/feed/
+  - type: Vocabulary
+    url: vocabulary/actionstep-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/actionstep-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
