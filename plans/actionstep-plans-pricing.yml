@@ -1,0 +1,72 @@
+specificationVersion: "0.1"
+id: actionstep-plans-pricing
+name: Actionstep Plans and Pricing
+description: >-
+  Actionstep uses custom, quote-based pricing for its legal practice management
+  platform. Pricing is per user plus implementation fees, with no publicly
+  listed rates. API access requires a one-time setup fee of $500 which covers
+  sandbox provisioning and API credential issuance.
+provider: actionstep
+url: https://www.actionstep.com/pricing/
+plans:
+  - name: Practice Management Platform
+    description: >-
+      Core legal practice management platform including matter management,
+      document management, workflow automation, time tracking, billing, client
+      portal, and CRM. Pricing is per user plus implementation fees.
+    pricingModel: per-user
+    pricingUrl: https://www.actionstep.com/pricing-request/
+    features:
+      - Matter and workflow management with automation
+      - Document management and automation
+      - Time tracking and billing
+      - Client portal and communications
+      - CRM and client intake
+      - Mobile apps for iOS and Android
+      - 50+ integrations
+  - name: Legal Accounting Platform
+    description: >-
+      Legal accounting solution including trust accounting and financial
+      reporting. Available in North America only. Can be purchased separately
+      or bundled with the practice management platform.
+    pricingModel: per-user
+    pricingUrl: https://www.actionstep.com/pricing-request/
+    availability: North America only
+    features:
+      - Trust accounting
+      - General ledger
+      - Financial reporting
+      - Law firm billing
+  - name: Builder Module
+    description: >-
+      Add-on module for document automation and workflow building capabilities.
+    pricingModel: per-user
+    pricingUrl: https://www.actionstep.com/pricing-request/
+    addOn: true
+  - name: Capture Module
+    description: >-
+      Add-on module for client intake and data capture workflows.
+    pricingModel: per-user
+    pricingUrl: https://www.actionstep.com/pricing-request/
+    addOn: true
+  - name: API Access
+    description: >-
+      Access to the Actionstep REST API for building custom integrations.
+      Requires a $500 one-time setup fee and completion of an integrator
+      application form. Includes sandbox database provisioning for development
+      and testing. Production access requires passing an API review process.
+    pricingModel: one-time-setup-fee
+    setupFee: 500
+    currency: USD
+    pricingUrl: https://support.actionstep.com/hc/en-us/articles/50482549518355-Actionstep-API
+    features:
+      - Sandbox database (blank or copied from live system)
+      - API credentials (Client ID and Client Secret)
+      - Access to all public API endpoints
+      - Postman configuration file
+      - Demonstration application with source code
+notes:
+  - Actionstep does not publish standard per-seat pricing publicly
+  - All plans require contacting sales for a custom quote
+  - Implementation fees are charged in addition to per-user fees
+  - API access is subject to review and approval by the Global Support Team

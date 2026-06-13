@@ -1,0 +1,110 @@
+specificationVersion: "1.0"
+id: actionstep-finops
+name: Actionstep FinOps Framework
+description: >-
+  FinOps Framework FOCUS-aligned cost and usage information for integrating
+  with the Actionstep legal practice management API. This document covers
+  the financial operations considerations for teams consuming the Actionstep
+  API, including setup costs, ongoing usage, and cost optimization practices.
+provider: actionstep
+url: https://www.actionstep.com/pricing/
+framework: FinOps Foundation FOCUS v1.0
+costs:
+  - name: API Setup Fee
+    description: >-
+      One-time fee charged upon requesting API credentials. Covers sandbox
+      database provisioning, API credential issuance, and initial integration
+      review.
+    chargeType: one-time
+    amount: 500
+    currency: USD
+    billingModel: invoice
+    pricingUrl: https://support.actionstep.com/hc/en-us/articles/50482549518355-Actionstep-API
+  - name: Platform Subscription
+    description: >-
+      Per-user subscription fee for the Actionstep practice management
+      platform. Pricing is custom and quote-based, varying by region
+      (US, UK, AU, NZ, CA) and modules selected.
+    chargeType: recurring
+    billingPeriod: monthly
+    pricingModel: per-user
+    currency: USD
+    amount: custom
+    pricingUrl: https://www.actionstep.com/pricing-request/
+  - name: Implementation Fees
+    description: >-
+      One-time or project-based implementation fees charged in addition to
+      per-user subscription costs. Amount varies based on scope of deployment
+      and customization required.
+    chargeType: one-time
+    amount: custom
+    currency: USD
+costDrivers:
+  - name: API Usage
+    description: >-
+      API usage itself does not incur metered charges beyond the base
+      subscription. However, API access is governed by dynamic rate limits
+      that may affect integration performance.
+    metered: false
+  - name: Number of Users
+    description: >-
+      Primary cost driver is the number of licensed users across all modules
+      (Practice Management, Legal Accounting, Builder, Capture).
+    unit: user
+  - name: Add-on Modules
+    description: >-
+      Builder and Capture modules are priced separately per user and add to
+      the overall subscription cost.
+    modules:
+      - Builder
+      - Capture
+optimization:
+  - name: Scope API Credentials Correctly
+    description: >-
+      Request only the API scopes your integration requires to reduce
+      operational overhead and stay within policy. Unnecessary scopes
+      may trigger additional review requirements.
+    url: https://docs.actionstep.com/api-scopes/
+  - name: Handle Rate Limits Efficiently
+    description: >-
+      Implement exponential backoff and retry logic to avoid wasted API
+      calls when rate limits are encountered. This reduces redundant
+      requests and improves integration reliability.
+    url: https://docs.actionstep.com/api-limits/
+  - name: Use Pagination Efficiently
+    description: >-
+      Use the maximum allowed page size of 200 records per request to
+      minimize the total number of API calls needed for large data sets.
+    maxPageSize: 200
+  - name: Use Sandbox for Development
+    description: >-
+      Develop and test integrations against the sandbox environment before
+      going live to avoid impacting production data and to reduce the risk
+      of costly errors.
+    url: https://docs.actionstep.com/getting-started/
+  - name: Regional Data Compliance
+    description: >-
+      Ensure integration architecture respects data sovereignty requirements.
+      Do not transfer personally identifiable information across jurisdictions
+      where local rules prohibit it, as non-compliance may incur legal costs.
+allocation:
+  - name: Per-Integration Cost Tracking
+    description: >-
+      API credentials are issued per application/integration, enabling
+      cost and usage to be tracked at the integration level by the
+      Actionstep support team.
+  - name: Regional Pricing
+    description: >-
+      Costs vary by region. Track spend separately for US, UK, AU, NZ,
+      and CA deployments as pricing differs by market.
+    regions:
+      - US
+      - UK
+      - AU
+      - NZ
+      - CA
+notes:
+  - Actionstep does not publish a metered API pricing model; API usage is
+    included with the platform subscription beyond the initial $500 setup fee
+  - All pricing is custom and requires direct contact with Actionstep sales
+  - The Legal Accounting platform is only available in North America

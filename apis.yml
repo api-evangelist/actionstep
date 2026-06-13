@@ -1,0 +1,86 @@
+aid: actionstep
+name: Actionstep
+description: >-
+  Actionstep is a cloud-based legal practice management platform serving
+  midsize law firms with a REST API for managing matters, contacts, documents,
+  tasks, billing, trust accounting, and law firm financial reporting. The API
+  enables developers to build integrations using Actionstep as the back-end
+  database with built-in data structures and business models for workflow,
+  document management, calendaring, time sheets, billing, and general ledger.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/actionstep/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+tags:
+  - Legal
+  - Practice Management
+  - Law Firm
+  - Matters
+  - Billing
+  - Documents
+  - Trust Accounting
+  - Contacts
+  - Workflow
+apis:
+  - aid: actionstep:actionstep-api
+    name: Actionstep API
+    description: >-
+      REST API for interacting with the Actionstep legal practice management
+      platform, providing access to matters, contacts, documents, tasks,
+      billing, trust accounting, and financial reporting data for law firms.
+    humanURL: https://docs.actionstep.com/
+    baseURL: https://api.actionstep.com
+    tags:
+      - Legal
+      - Practice Management
+      - Matters
+      - Billing
+      - Documents
+      - Contacts
+    properties:
+      - type: Documentation
+        url: https://docs.actionstep.com/
+      - type: GettingStarted
+        url: https://docs.actionstep.com/getting-started/
+      - type: Authentication
+        url: https://docs.actionstep.com/api-credentials
+      - type: Scopes
+        url: https://docs.actionstep.com/api-scopes/
+      - type: RateLimits
+        url: https://docs.actionstep.com/api-limits/
+      - type: Errors
+        url: https://docs.actionstep.com/api-responses/
+      - type: TermsOfService
+        url: https://docs.actionstep.com/terms-and-conditions/
+      - type: Postman
+        url: https://docs.actionstep.com/
+common:
+  - type: Website
+    url: https://www.actionstep.com
+  - type: Documentation
+    url: https://docs.actionstep.com/
+  - type: GitHubOrg
+    url: https://github.com/actionstep
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/actionstep
+  - type: Blog
+    url: https://www.actionstep.com/blog/
+  - type: Pricing
+    url: https://www.actionstep.com/pricing/
+  - type: StatusPage
+    url: https://status.actionstep.com
+  - type: X
+    url: https://x.com/actionstep
+  - type: Support
+    url: https://support.actionstep.com
+  - type: Plans
+    url: plans/actionstep-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/actionstep-rate-limits.yml
+  - type: FinOps
+    url: finops/actionstep-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

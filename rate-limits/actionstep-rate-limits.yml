@@ -1,0 +1,51 @@
+specificationVersion: "0.1"
+id: actionstep-rate-limits
+name: Actionstep API Rate Limits
+description: >-
+  Actionstep introduced rate limiting across all public API endpoints from
+  April 2024 to manage infrastructure capacity and ensure service continuity.
+  Limits are implemented on a user-centric (session) basis with higher-order
+  orgkey and IP address constraints. Specific numeric thresholds are not
+  publicly documented and will adjust dynamically based on load and capacity.
+provider: actionstep
+url: https://docs.actionstep.com/api-limits/
+limits:
+  - name: Session-Based Rate Limit
+    description: >-
+      Rate limiting is implemented on a per-user (session) basis. The limit
+      is dynamic and will adjust based on load and capacity factors. Exceeding
+      the limit returns HTTP 429 Too Many Requests.
+    scope: session
+    dynamic: true
+    httpStatusOnExceeded: 429
+    retryStrategy: exponential-backoff
+  - name: OrgKey Constraint
+    description: >-
+      Higher-order rate limiting applied at the organization key level to
+      manage capacity across all users within a single Actionstep organization.
+    scope: orgkey
+    dynamic: true
+  - name: IP Address Constraint
+    description: >-
+      Higher-order rate limiting applied at the IP address level as an
+      additional constraint layer.
+    scope: ip-address
+    dynamic: true
+  - name: Page Size Limit
+    description: >-
+      Maximum number of records returned per paged API request. Requests
+      specifying a pageSize larger than 200 will be capped at 200.
+    type: pagination
+    maxPageSize: 200
+    unit: records-per-request
+handling:
+  - code: 429
+    meaning: Rate limit exceeded
+    recommendedAction: >-
+      Implement an appropriate retry strategy, for example exponential
+      backoff, to retry the request after a delay.
+notes:
+  - Rate limiting was introduced in April 2024 across all public API endpoints
+  - Exact numeric thresholds (requests per minute/hour) are not publicly documented
+  - Limits are dynamic and may change based on infrastructure load
+  - All API consuming applications and integrations should be built to handle 429 responses
