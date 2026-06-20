@@ -8,7 +8,7 @@ description: >-
   database with built-in data structures and business models for workflow,
   document management, calendaring, time sheets, billing, and general ledger.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/actionstep/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
