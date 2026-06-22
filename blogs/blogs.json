@@ -1,21 +1,14 @@
 {
-  "name": "Actionstep Blog",
-  "description": "Official blog from Actionstep covering legal practice management, law firm technology, and product updates.",
-  "url": "https://www.actionstep.com/blog/",
-  "rss": "https://www.actionstep.com/blog/feed/",
-  "type": "rss",
-  "lastFetched": "2026-06-13",
-  "posts": [],
   "repo": "actionstep",
   "feeds": [
     {
-      "source": "https://www.linkedin.com/company/actionstep",
-      "feed_url": "https://www.linkedin.com/company/actionstep",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "source": "https://www.actionstep.com/blog/",
+      "feed_url": "https://www.actionstep.com/feed/",
+      "title": "Actionstep Blog",
+      "saved": 1,
+      "note": "BlogRSS at /blog/feed/ resolves to the empty WordPress comments feed; the populated posts feed is at /feed/"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-21T17:00:00Z",
+  "post_count": 1
 }
