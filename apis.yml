@@ -50,7 +50,7 @@ apis:
         url: https://docs.actionstep.com/api-scopes/
       - type: RateLimits
         url: https://docs.actionstep.com/api-limits/
-      - type: Errors
+      - type: ErrorCodes
         url: https://docs.actionstep.com/api-responses/
       - type: TermsOfService
         url: https://docs.actionstep.com/terms-and-conditions/

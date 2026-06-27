@@ -2,13 +2,20 @@
   "repo": "actionstep",
   "feeds": [
     {
-      "source": "https://www.actionstep.com/blog/",
+      "source": "https://www.actionstep.com/feed/",
       "feed_url": "https://www.actionstep.com/feed/",
-      "title": "Actionstep Blog",
-      "saved": 1,
-      "note": "BlogRSS at /blog/feed/ resolves to the empty WordPress comments feed; the populated posts feed is at /feed/"
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.linkedin.com/company/actionstep",
+      "feed_url": "https://www.linkedin.com/company/actionstep",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-21T17:00:00Z",
+  "fetched": "2026-06-27T12:03:07Z",
   "post_count": 1
 }
