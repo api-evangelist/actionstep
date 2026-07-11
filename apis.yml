@@ -127,6 +127,12 @@ apis:
       - type: OpenAPI
         url: openapi/actionstep-utbmscodes-openapi.yml
 common:
+  - type: TrustCenter
+    url: security/actionstep-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/actionstep-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/actionstep-domain-security.yml
   - type: Website
     url: https://www.actionstep.com
   - type: Documentation

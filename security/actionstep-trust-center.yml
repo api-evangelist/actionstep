@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.actionstep.com/trust-accounting/
+url: https://www.actionstep.com/trust-accounting/
+certifications:
+- SOC 2
+evidence:
+- source: https://www.actionstep.com/trust-accounting/
+  keywords:
+  - soc 2
+  - soc2
