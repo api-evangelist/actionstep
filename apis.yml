@@ -127,6 +127,8 @@ apis:
       - type: OpenAPI
         url: openapi/actionstep-utbmscodes-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/actionstep-agentic-access.yml
   - type: TrustCenter
     url: security/actionstep-trust-center.yml
   - type: VulnerabilityDisclosure
