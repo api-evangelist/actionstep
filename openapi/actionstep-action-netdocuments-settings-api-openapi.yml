@@ -1,0 +1,295 @@
+openapi: 3.0.3
+info:
+  title: Action (Matter) Bill Settings Action Bill Settings Action NetDocuments Settings API
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  version: '1.0'
+tags:
+- name: Action NetDocuments Settings
+paths:
+  /actionnetdocssettings:
+    get:
+      description: Returns the collection of NetDocuments Settings for all matters.
+      tags:
+      - Action NetDocuments Settings
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedActionNetdocumentsSettings'
+    post:
+      description: Create a new NetDocuments settings record.
+      tags:
+      - Action NetDocuments Settings
+      requestBody:
+        $ref: '#/components/requestBodies/CreateActionNetDocumentsSettings'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionNetDocumentsSettings'
+  /actionnetdocssettings/{id}:
+    get:
+      description: Returns a single NetDocuments settings record.
+      tags:
+      - Action NetDocuments Settings
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single NetDocuments settings record.
+        required: true
+        schema:
+          type: integer
+          format: integer
+        example: 568
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionNetDocumentsSettings'
+    put:
+      description: Updates a single NetDocuments settings record.
+      tags:
+      - Action NetDocuments Settings
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single NetDocuments settings record.
+        required: true
+        schema:
+          type: integer
+          format: integer
+        example: 568
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateActionNetDocumentsSettings'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionNetDocumentsSettings'
+    delete:
+      description: Deletes a single NetDocuments settings record.
+      tags:
+      - Action NetDocuments Settings
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single NetDocuments settings record.
+        required: true
+        schema:
+          type: integer
+          format: integer
+        example: 568
+      responses:
+        '204':
+          description: Success, No Content.
+components:
+  schemas:
+    UpdateActionNetDocumentsSettingsLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier for the matter to which these NetDocuments settings are applied.
+          example: 8263
+          type: string
+        participant:
+          description: Unique identifier for a participant to which these NetDocuments settings are applied.
+          example: 321845
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        actionnetdocssettings:
+          $ref: '#/components/schemas/ActionNetDocumentsSettingsPageData'
+    PagedActionNetdocumentsSettings:
+      type: object
+      properties:
+        actionnetdocssettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionNetDocumentsSettings'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    UpdateActionNetDocumentsSettings:
+      type: object
+      properties:
+        workspaceIdentifier:
+          description: Workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 1005499
+        parentWorkspaceIdentifier:
+          description: Parent workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 799294
+        workspaceEnvId:
+          description: The workspace environment identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: Q14:b:i:d:v:^W250512223611824.nev
+        workspaceFolderJson:
+          description: A JSON formatted string containing folder configuration details for this NetDocuments settings record.
+          type: string
+          format: string
+          example:
+          - \"id\":1: null
+            \"name\":\"Client Invoices\": null
+            \"envId\":\"Q23:a:2:7:2:^F250512223615873.nev\": null
+            \"folderId\":\"4898-5237-5619\": null
+            \"pid\":null: null
+        links:
+          $ref: '#/components/schemas/UpdateActionNetDocumentsSettingsLinks'
+    ActionNetDocumentsSettings:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for a single NetDocuments settings record.
+          type: integer
+          format: integer
+          example: 586
+          readOnly: true
+        workspaceIdentifier:
+          description: Workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 1005499
+        parentWorkspaceIdentifier:
+          description: Parent workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 799294
+        workspaceEnvId:
+          description: The workspace environment identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: Q14:b:i:d:v:^W250512223611824.nev
+        workspaceFolderJson:
+          description: A JSON formatted string containing folder configuration details for this NetDocuments settings record.
+          type: string
+          format: string
+          example:
+          - \"id\":1: null
+            \"name\":\"Client Invoices\": null
+            \"envId\":\"Q23:a:2:7:2:^F250512223615873.nev\": null
+            \"folderId\":\"4898-5237-5619\": null
+            \"pid\":null: null
+        workspaceFolderLastUpdatedTimestamp:
+          description: Timestamp for the last update of this NetDocuments settings record.
+          type: string
+          format: string
+          readOnly: true
+          example: 2025-05-13 14:36:33+12:00
+        links:
+          $ref: '#/components/schemas/ActionNetDocumentsSettingsLinks'
+    ActionNetDocumentsSettingsPageData:
+      type: object
+      properties:
+        recordCount:
+          description: The total number of NetDocuments settings records returned by the underlying query.
+          type: integer
+          example: 2487
+        pageCount:
+          description: The total number of pages generated by the underlying query.
+          type: integer
+          example: 50
+        page:
+          description: The page number for this page of NetDocuments settings records.
+          type: integer
+          example: 2
+        pageSize:
+          description: Page size.
+          type: integer
+          example: 50
+        prevPage:
+          description: A URL to the previous page of NetDocuments settings records.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/actionnetdocssettings?page=1
+        nextPage:
+          description: A URL to the next page of NetDocuments settings records.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/actionnetdocssettings?page=3
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    CreateActionNetDocumentsSettingsLinks:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          description: Unique identifier for the matter to which these NetDocuments settings are applied.
+          example: 8263
+          type: string
+          readOnly: true
+        participant:
+          description: Unique identifier for a participant to which these NetDocuments settings are applied.
+          example: 321845
+          type: integer
+          readOnly: true
+    ActionNetDocumentsSettingsLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier for the matter to which these NetDocuments settings are applied.
+          example: 8263
+          type: string
+          readOnly: true
+        participant:
+          description: Unique identifier for a participant to which these NetDocuments settings are applied.
+          example: 321845
+          type: integer
+          readOnly: true
+    CreateActionNetDocumentsSettings:
+      type: object
+      properties:
+        workspaceIdentifier:
+          description: Workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 1005499
+        parentWorkspaceIdentifier:
+          description: Parent workspace identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: 799294
+        workspaceEnvId:
+          description: The workspace environment identifier for this NetDocuments settings record.
+          type: string
+          format: string
+          example: Q14:b:i:d:v:^W250512223611824.nev
+        workspaceFolderJson:
+          description: A JSON formatted string containing folder configuration details for this NetDocuments settings record.
+          type: string
+          format: string
+          example:
+          - \"id\":1: null
+            \"name\":\"Client Invoices\": null
+            \"envId\":\"Q23:a:2:7:2:^F250512223615873.nev\": null
+            \"folderId\":\"4898-5237-5619\": null
+            \"pid\":null: null
+        links:
+          $ref: '#/components/schemas/CreateActionNetDocumentsSettingsLinks'
+  requestBodies:
+    UpdateActionNetDocumentsSettings:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateActionNetDocumentsSettings'
+    CreateActionNetDocumentsSettings:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateActionNetDocumentsSettings'
+externalDocs:
+  description: API Developer Portal - Constructing API Requests
+  url: https://docs.actionstep.com/api-requests/

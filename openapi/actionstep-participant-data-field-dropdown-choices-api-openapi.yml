@@ -1,0 +1,245 @@
+openapi: 3.0.3
+info:
+  title: Action (Matter) Bill Settings Action Bill Settings Participant Data Field Dropdown Choices API
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  version: '1.0'
+tags:
+- name: Participant Data Field Dropdown Choices
+paths:
+  /participantdatafielddropdownchoices:
+    get:
+      description: Returns a list of Participant Data Field Dropdown Choices.
+      tags:
+      - Participant Data Field Dropdown Choices
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParticipantDataFieldDropdownChoices'
+    post:
+      description: Create a new participant data field dropdown choice.
+      tags:
+      - Participant Data Field Dropdown Choices
+      requestBody:
+        $ref: '#/components/requestBodies/CreateParticipantDataFieldDropdownChoice'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
+  /participantdatafielddropdownchoices/{id}:
+    get:
+      description: Returns a single participant data field dropdown choice.
+      tags:
+      - Participant Data Field Dropdown Choices
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        required: true
+        schema:
+          type: string
+        example: 637--Colour
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
+    put:
+      description: Update a single participant data field dropdown choice.
+      tags:
+      - Participant Data Field Dropdown Choices
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        required: true
+        schema:
+          type: string
+        example: 637--Colour
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateParticipantDataFieldDropdownChoice'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
+    delete:
+      description: Delete a single participant data field dropdown choice.
+      tags:
+      - Participant Data Field Dropdown Choices
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        required: true
+        schema:
+          type: string
+        example: 637--Colour
+      responses:
+        '204':
+          description: Success, No content.
+components:
+  schemas:
+    ParticipantDataFieldDropdownChoiceLinks:
+      type: object
+      properties:
+        participantType:
+          description: Unique identifier for the underlying participant type to which this data field dropdown choice is associated.
+          type: integer
+          format: string
+          example: 7383
+          readOnly: true
+        participantDataField:
+          description: Unique identifier for the participant data field associated with this data field dropdown choice.
+          type: integer
+          format: string
+          example: 2300
+    ParticipantDataFieldDropdownChoice:
+      type: object
+      properties:
+        name:
+          description: Name for the participant data field dropdown choice. This is the display name shown on the UI.
+          type: string
+          example: Red
+        value:
+          description: The value that will be copied when the participant data field dropdown choice is selected.
+          type: string
+          example: red
+        listOrder:
+          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          type: integer
+          example: 5
+        isDefault:
+          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for a single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          type: string
+          enum:
+          - T
+          - F
+          example: T
+        links:
+          $ref: '#/components/schemas/ParticipantDataFieldDropdownChoiceLinks'
+    UpdateParticipantDataFieldDropdownChoice:
+      type: object
+      properties:
+        value:
+          description: The value that will be copied when the participant data field dropdown choice is selected.
+          type: string
+          example: red
+        listOrder:
+          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          type: integer
+          example: 5
+        isDefault:
+          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          type: string
+          enum:
+          - T
+          - F
+          example: T
+    CreateParticipantDataFieldDropdownChoice:
+      type: object
+      required:
+      - name
+      - value
+      - listOrder
+      - isDefault
+      - participantDataField
+      properties:
+        name:
+          description: Name for the participant data field dropdown choice. This is the display name shown on the UI. The name must be unique.
+          type: string
+          example: Red
+        value:
+          description: The value that will be copied when the participant data field dropdown choice is selected.
+          type: string
+          example: red
+        listOrder:
+          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          type: integer
+          example: 5
+        isDefault:
+          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          type: string
+          enum:
+          - T
+          - F
+          example: T
+        links:
+          $ref: '#/components/schemas/CreateParticipantDataFieldDropdownChoiceLinks'
+    CreateParticipantDataFieldDropdownChoiceLinks:
+      type: object
+      properties:
+        participantDataField:
+          description: Unique identifier for the participant data field associated with this data field dropdown choice.
+          type: integer
+          format: string
+          example: 2300
+    PagingData:
+      type: object
+      properties:
+        participantdatafielddropdownchoices:
+          $ref: '#/components/schemas/ParticipantDataFieldDropdownChoicePageData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    ParticipantDataFieldDropdownChoicePageData:
+      type: object
+      properties:
+        recordCount:
+          description: The total number of Participant Data Field Dropdown Choices returned by the underlying query.
+          type: integer
+          example: 4
+        pageCount:
+          description: The total number of pages generated by the underlying query.
+          type: integer
+          example: 8
+        page:
+          description: The page number for this page of custom Participant Data Field Dropdown Choices.
+          type: integer
+          example: 2
+        pageSize:
+          description: Page size.
+          type: integer
+          example: 50
+        prevPage:
+          description: A URL to the previous page of custom Participant Data Field Dropdown Choices.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/participantdatafielddropdownchoices?page=1
+        nextPage:
+          description: A URL to the next page of custom Participant Data Field Dropdown Choices.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/participantdatafielddropdownchoices?page=3
+    ParticipantDataFieldDropdownChoices:
+      type: object
+      properties:
+        participantdatafielddropdownchoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+  requestBodies:
+    UpdateParticipantDataFieldDropdownChoice:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateParticipantDataFieldDropdownChoice'
+    CreateParticipantDataFieldDropdownChoice:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateParticipantDataFieldDropdownChoice'
+externalDocs:
+  description: API Developer Portal - Constructing API Requests
+  url: https://docs.actionstep.com/api-requests/

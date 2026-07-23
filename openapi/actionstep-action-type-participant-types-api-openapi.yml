@@ -1,0 +1,240 @@
+openapi: 3.0.3
+info:
+  title: Action (Matter) Bill Settings Action Bill Settings Action Type Participant Types API
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  version: '1.0'
+tags:
+- name: Action Type Participant Types
+paths:
+  /actiontypeparticipanttypes:
+    get:
+      description: Returns the collection of all participant types for all matter types.
+      tags:
+      - Action Type Participant Types
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedActionTypeParticipantTypes'
+    post:
+      description: Add an existing participant type to an existing matter type.
+      tags:
+      - Action Type Participant Types
+      requestBody:
+        $ref: '#/components/requestBodies/CreateActionTypeParticipantType'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateActionTypeParticipantType'
+  /actiontypeparticipanttypes/{id}:
+    get:
+      description: Returns a single matter type participant type record.
+      tags:
+      - Action Type Participant Types
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by "--".
+        required: true
+        schema:
+          type: string
+          format: string
+        example: 14--54
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionTypeParticipantType'
+    put:
+      description: Updates a single matter type participant type record.
+      tags:
+      - Action Type Participant Types
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by "--".
+        required: true
+        schema:
+          type: string
+          format: string
+        example: 14--54
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateActionTypeParticipantType'
+      responses:
+        '200':
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionTypeParticipantType'
+    delete:
+      description: Deletes a single matter type participant type record.
+      tags:
+      - Action Type Participant Types
+      parameters:
+      - name: id
+        in: path
+        description: Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by "--".
+        required: true
+        schema:
+          type: string
+          format: string
+        example: 14--54
+      responses:
+        '204':
+          description: Success, No Content.
+components:
+  schemas:
+    UpdateActionTypeParticipantType:
+      type: object
+      properties:
+        required:
+          description: A flag to indicate if a participant of the specified participant type is required for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        isPrimaryParticipantType:
+          description: A flag to indicate if a participant of the specified participant type is the primary participant type for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+    ActionTypeParticipantTypeLinks:
+      type: object
+      properties:
+        participantType:
+          description: Unique identifier for the participant type for this record.
+          example: 546
+          type: integer
+          readOnly: true
+    CreateActionTypeParticipantTypeLinks:
+      type: object
+      required:
+      - participantType
+      properties:
+        participantType:
+          description: Unique identifier for the participant type for this record.
+          example: 546
+          type: integer
+    PagedActionTypeParticipantTypes:
+      type: object
+      properties:
+        actiontypeparticipanttypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionTypeParticipantType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    ActionTypeParticipantTypesPageData:
+      type: object
+      properties:
+        recordCount:
+          description: The total number of matter type participant type records returned by the underlying query.
+          type: integer
+          example: 2487
+        pageCount:
+          description: The total number of pages generated by the underlying query.
+          type: integer
+          example: 50
+        page:
+          description: The page number for this page of matter type participant type records.
+          type: integer
+          example: 2
+        pageSize:
+          description: Page size.
+          type: integer
+          example: 50
+        prevPage:
+          description: A URL to the previous page of matter type participant type records.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/actiontypeparticipanttypes?page=1
+        nextPage:
+          description: A URL to the next page of matter type participant type records.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/actiontypeparticipanttypes?page=3
+    PagingData:
+      type: object
+      properties:
+        actiontypeparticipanttypes:
+          $ref: '#/components/schemas/ActionTypeParticipantTypesPageData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    CreateActionTypeParticipantType:
+      type: object
+      properties:
+        required:
+          description: A flag to indicate if a participant of the specified participant type is required for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        isPrimaryParticipantType:
+          description: A flag to indicate if a participant of the specified participant type is the primary participant type for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        actionType:
+          description: The matter type for which participant types are being managed.
+          example: 14
+          type: integer
+        links:
+          $ref: '#/components/schemas/CreateActionTypeParticipantTypeLinks'
+    ActionTypeParticipantType:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by "--".
+          type: string
+          format: string
+          example: 14--54
+          readOnly: true
+        required:
+          description: A flag to indicate if a participant of the specified participant type is required for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        isPrimaryParticipantType:
+          description: A flag to indicate if a participant of the specified participant type is the primary participant type for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        actionType:
+          description: The matter type for which participant types are being managed.
+          example: 14
+          type: integer
+        links:
+          $ref: '#/components/schemas/ActionTypeParticipantTypeLinks'
+  requestBodies:
+    CreateActionTypeParticipantType:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateActionTypeParticipantType'
+    UpdateActionTypeParticipantType:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateActionTypeParticipantType'
+externalDocs:
+  description: API Developer Portal - Constructing API Requests
+  url: https://docs.actionstep.com/api-requests/
