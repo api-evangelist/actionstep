@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Action Bill Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /actionbillsettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actionbillsettings"
+          },
+          "docs": "Returns a summary of bill settings for all matters."
+        },
+        {
+          "info": {
+            "name": "GET /actionbillsettings/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actionbillsettings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1930",
+                "type": "path",
+                "description": "Unique identifier for a matter."
+              }
+            ]
+          },
+          "docs": "Returns a summary of bill settings for an individual matter."
+        },
+        {
+          "info": {
+            "name": "PUT /actionbillsettings/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/actionbillsettings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1930",
+                "type": "path",
+                "description": "Unique identifier for a matter."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the bill settings for a single matter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

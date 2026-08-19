@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Contact Relationships API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Contact Relationships
@@ -39,7 +41,8 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
+        description: Unique identifier for a single contact relationship record. The identifier is composed
+          from the relationship, fromContact, and toContact properties separated by "--".
         required: true
         schema:
           type: string
@@ -59,7 +62,8 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
+        description: Unique identifier for a single contact relationship record. The identifier is composed
+          from the relationship, fromContact, and toContact properties separated by "--".
         required: true
         schema:
           type: string
@@ -101,7 +105,8 @@ components:
       type: object
       properties:
         id:
-          description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
+          description: Unique identifier for a single contact relationship record. The identifier is composed
+            from the relationship, fromContact, and toContact properties separated by "--".
           type: string
           format: string
           example: Father-41854-845258
@@ -180,3 +185,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

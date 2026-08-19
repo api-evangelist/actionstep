@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Quick Codes API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quick Codes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /quickcodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/quickcodes"
+          },
+          "docs": "Returns the collection of all Quick Codes."
+        },
+        {
+          "info": {
+            "name": "POST /quickcodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/quickcodes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Quick Code."
+        },
+        {
+          "info": {
+            "name": "GET /quickcodes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/quickcodes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "300",
+                "type": "path",
+                "description": "Unique identifier for a single Quick Code."
+              }
+            ]
+          },
+          "docs": "Returns a single Quick Code."
+        },
+        {
+          "info": {
+            "name": "PUT /quickcodes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/quickcodes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "300",
+                "type": "path",
+                "description": "Unique identifier for a single Quick Code."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single Quick Code."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

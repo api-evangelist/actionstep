@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "435befa5-dc10-4ba4-8a0d-a42f5423a350",
+      "name": "Phone Records",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "089fbe39-de45-4da5-88d9-004b4a2b92c9",
+          "name": "Returns the collection of all phone records.",
+          "request": {
+            "name": "Returns the collection of all phone records.",
+            "description": {
+              "content": "Returns the collection of all phone records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "phonerecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30913bf0-0c8d-4430-87df-a53b4b934566",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "phonerecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"phonerecords\": [\n    {\n      \"id\": 1176,\n      \"fromParticipantOther\": \"John Smith\",\n      \"toParticipantOther\": \"AJ Accountants LLC\",\n      \"direction\": \"out\",\n      \"phoneNumber\": \"+44 493 993938\",\n      \"phoneNumberType\": \"Business\",\n      \"actualHours\": 0.25,\n      \"notes\": \"Discussed progress for this week.\",\n      \"callTimestamp\": \"2025-09-17 09:12:32+12:00\",\n      \"outcome\": \"Call completed\",\n      \"links\": {\n        \"action\": 321845,\n        \"fromParticipant\": 8945,\n        \"toParticipant\": 4912\n      }\n    },\n    {\n      \"id\": 1176,\n      \"fromParticipantOther\": \"John Smith\",\n      \"toParticipantOther\": \"AJ Accountants LLC\",\n      \"direction\": \"out\",\n      \"phoneNumber\": \"+44 493 993938\",\n      \"phoneNumberType\": \"Business\",\n      \"actualHours\": 0.25,\n      \"notes\": \"Discussed progress for this week.\",\n      \"callTimestamp\": \"2025-09-17 09:12:32+12:00\",\n      \"outcome\": \"Call completed\",\n      \"links\": {\n        \"action\": 321845,\n        \"fromParticipant\": 8945,\n        \"toParticipant\": 4912\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"phonerecords\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/phonerecords?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/phonerecords?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00ce1c2a-8f32-4d71-bab0-ac7b3faf3a23",
+          "name": "Create a new phone record.",
+          "request": {
+            "name": "Create a new phone record.",
+            "description": {
+              "content": "Create a new phone record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "phonerecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"direction\": \"<string>\",\n  \"callTimestamp\": \"<timestamp>\",\n  \"outcome\": \"<string>\",\n  \"fromParticipantOther\": \"<string>\",\n  \"toParticipantOther\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberType\": \"<string>\",\n  \"actualHours\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"fromParticipant\": \"<integer>\",\n    \"toParticipant\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1e1e694f-49cc-41a6-9c52-0ea66074fc4e",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "phonerecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1176,\n  \"fromParticipantOther\": \"John Smith\",\n  \"toParticipantOther\": \"AJ Accountants LLC\",\n  \"direction\": \"out\",\n  \"phoneNumber\": \"+44 493 993938\",\n  \"phoneNumberType\": \"Business\",\n  \"actualHours\": 0.25,\n  \"notes\": \"Discussed progress for this week.\",\n  \"callTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"outcome\": \"Call completed\",\n  \"links\": {\n    \"action\": 321845,\n    \"fromParticipant\": 8945,\n    \"toParticipant\": 4912\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bb5cee5-ae1b-4cee-8e22-bfa52695bdf2",
+          "name": "Returns a single phone record.",
+          "request": {
+            "name": "Returns a single phone record.",
+            "description": {
+              "content": "Returns a single phone record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "phonerecords",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single phone record."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e734e0c-03af-4fab-b3a4-04ebf2b1ad29",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "phonerecords",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single phone record."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1176,\n  \"fromParticipantOther\": \"John Smith\",\n  \"toParticipantOther\": \"AJ Accountants LLC\",\n  \"direction\": \"out\",\n  \"phoneNumber\": \"+44 493 993938\",\n  \"phoneNumberType\": \"Business\",\n  \"actualHours\": 0.25,\n  \"notes\": \"Discussed progress for this week.\",\n  \"callTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"outcome\": \"Call completed\",\n  \"links\": {\n    \"action\": 321845,\n    \"fromParticipant\": 8945,\n    \"toParticipant\": 4912\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "519402b3-9e9a-49cd-b192-f99256c92c7d",
+          "name": "Updates a single phone record.",
+          "request": {
+            "name": "Updates a single phone record.",
+            "description": {
+              "content": "Updates a single phone record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "phonerecords",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single phone record."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fromParticipantOther\": \"<string>\",\n  \"toParticipantOther\": \"<string>\",\n  \"direction\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberType\": \"<string>\",\n  \"actualHours\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"callTimestamp\": \"<timestamp>\",\n  \"outcome\": \"<string>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"fromParticipant\": \"<integer>\",\n    \"toParticipant\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc45e7c2-8aa0-4d9b-b007-f54795b40c81",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "phonerecords",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single phone record."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1176,\n  \"fromParticipantOther\": \"John Smith\",\n  \"toParticipantOther\": \"AJ Accountants LLC\",\n  \"direction\": \"out\",\n  \"phoneNumber\": \"+44 493 993938\",\n  \"phoneNumberType\": \"Business\",\n  \"actualHours\": 0.25,\n  \"notes\": \"Discussed progress for this week.\",\n  \"callTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"outcome\": \"Call completed\",\n  \"links\": {\n    \"action\": 321845,\n    \"fromParticipant\": 8945,\n    \"toParticipant\": 4912\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84216b36-e263-4c88-86ca-93e524d1f032",
+          "name": "Delete a single phone record.",
+          "request": {
+            "name": "Delete a single phone record.",
+            "description": {
+              "content": "Delete a single phone record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "phonerecords",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single phone record."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a08ba277-da1f-4d07-bf0b-befaa5a121a2",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "phonerecords",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single phone record."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "276d1ccc-f48a-4fad-a95e-bc60eded1082",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Phone Records API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Folders API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact Folders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /contactfolders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactfolders"
+          },
+          "docs": "Returns the collection of all contact folders."
+        },
+        {
+          "info": {
+            "name": "POST /contactfolders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/contactfolders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new contact folder."
+        },
+        {
+          "info": {
+            "name": "GET /contactfolders/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactfolders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single contact folder record."
+              }
+            ]
+          },
+          "docs": "Returns a single contact folder record."
+        },
+        {
+          "info": {
+            "name": "PUT /contactfolders/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/contactfolders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single contact folder record."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single folder."
+        },
+        {
+          "info": {
+            "name": "DELETE /contactfolders/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/contactfolders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single contact folder record."
+              }
+            ]
+          },
+          "docs": "Deletes a single contact folder record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

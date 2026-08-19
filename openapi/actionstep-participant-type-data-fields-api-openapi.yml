@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Participant Type Data Fields API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Participant Type Data Fields
@@ -96,7 +98,8 @@ components:
       type: object
       properties:
         recordCount:
-          description: The total number of participant type data field records returned by the underlying query.
+          description: The total number of participant type data field records returned by the underlying
+            query.
           type: integer
           example: 2487
         pageCount:
@@ -173,7 +176,9 @@ components:
           format: string
           example: Car colour
         synchronizeValues:
-          description: When enabled (T) the field value is not unique to any specific Matter, meaning updating this field anywhere will update everywhere at the same time. When disabled (F) each Matter will have a unique value for this field.
+          description: When enabled (T) the field value is not unique to any specific Matter, meaning
+            updating this field anywhere will update everywhere at the same time. When disabled (F) each
+            Matter will have a unique value for this field.
           enum:
           - T
           - F
@@ -181,7 +186,8 @@ components:
           type: string
           format: string
         limitUseToMatterOnly:
-          description: Enable this only if the field should not be editable on a contact record, but should be editable only on a contact linked to a matter.
+          description: Enable this only if the field should not be editable on a contact record, but should
+            be editable only on a contact linked to a matter.
           enum:
           - T
           - F
@@ -266,7 +272,9 @@ components:
           format: string
           example: Car colour
         synchronizeValues:
-          description: When enabled (T) the field value is not unique to any specific Matter, meaning updating this field anywhere will update everywhere at the same time. When disabled (F) each Matter will have a unique value for this field.
+          description: When enabled (T) the field value is not unique to any specific Matter, meaning
+            updating this field anywhere will update everywhere at the same time. When disabled (F) each
+            Matter will have a unique value for this field.
           enum:
           - T
           - F
@@ -274,7 +282,8 @@ components:
           type: string
           format: string
         limitUseToMatterOnly:
-          description: Enable this only if the field should not be editable on a contact record, but should be editable only on a contact linked to a matter.
+          description: Enable this only if the field should not be editable on a contact record, but should
+            be editable only on a contact linked to a matter.
           enum:
           - T
           - F
@@ -359,7 +368,9 @@ components:
           format: string
           example: Car colour
         synchronizeValues:
-          description: When enabled (T) the field value is not unique to any specific Matter, meaning updating this field anywhere will update everywhere at the same time. When disabled (F) each Matter will have a unique value for this field.
+          description: When enabled (T) the field value is not unique to any specific Matter, meaning
+            updating this field anywhere will update everywhere at the same time. When disabled (F) each
+            Matter will have a unique value for this field.
           enum:
           - T
           - F
@@ -367,7 +378,8 @@ components:
           type: string
           format: string
         limitUseToMatterOnly:
-          description: Enable this only if the field should not be editable on a contact record, but should be editable only on a contact linked to a matter.
+          description: Enable this only if the field should not be editable on a contact record, but should
+            be editable only on a contact linked to a matter.
           enum:
           - T
           - F
@@ -390,3 +402,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "38e84534-393d-42c1-870a-049bbf08afee",
+      "name": "Participant Data Field Dropdown Choices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9447b5e7-5d7c-4ae2-b802-bfc9095aec2d",
+          "name": "Returns a list of Participant Data Field Dropdown Choices.",
+          "request": {
+            "name": "Returns a list of Participant Data Field Dropdown Choices.",
+            "description": {
+              "content": "Returns a list of Participant Data Field Dropdown Choices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdatafielddropdownchoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "667822da-5713-4b0c-8c4f-93d0dccdf47f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdatafielddropdownchoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"participantdatafielddropdownchoices\": [\n    {\n      \"name\": \"Red\",\n      \"value\": \"red\",\n      \"listOrder\": 5,\n      \"isDefault\": \"T\",\n      \"links\": {\n        \"participantType\": 7383,\n        \"participantDataField\": 2300\n      }\n    },\n    {\n      \"name\": \"Red\",\n      \"value\": \"red\",\n      \"listOrder\": 5,\n      \"isDefault\": \"T\",\n      \"links\": {\n        \"participantType\": 7383,\n        \"participantDataField\": 2300\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"participantdatafielddropdownchoices\": {\n        \"recordCount\": 4,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantdatafielddropdownchoices?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantdatafielddropdownchoices?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49770f39-f13b-4066-8e90-6b0569c56f5c",
+          "name": "Create a new participant data field dropdown choice.",
+          "request": {
+            "name": "Create a new participant data field dropdown choice.",
+            "description": {
+              "content": "Create a new participant data field dropdown choice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdatafielddropdownchoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"listOrder\": \"<integer>\",\n  \"isDefault\": \"<string>\",\n  \"links\": {\n    \"participantDataField\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "21a079d2-8c41-4e9b-8569-6a5eac90ceef",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdatafielddropdownchoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Red\",\n  \"value\": \"red\",\n  \"listOrder\": 5,\n  \"isDefault\": \"T\",\n  \"links\": {\n    \"participantType\": 7383,\n    \"participantDataField\": 2300\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f2c2fe5-6662-4e4c-a415-4a7c8385fb95",
+          "name": "Returns a single participant data field dropdown choice.",
+          "request": {
+            "name": "Returns a single participant data field dropdown choice.",
+            "description": {
+              "content": "Returns a single participant data field dropdown choice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdatafielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fbb77b9-d6af-4bea-84c4-864a627d02b0",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdatafielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Red\",\n  \"value\": \"red\",\n  \"listOrder\": 5,\n  \"isDefault\": \"T\",\n  \"links\": {\n    \"participantType\": 7383,\n    \"participantDataField\": 2300\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84641bc6-355a-4786-94e7-342b0503cc83",
+          "name": "Update a single participant data field dropdown choice.",
+          "request": {
+            "name": "Update a single participant data field dropdown choice.",
+            "description": {
+              "content": "Update a single participant data field dropdown choice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdatafielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"value\": \"<string>\",\n  \"listOrder\": \"<integer>\",\n  \"isDefault\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0ff4e6e9-608c-4c61-a797-21f71c98d1da",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdatafielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Red\",\n  \"value\": \"red\",\n  \"listOrder\": 5,\n  \"isDefault\": \"T\",\n  \"links\": {\n    \"participantType\": 7383,\n    \"participantDataField\": 2300\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44cca624-c57e-4635-80ac-0a24e9b2f4aa",
+          "name": "Delete a single participant data field dropdown choice.",
+          "request": {
+            "name": "Delete a single participant data field dropdown choice.",
+            "description": {
+              "content": "Delete a single participant data field dropdown choice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdatafielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9be5af62-1577-4ddd-af03-84ec15cf6793",
+              "name": "Success, No content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdatafielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d5b6ef3b-b50a-4680-b31c-d5b7aa6acbf6",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Data Field Dropdown Choices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

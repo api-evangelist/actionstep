@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Phone Records API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Phone Records
@@ -100,12 +102,14 @@ components:
       - outcome
       properties:
         fromParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an incoming call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an incoming call.
           type: string
           format: string
           example: John Smith
         toParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an outgoing call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an outgoing call.
           type: string
           format: string
           example: AJ Accountants LLC
@@ -153,12 +157,14 @@ components:
       type: object
       properties:
         fromParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an incoming call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an incoming call.
           type: string
           format: string
           example: John Smith
         toParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an outgoing call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an outgoing call.
           type: string
           format: string
           example: AJ Accountants LLC
@@ -288,12 +294,14 @@ components:
           example: 1176
           readOnly: true
         fromParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an incoming call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an incoming call.
           type: string
           format: string
           example: John Smith
         toParticipantOther:
-          description: Used to record the name of an individual or company not held in Actionstep for an outgoing call.
+          description: Used to record the name of an individual or company not held in Actionstep for
+            an outgoing call.
           type: string
           format: string
           example: AJ Accountants LLC
@@ -366,3 +374,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

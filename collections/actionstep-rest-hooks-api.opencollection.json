@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings REST Hooks API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "REST Hooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /resthooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/resthooks"
+          },
+          "docs": "Returns a collection of REST hooks."
+        },
+        {
+          "info": {
+            "name": "POST /resthooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/resthooks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new REST hook."
+        },
+        {
+          "info": {
+            "name": "GET /resthooks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/resthooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "9287",
+                "type": "path",
+                "description": "Unique identifier for a REST hook."
+              }
+            ]
+          },
+          "docs": "Returns a single REST hook."
+        },
+        {
+          "info": {
+            "name": "PUT /resthooks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/resthooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a REST hook."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a REST hook."
+        },
+        {
+          "info": {
+            "name": "DELETE /resthooks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/resthooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a REST hook."
+              }
+            ]
+          },
+          "docs": "Delete a REST hook."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

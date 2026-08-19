@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "10573776-ad49-4296-952c-fafd8f36e0f3",
+      "name": "Contact Documents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "606b5e65-a557-45fe-96ee-8ec48331a9cc",
+          "name": "Returns the collection of all contact documents.",
+          "request": {
+            "name": "Returns the collection of all contact documents.",
+            "description": {
+              "content": "Returns the collection of all contact documents.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactdocuments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca19d8f6-8cea-440f-a0ca-a72167e05708",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactdocuments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactdocuments\": [\n    {\n      \"id\": 586,\n      \"name\": \"Contract Terms and Conditions\",\n      \"createdTimestamp\": \"2025-05-13 14:36:33+12:00\",\n      \"modifiedTimestamp\": \"2025-09-17 09:12:32+12:00\",\n      \"status\": \"uploaded\",\n      \"keywords\": \"AML, KYC\",\n      \"summary\": \"Updated KYC report.\",\n      \"fileType\": \"image/png\",\n      \"fileSize\": 62739,\n      \"extension\": \"png\",\n      \"fileName\": \"pid_11_1508314872d144890a7105bde4ec50182fc6.png\",\n      \"sharepointUrl\": \"https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png\",\n      \"file\": \"CD::Contacts::63727::13\",\n      \"links\": {\n        \"participant\": 321845,\n        \"folder\": \"string\",\n        \"createdBy\": 925\n      }\n    },\n    {\n      \"id\": 586,\n      \"name\": \"Contract Terms and Conditions\",\n      \"createdTimestamp\": \"2025-05-13 14:36:33+12:00\",\n      \"modifiedTimestamp\": \"2025-09-17 09:12:32+12:00\",\n      \"status\": \"uploaded\",\n      \"keywords\": \"AML, KYC\",\n      \"summary\": \"Updated KYC report.\",\n      \"fileType\": \"image/png\",\n      \"fileSize\": 62739,\n      \"extension\": \"png\",\n      \"fileName\": \"pid_11_1508314872d144890a7105bde4ec50182fc6.png\",\n      \"sharepointUrl\": \"https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png\",\n      \"file\": \"CD::Contacts::63727::13\",\n      \"links\": {\n        \"participant\": 321845,\n        \"folder\": \"string\",\n        \"createdBy\": 925\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"contactdocuments\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactdocuments?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactdocuments?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ea9d079-408a-4195-a7c3-031d0ed59892",
+          "name": "Create a new contact document.",
+          "request": {
+            "name": "Create a new contact document.",
+            "description": {
+              "content": "Create a new contact document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactdocuments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"file\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"links\": {\n    \"participant\": \"<integer>\",\n    \"folder\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c66446b0-b10c-4cb4-8023-cbd47aaa3b25",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactdocuments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"name\": \"Contract Terms and Conditions\",\n  \"createdTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"modifiedTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"status\": \"uploaded\",\n  \"keywords\": \"AML, KYC\",\n  \"summary\": \"Updated KYC report.\",\n  \"fileType\": \"image/png\",\n  \"fileSize\": 62739,\n  \"extension\": \"png\",\n  \"fileName\": \"pid_11_1508314872d144890a7105bde4ec50182fc6.png\",\n  \"sharepointUrl\": \"https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png\",\n  \"file\": \"CD::Contacts::63727::13\",\n  \"links\": {\n    \"participant\": 321845,\n    \"folder\": \"string\",\n    \"createdBy\": 925\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af85d939-29ee-4434-a308-264b11c69510",
+          "name": "Returns a single contact document.",
+          "request": {
+            "name": "Returns a single contact document.",
+            "description": {
+              "content": "Returns a single contact document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactdocuments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single contact document."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5ca78bb-bb5e-42a5-83a5-535c19e4f1db",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactdocuments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single contact document."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"name\": \"Contract Terms and Conditions\",\n  \"createdTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"modifiedTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"status\": \"uploaded\",\n  \"keywords\": \"AML, KYC\",\n  \"summary\": \"Updated KYC report.\",\n  \"fileType\": \"image/png\",\n  \"fileSize\": 62739,\n  \"extension\": \"png\",\n  \"fileName\": \"pid_11_1508314872d144890a7105bde4ec50182fc6.png\",\n  \"sharepointUrl\": \"https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png\",\n  \"file\": \"CD::Contacts::63727::13\",\n  \"links\": {\n    \"participant\": 321845,\n    \"folder\": \"string\",\n    \"createdBy\": 925\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f0338f7-784e-4758-ba50-8db0ea73b16e",
+          "name": "Updates a single contact document.",
+          "request": {
+            "name": "Updates a single contact document.",
+            "description": {
+              "content": "Updates a single contact document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactdocuments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single contact document."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"links\": {\n    \"folder\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c88020be-e43e-425c-ad50-8f849e1a9a98",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactdocuments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single contact document."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"name\": \"Contract Terms and Conditions\",\n  \"createdTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"modifiedTimestamp\": \"2025-09-17 09:12:32+12:00\",\n  \"status\": \"uploaded\",\n  \"keywords\": \"AML, KYC\",\n  \"summary\": \"Updated KYC report.\",\n  \"fileType\": \"image/png\",\n  \"fileSize\": 62739,\n  \"extension\": \"png\",\n  \"fileName\": \"pid_11_1508314872d144890a7105bde4ec50182fc6.png\",\n  \"sharepointUrl\": \"https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png\",\n  \"file\": \"CD::Contacts::63727::13\",\n  \"links\": {\n    \"participant\": 321845,\n    \"folder\": \"string\",\n    \"createdBy\": 925\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cf93dab-22e5-4f17-a3fb-946167ac0004",
+          "name": "Delete a single contact document",
+          "request": {
+            "name": "Delete a single contact document",
+            "description": {
+              "content": "Delete a single contact document",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactdocuments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single contact document."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec092c82-dbee-4414-8653-3499d561d157",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactdocuments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single contact document."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e13ba93b-4af6-4edc-886f-70bc968eb161",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Documents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

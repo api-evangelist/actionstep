@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "c6e4fede-a251-4f6f-b127-539b1827294c",
+      "name": "Data Collections",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e463101-8f77-4439-8b74-5182dcb05e87",
+          "name": "Returns a collection of data collections.",
+          "request": {
+            "name": "Returns a collection of data collections.",
+            "description": {
+              "content": "Returns a collection of data collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbdca034-1e1f-43a7-ab31-607a53e19695",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datacollections\": [\n    {\n      \"id\": 2347,\n      \"name\": \"AMLData\",\n      \"description\": \"AML status and progress values.\",\n      \"multipleRecords\": \"F\",\n      \"order\": 5,\n      \"label\": \"AML Certification\",\n      \"alwaysShowDescriptions\": \"F\",\n      \"links\": {\n        \"actionType\": 822\n      }\n    },\n    {\n      \"id\": 2347,\n      \"name\": \"AMLData\",\n      \"description\": \"AML status and progress values.\",\n      \"multipleRecords\": \"F\",\n      \"order\": 5,\n      \"label\": \"AML Certification\",\n      \"alwaysShowDescriptions\": \"F\",\n      \"links\": {\n        \"actionType\": 822\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"datacollections\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollections?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollections?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e604cd3f-397b-4992-b80e-3317d2d7171b",
+          "name": "Create a new data collection.",
+          "request": {
+            "name": "Create a new data collection.",
+            "description": {
+              "content": "Create a new data collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"multipleRecords\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"label\": \"<string>\",\n  \"alwaysShowDescriptions\": \"<string>\",\n  \"links\": {\n    \"actionType\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3814b3ee-a01b-4d98-9cdb-af6a5cc2c9df",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"AMLData\",\n  \"description\": \"AML status and progress values.\",\n  \"multipleRecords\": \"F\",\n  \"order\": 5,\n  \"label\": \"AML Certification\",\n  \"alwaysShowDescriptions\": \"F\",\n  \"links\": {\n    \"actionType\": 822\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e91fbe8-b15d-4386-95d4-681a8c18d6e0",
+          "name": "Returns a single data collection.",
+          "request": {
+            "name": "Returns a single data collection.",
+            "description": {
+              "content": "Returns a single data collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollection",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3c46378-f983-4d68-8a60-29b45cbe5f0f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollection",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"AMLData\",\n  \"description\": \"AML status and progress values.\",\n  \"multipleRecords\": \"F\",\n  \"order\": 5,\n  \"label\": \"AML Certification\",\n  \"alwaysShowDescriptions\": \"F\",\n  \"links\": {\n    \"actionType\": 822\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c470dec-769e-49b7-99c5-f6dcb2e39c04",
+          "name": "Update a data collection.",
+          "request": {
+            "name": "Update a data collection.",
+            "description": {
+              "content": "Update a data collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollection",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"multipleRecords\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"label\": \"<string>\",\n  \"alwaysShowDescriptions\": \"<string>\",\n  \"links\": {\n    \"actionType\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6ab8273-384c-43d8-8265-97417ff144e3",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollection",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"AMLData\",\n  \"description\": \"AML status and progress values.\",\n  \"multipleRecords\": \"F\",\n  \"order\": 5,\n  \"label\": \"AML Certification\",\n  \"alwaysShowDescriptions\": \"F\",\n  \"links\": {\n    \"actionType\": 822\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70931e23-9147-462c-b41d-921127353af1",
+          "name": "Delete a data collection.",
+          "request": {
+            "name": "Delete a data collection.",
+            "description": {
+              "content": "Delete a data collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollection",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe865221-f64b-4632-87ac-523277e4f3ed",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollection",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "21a49842-9733-43bf-8cc4-0dd4be7bb3a6",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collections API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

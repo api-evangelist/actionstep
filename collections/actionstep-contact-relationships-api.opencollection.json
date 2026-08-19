@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Relationships API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact Relationships",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /contactrelationships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactrelationships"
+          },
+          "docs": "Returns the collection of all contact relationships."
+        },
+        {
+          "info": {
+            "name": "POST /contactrelationships",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/contactrelationships",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new contact relationship."
+        },
+        {
+          "info": {
+            "name": "GET /contactrelationships/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactrelationships/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "Father-41854-845258",
+                "type": "path",
+                "description": "Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Returns a single contact relationship record."
+        },
+        {
+          "info": {
+            "name": "DELETE /contactrelationships/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/contactrelationships/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "Father-41854-845258",
+                "type": "path",
+                "description": "Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Deletes a single contact relationship record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

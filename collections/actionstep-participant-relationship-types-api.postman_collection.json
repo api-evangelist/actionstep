@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "id": "f4af5d6e-e085-495c-a1dc-f949ede30638",
+      "name": "Participant Relationship Types",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a37ca05-59da-4288-8297-fe773c528125",
+          "name": "Returns a list of all Participant Relationship Types.",
+          "request": {
+            "name": "Returns a list of all Participant Relationship Types.",
+            "description": {
+              "content": "Returns a list of all Participant Relationship Types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantrelationshiptypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9da6007-67dc-4752-8530-334d857c6694",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantrelationshiptypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"participantrelationshiptypes\": [\n    {\n      \"category\": \"IndividualToIndividual\",\n      \"relationshipType\": \"Acquaintance\"\n    },\n    {\n      \"category\": \"IndividualToIndividual\",\n      \"relationshipType\": \"Acquaintance\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"participantrelationshiptypes\": {\n        \"recordCount\": 4,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantrelationshiptypes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantrelationshiptypes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e07e8411-a1ef-4383-b751-018ceb8ff167",
+          "name": "Create a new participant relationship type.",
+          "request": {
+            "name": "Create a new participant relationship type.",
+            "description": {
+              "content": "Create a new participant relationship type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantrelationshiptypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": \"<string>\",\n  \"relationshipType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c739bd83-470a-4e51-adf1-98d95464ad31",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantrelationshiptypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"category\": \"IndividualToIndividual\",\n  \"relationshipType\": \"Acquaintance\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5df7a82d-5d95-4c98-978e-0efaa3c485c6",
+          "name": "Returns a single participant relationship type.",
+          "request": {
+            "name": "Returns a single participant relationship type.",
+            "description": {
+              "content": "Returns a single participant relationship type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantrelationshiptypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d2fb27a-aa0b-4381-b26a-994ed6e10b01",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantrelationshiptypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"category\": \"IndividualToIndividual\",\n  \"relationshipType\": \"Acquaintance\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ddad3b65-7618-43cf-b3db-938be58fa1c9",
+          "name": "Delete a single participant relationship type.",
+          "request": {
+            "name": "Delete a single participant relationship type.",
+            "description": {
+              "content": "Delete a single participant relationship type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantrelationshiptypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bf453eb2-8588-4aae-88a3-588361aa4e1b",
+              "name": "Success, No content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantrelationshiptypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5b38c037-a8b3-4646-a988-9ac64a278631",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Relationship Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

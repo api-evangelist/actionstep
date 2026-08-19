@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings File Notes API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "File Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /filenotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/filenotes"
+          },
+          "docs": "Returns a collection of file notes."
+        },
+        {
+          "info": {
+            "name": "POST /filenotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/filenotes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new file note."
+        },
+        {
+          "info": {
+            "name": "GET /filenotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/filenotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "9287",
+                "type": "path",
+                "description": "Unique identifier for a file note."
+              }
+            ]
+          },
+          "docs": "Returns a single file note."
+        },
+        {
+          "info": {
+            "name": "PUT /filenotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/filenotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a file note."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a file note."
+        },
+        {
+          "info": {
+            "name": "DELETE /filenotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/filenotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a file note."
+              }
+            ]
+          },
+          "docs": "Delete a file note."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

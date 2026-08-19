@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "abca305a-5598-4f29-85eb-dfdb4182c586",
+      "name": "Action Type Participant Types",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8318a21a-a3a7-4bca-808c-6092b839fa0f",
+          "name": "Returns the collection of all participant types for all matter types.",
+          "request": {
+            "name": "Returns the collection of all participant types for all matter types.",
+            "description": {
+              "content": "Returns the collection of all participant types for all matter types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actiontypeparticipanttypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92553824-6cd0-4c47-9ecb-bac81ada53ca",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actiontypeparticipanttypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"actiontypeparticipanttypes\": [\n    {\n      \"id\": \"14--54\",\n      \"required\": \"T\",\n      \"isPrimaryParticipantType\": \"T\",\n      \"actionType\": 14,\n      \"links\": {\n        \"participantType\": 546\n      }\n    },\n    {\n      \"id\": \"14--54\",\n      \"required\": \"T\",\n      \"isPrimaryParticipantType\": \"T\",\n      \"actionType\": 14,\n      \"links\": {\n        \"participantType\": 546\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"actiontypeparticipanttypes\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actiontypeparticipanttypes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actiontypeparticipanttypes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24cfe6e8-3ae8-41fb-9637-ff42a2e20e05",
+          "name": "Add an existing participant type to an existing matter type.",
+          "request": {
+            "name": "Add an existing participant type to an existing matter type.",
+            "description": {
+              "content": "Add an existing participant type to an existing matter type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actiontypeparticipanttypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"required\": \"<string>\",\n  \"isPrimaryParticipantType\": \"<string>\",\n  \"actionType\": \"<integer>\",\n  \"links\": {\n    \"participantType\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f80b87e-c018-4afd-8f65-882628199921",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actiontypeparticipanttypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"required\": \"T\",\n  \"isPrimaryParticipantType\": \"T\",\n  \"actionType\": 14,\n  \"links\": {\n    \"participantType\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdc8b96b-8320-4721-a624-a087981ea0fe",
+          "name": "Returns a single matter type participant type record.",
+          "request": {
+            "name": "Returns a single matter type participant type record.",
+            "description": {
+              "content": "Returns a single matter type participant type record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actiontypeparticipanttypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93758ef7-51f2-4c81-9778-88faf36e53cc",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actiontypeparticipanttypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"14--54\",\n  \"required\": \"T\",\n  \"isPrimaryParticipantType\": \"T\",\n  \"actionType\": 14,\n  \"links\": {\n    \"participantType\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39c52ace-6d8d-4192-993a-55367428a3ba",
+          "name": "Updates a single matter type participant type record.",
+          "request": {
+            "name": "Updates a single matter type participant type record.",
+            "description": {
+              "content": "Updates a single matter type participant type record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actiontypeparticipanttypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"required\": \"<string>\",\n  \"isPrimaryParticipantType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e87c406-b569-4706-b7f7-345ef7b4592f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actiontypeparticipanttypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"14--54\",\n  \"required\": \"T\",\n  \"isPrimaryParticipantType\": \"T\",\n  \"actionType\": 14,\n  \"links\": {\n    \"participantType\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5879802e-27de-429c-abeb-7d4153c2ad1f",
+          "name": "Deletes a single matter type participant type record.",
+          "request": {
+            "name": "Deletes a single matter type participant type record.",
+            "description": {
+              "content": "Deletes a single matter type participant type record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actiontypeparticipanttypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a375e582-0c76-439b-836d-ea8ae139f719",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actiontypeparticipanttypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "46b91b35-660f-4806-90a7-b77a88c2dc24",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action Type Participant Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

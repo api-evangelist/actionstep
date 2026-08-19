@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings REST Hooks API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: REST Hooks
@@ -103,7 +105,8 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
+            description: For the complete list of supported events please reference the API Developer
+              Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
@@ -157,7 +160,8 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
+            description: For the complete list of supported events please reference the API Developer
+              Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
@@ -184,7 +188,8 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
+            description: For the complete list of supported events please reference the API Developer
+              Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
@@ -220,3 +225,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

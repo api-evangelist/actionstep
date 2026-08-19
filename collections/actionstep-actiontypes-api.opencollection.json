@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings ActionTypes API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ActionTypes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /actiontypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actiontypes"
+          },
+          "docs": "Returns a collection of Matter types. For information on how to construct requests filtering by various properties on a Matter type please refer to the API Developer Portal."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

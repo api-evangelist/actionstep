@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Participant Relationship Types API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Participant Relationship Types
@@ -39,7 +41,8 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'.
+        description: Unique identifier for the participant relationship type. This is a composite key
+          composed from the category and relationship properties, separated by '--'.
         required: true
         schema:
           type: string
@@ -58,7 +61,8 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'.
+        description: Unique identifier for the participant relationship type. This is a composite key
+          composed from the category and relationship properties, separated by '--'.
         required: true
         schema:
           type: string
@@ -149,7 +153,8 @@ components:
           format: string
           example: IndividualToIndividual
         relationshipType:
-          description: The name for the relationship type. A relationship type must be unique within a category.
+          description: The name for the relationship type. A relationship type must be unique within a
+            category.
           type: string
           format: string
           example: Acquaintance
@@ -162,3 +167,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

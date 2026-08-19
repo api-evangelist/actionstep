@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "a8c4adb5-1453-465b-a66d-dbf8657bbf23",
+      "name": "Time Entries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "32b3e15f-16cd-45af-a38a-b0417bea4d42",
+          "name": "Returns a collection of time entries.",
+          "request": {
+            "name": "Returns a collection of time entries.",
+            "description": {
+              "content": "Returns a collection of time entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timeentries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57ad22d9-eb72-4509-aa08-b62b13f0a0cf",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timeentries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timeentries\": [\n    {\n      \"id\": 47,\n      \"timestampDate\": \"2022-05-03 00:00:00+12:00\",\n      \"description\": \"Court hearing\",\n      \"actualHours\": 2.5,\n      \"billableHours\": 2.5,\n      \"createdTimestamp\": \"2022-05-03 20:06:29+12:00\",\n      \"startTime\": \"09:00:00\",\n      \"timerStatus\": \"Stopped\",\n      \"timerStartedClientTimestamp\": \"2022-05-03 20:06:29+12:00\",\n      \"timerDurationSeconds\": 9000,\n      \"billingBehavior\": \"Bill\",\n      \"rateUnitPrice\": 750,\n      \"rateSource\": \"string\",\n      \"rateTimestamp\": \"string\",\n      \"billableAmountType\": \"Calculated\",\n      \"billableAmount\": 1875,\n      \"isBillable\": \"T\",\n      \"importExternalReference\": \"DDH-3838939-333\",\n      \"links\": {\n        \"task\": 29339,\n        \"quickCode\": 273,\n        \"createdBy\": 12,\n        \"owner\": 14,\n        \"action\": 7334,\n        \"rate\": 17,\n        \"utbmsActivityCode\": \"A120\",\n        \"utbmsTaskCode\": \"X50\",\n        \"utbmsTimekeeperCode\": \"TK830\",\n        \"phoneRecord\": 1176\n      }\n    },\n    {\n      \"id\": 47,\n      \"timestampDate\": \"2022-05-03 00:00:00+12:00\",\n      \"description\": \"Court hearing\",\n      \"actualHours\": 2.5,\n      \"billableHours\": 2.5,\n      \"createdTimestamp\": \"2022-05-03 20:06:29+12:00\",\n      \"startTime\": \"09:00:00\",\n      \"timerStatus\": \"Stopped\",\n      \"timerStartedClientTimestamp\": \"2022-05-03 20:06:29+12:00\",\n      \"timerDurationSeconds\": 9000,\n      \"billingBehavior\": \"Bill\",\n      \"rateUnitPrice\": 750,\n      \"rateSource\": \"string\",\n      \"rateTimestamp\": \"string\",\n      \"billableAmountType\": \"Calculated\",\n      \"billableAmount\": 1875,\n      \"isBillable\": \"T\",\n      \"importExternalReference\": \"DDH-3838939-333\",\n      \"links\": {\n        \"task\": 29339,\n        \"quickCode\": 273,\n        \"createdBy\": 12,\n        \"owner\": 14,\n        \"action\": 7334,\n        \"rate\": 17,\n        \"utbmsActivityCode\": \"A120\",\n        \"utbmsTaskCode\": \"X50\",\n        \"utbmsTimekeeperCode\": \"TK830\",\n        \"phoneRecord\": 1176\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"timeentries\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/timeentries?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/timeentries?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c68308-eac2-4a49-b69d-51046c83c249",
+          "name": "Create a new time entry.",
+          "request": {
+            "name": "Create a new time entry.",
+            "description": {
+              "content": "Create a new time entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timeentries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timestampDate\": \"<timestamp>\",\n  \"actualHours\": \"<number>\",\n  \"description\": \"<string>\",\n  \"billableHours\": \"<number>\",\n  \"createdTimestamp\": \"<timestamp>\",\n  \"startTime\": \"<time>\",\n  \"timerStatus\": \"<string>\",\n  \"timerStartedClientTimestamp\": \"<timestamp>\",\n  \"timerDurationSeconds\": \"<string>\",\n  \"billingBehavior\": \"<string>\",\n  \"rateUnitPrice\": \"<number>\",\n  \"rateSource\": \"<string>\",\n  \"rateTimestamp\": \"<string>\",\n  \"billableAmountType\": \"<string>\",\n  \"billableAmount\": \"<number>\",\n  \"isBillable\": \"<string>\",\n  \"importExternalReference\": \"<string>\",\n  \"links\": {\n    \"task\": \"<string>\",\n    \"quickCode\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"action\": \"<string>\",\n    \"rate\": \"<string>\",\n    \"utbmsActivityCode\": \"<string>\",\n    \"utbmsTaskCode\": \"<string>\",\n    \"utbmsTimekeeperCode\": \"<string>\",\n    \"phoneRecord\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9933497a-00ce-4a0b-898e-a213d24e0e67",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timeentries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 47,\n  \"timestampDate\": \"2022-05-03 00:00:00+12:00\",\n  \"description\": \"Court hearing\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"createdTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"startTime\": \"09:00:00\",\n  \"timerStatus\": \"Stopped\",\n  \"timerStartedClientTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"timerDurationSeconds\": 9000,\n  \"billingBehavior\": \"Bill\",\n  \"rateUnitPrice\": 750,\n  \"rateSource\": \"string\",\n  \"rateTimestamp\": \"string\",\n  \"billableAmountType\": \"Calculated\",\n  \"billableAmount\": 1875,\n  \"isBillable\": \"T\",\n  \"importExternalReference\": \"DDH-3838939-333\",\n  \"links\": {\n    \"task\": 29339,\n    \"quickCode\": 273,\n    \"createdBy\": 12,\n    \"owner\": 14,\n    \"action\": 7334,\n    \"rate\": 17,\n    \"utbmsActivityCode\": \"A120\",\n    \"utbmsTaskCode\": \"X50\",\n    \"utbmsTimekeeperCode\": \"TK830\",\n    \"phoneRecord\": 1176\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16e7cb7e-e35d-4142-b394-8cc554b1bc43",
+          "name": "Returns a single time entry.",
+          "request": {
+            "name": "Returns a single time entry.",
+            "description": {
+              "content": "Returns a single time entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timeentries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a time entry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0ca362f-cfe5-4b16-b175-e4bbae9866df",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timeentries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a time entry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 47,\n  \"timestampDate\": \"2022-05-03 00:00:00+12:00\",\n  \"description\": \"Court hearing\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"createdTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"startTime\": \"09:00:00\",\n  \"timerStatus\": \"Stopped\",\n  \"timerStartedClientTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"timerDurationSeconds\": 9000,\n  \"billingBehavior\": \"Bill\",\n  \"rateUnitPrice\": 750,\n  \"rateSource\": \"string\",\n  \"rateTimestamp\": \"string\",\n  \"billableAmountType\": \"Calculated\",\n  \"billableAmount\": 1875,\n  \"isBillable\": \"T\",\n  \"importExternalReference\": \"DDH-3838939-333\",\n  \"links\": {\n    \"task\": 29339,\n    \"quickCode\": 273,\n    \"createdBy\": 12,\n    \"owner\": 14,\n    \"action\": 7334,\n    \"rate\": 17,\n    \"utbmsActivityCode\": \"A120\",\n    \"utbmsTaskCode\": \"X50\",\n    \"utbmsTimekeeperCode\": \"TK830\",\n    \"phoneRecord\": 1176\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a86c4ecc-774e-44d2-95bf-59687b275391",
+          "name": "Update a time entry.",
+          "request": {
+            "name": "Update a time entry.",
+            "description": {
+              "content": "Update a time entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timeentries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a time entry."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timestampDate\": \"<timestamp>\",\n  \"actualHours\": \"<number>\",\n  \"description\": \"<string>\",\n  \"billableHours\": \"<number>\",\n  \"createdTimestamp\": \"<timestamp>\",\n  \"startTime\": \"<time>\",\n  \"timerStatus\": \"<string>\",\n  \"timerStartedClientTimestamp\": \"<timestamp>\",\n  \"timerDurationSeconds\": \"<string>\",\n  \"billingBehavior\": \"<string>\",\n  \"rateUnitPrice\": \"<number>\",\n  \"rateSource\": \"<string>\",\n  \"rateTimestamp\": \"<string>\",\n  \"billableAmountType\": \"<string>\",\n  \"billableAmount\": \"<number>\",\n  \"isBillable\": \"<string>\",\n  \"importExternalReference\": \"<string>\",\n  \"links\": {\n    \"task\": \"<string>\",\n    \"quickCode\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"action\": \"<string>\",\n    \"rate\": \"<string>\",\n    \"utbmsActivityCode\": \"<string>\",\n    \"utbmsTaskCode\": \"<string>\",\n    \"utbmsTimekeeperCode\": \"<string>\",\n    \"phoneRecord\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18064020-431d-44c1-b7e6-66576e6fa969",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timeentries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a time entry."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 47,\n  \"timestampDate\": \"2022-05-03 00:00:00+12:00\",\n  \"description\": \"Court hearing\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"createdTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"startTime\": \"09:00:00\",\n  \"timerStatus\": \"Stopped\",\n  \"timerStartedClientTimestamp\": \"2022-05-03 20:06:29+12:00\",\n  \"timerDurationSeconds\": 9000,\n  \"billingBehavior\": \"Bill\",\n  \"rateUnitPrice\": 750,\n  \"rateSource\": \"string\",\n  \"rateTimestamp\": \"string\",\n  \"billableAmountType\": \"Calculated\",\n  \"billableAmount\": 1875,\n  \"isBillable\": \"T\",\n  \"importExternalReference\": \"DDH-3838939-333\",\n  \"links\": {\n    \"task\": 29339,\n    \"quickCode\": 273,\n    \"createdBy\": 12,\n    \"owner\": 14,\n    \"action\": 7334,\n    \"rate\": 17,\n    \"utbmsActivityCode\": \"A120\",\n    \"utbmsTaskCode\": \"X50\",\n    \"utbmsTimekeeperCode\": \"TK830\",\n    \"phoneRecord\": 1176\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8642811b-c539-4bba-81a3-2a179e13ce04",
+          "name": "Delete a time entry.",
+          "request": {
+            "name": "Delete a time entry.",
+            "description": {
+              "content": "Delete a time entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timeentries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a time entry."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55fb6d67-c3d9-499d-bae3-cf5e863c579e",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timeentries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a time entry."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3d9c7e87-3519-40cb-8691-37394e5d23a1",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Time Entries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

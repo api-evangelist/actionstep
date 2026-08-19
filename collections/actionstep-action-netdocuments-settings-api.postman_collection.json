@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "7b5290ac-6a7f-4449-b1b3-0b750cbb589f",
+      "name": "Action NetDocuments Settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "829ea57c-a945-479a-873e-d54661466a5b",
+          "name": "Returns the collection of NetDocuments Settings for all matters.",
+          "request": {
+            "name": "Returns the collection of NetDocuments Settings for all matters.",
+            "description": {
+              "content": "Returns the collection of NetDocuments Settings for all matters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionnetdocssettings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4871283-97d5-4afb-a69a-0a7490ed1b39",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionnetdocssettings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"actionnetdocssettings\": [\n    {\n      \"id\": 586,\n      \"workspaceIdentifier\": \"string\",\n      \"parentWorkspaceIdentifier\": \"string\",\n      \"workspaceEnvId\": \"Q14:b:i:d:v:^W250512223611824.nev\",\n      \"workspaceFolderJson\": \"string\",\n      \"workspaceFolderLastUpdatedTimestamp\": \"2025-05-13 14:36:33+12:00\",\n      \"links\": {\n        \"action\": \"string\",\n        \"participant\": 321845\n      }\n    },\n    {\n      \"id\": 586,\n      \"workspaceIdentifier\": \"string\",\n      \"parentWorkspaceIdentifier\": \"string\",\n      \"workspaceEnvId\": \"Q14:b:i:d:v:^W250512223611824.nev\",\n      \"workspaceFolderJson\": \"string\",\n      \"workspaceFolderLastUpdatedTimestamp\": \"2025-05-13 14:36:33+12:00\",\n      \"links\": {\n        \"action\": \"string\",\n        \"participant\": 321845\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"actionnetdocssettings\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionnetdocssettings?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionnetdocssettings?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e288b7b-c062-498b-a796-9a196b69deb4",
+          "name": "Create a new NetDocuments settings record.",
+          "request": {
+            "name": "Create a new NetDocuments settings record.",
+            "description": {
+              "content": "Create a new NetDocuments settings record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionnetdocssettings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workspaceIdentifier\": \"<string>\",\n  \"parentWorkspaceIdentifier\": \"<string>\",\n  \"workspaceEnvId\": \"<string>\",\n  \"workspaceFolderJson\": \"<string>\",\n  \"links\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dd4ef3d2-791c-470f-b112-e3aebbd87aca",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionnetdocssettings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"workspaceIdentifier\": \"string\",\n  \"parentWorkspaceIdentifier\": \"string\",\n  \"workspaceEnvId\": \"Q14:b:i:d:v:^W250512223611824.nev\",\n  \"workspaceFolderJson\": \"string\",\n  \"workspaceFolderLastUpdatedTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"links\": {\n    \"action\": \"string\",\n    \"participant\": 321845\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e22c757-aecd-4d0a-9e93-0fc97d5200d8",
+          "name": "Returns a single NetDocuments settings record.",
+          "request": {
+            "name": "Returns a single NetDocuments settings record.",
+            "description": {
+              "content": "Returns a single NetDocuments settings record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionnetdocssettings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22c3420b-f974-47b3-b5f1-c9496762a3fc",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionnetdocssettings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"workspaceIdentifier\": \"string\",\n  \"parentWorkspaceIdentifier\": \"string\",\n  \"workspaceEnvId\": \"Q14:b:i:d:v:^W250512223611824.nev\",\n  \"workspaceFolderJson\": \"string\",\n  \"workspaceFolderLastUpdatedTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"links\": {\n    \"action\": \"string\",\n    \"participant\": 321845\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32a45002-8226-450a-9b18-fca31bfa7c24",
+          "name": "Updates a single NetDocuments settings record.",
+          "request": {
+            "name": "Updates a single NetDocuments settings record.",
+            "description": {
+              "content": "Updates a single NetDocuments settings record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionnetdocssettings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workspaceIdentifier\": \"<string>\",\n  \"parentWorkspaceIdentifier\": \"<string>\",\n  \"workspaceEnvId\": \"<string>\",\n  \"workspaceFolderJson\": \"<string>\",\n  \"links\": {\n    \"action\": \"<string>\",\n    \"participant\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "067ae86b-5d32-480d-a987-f3fe2ff7138c",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionnetdocssettings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 586,\n  \"workspaceIdentifier\": \"string\",\n  \"parentWorkspaceIdentifier\": \"string\",\n  \"workspaceEnvId\": \"Q14:b:i:d:v:^W250512223611824.nev\",\n  \"workspaceFolderJson\": \"string\",\n  \"workspaceFolderLastUpdatedTimestamp\": \"2025-05-13 14:36:33+12:00\",\n  \"links\": {\n    \"action\": \"string\",\n    \"participant\": 321845\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b96bdacc-0488-449a-8718-08c52a92898a",
+          "name": "Deletes a single NetDocuments settings record.",
+          "request": {
+            "name": "Deletes a single NetDocuments settings record.",
+            "description": {
+              "content": "Deletes a single NetDocuments settings record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionnetdocssettings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23199f2a-ad64-4d35-8df3-cd92417eedc5",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionnetdocssettings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single NetDocuments settings record."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "63093367-9f94-4b78-9634-d2a15e120da2",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action NetDocuments Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

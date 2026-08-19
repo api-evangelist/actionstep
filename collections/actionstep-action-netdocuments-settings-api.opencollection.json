@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action NetDocuments Settings API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Action NetDocuments Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /actionnetdocssettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actionnetdocssettings"
+          },
+          "docs": "Returns the collection of NetDocuments Settings for all matters."
+        },
+        {
+          "info": {
+            "name": "POST /actionnetdocssettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/actionnetdocssettings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new NetDocuments settings record."
+        },
+        {
+          "info": {
+            "name": "GET /actionnetdocssettings/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actionnetdocssettings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single NetDocuments settings record."
+              }
+            ]
+          },
+          "docs": "Returns a single NetDocuments settings record."
+        },
+        {
+          "info": {
+            "name": "PUT /actionnetdocssettings/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/actionnetdocssettings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single NetDocuments settings record."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single NetDocuments settings record."
+        },
+        {
+          "info": {
+            "name": "DELETE /actionnetdocssettings/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/actionnetdocssettings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single NetDocuments settings record."
+              }
+            ]
+          },
+          "docs": "Deletes a single NetDocuments settings record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings UTBMS Codes API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UTBMS Codes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /utbmscodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/utbmscodes"
+          },
+          "docs": "Returns the collection of all UTBMS codes."
+        },
+        {
+          "info": {
+            "name": "POST /utbmscodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/utbmscodes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new UTBMS code."
+        },
+        {
+          "info": {
+            "name": "GET /utbmscodes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/utbmscodes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "A100",
+                "type": "path",
+                "description": "Unique identifier for a single UTBMS code."
+              }
+            ]
+          },
+          "docs": "Returns a single UTBMS code."
+        },
+        {
+          "info": {
+            "name": "PUT /utbmscodes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/utbmscodes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "A100",
+                "type": "path",
+                "description": "Unique identifier for a single UTBMS code."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single UTBMS code."
+        },
+        {
+          "info": {
+            "name": "DELETE /utbmscodes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/utbmscodes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "A100",
+                "type": "path",
+                "description": "Unique identifier for a single UTBMS code."
+              }
+            ]
+          },
+          "docs": "Deletes a single UTBMS code."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

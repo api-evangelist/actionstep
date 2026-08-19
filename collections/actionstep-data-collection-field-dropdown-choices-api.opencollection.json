@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Field Dropdown Choices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Collection Field Dropdown Choices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /datacollectionfielddropdownchoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionfielddropdownchoices"
+          },
+          "docs": "Returns the collection of all data collection field dropdown choice records."
+        },
+        {
+          "info": {
+            "name": "POST /datacollectionfielddropdownchoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/datacollectionfielddropdownchoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new data collection field dropdown choice record."
+        },
+        {
+          "info": {
+            "name": "GET /datacollectionfielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionfielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "230--CarColor--Red",
+                "type": "path",
+                "description": "Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+              }
+            ]
+          },
+          "docs": "Returns a single data collection field dropdown choice record."
+        },
+        {
+          "info": {
+            "name": "PUT /datacollectionfielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/datacollectionfielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "230--CarColor--Red",
+                "type": "path",
+                "description": "Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single data collection field dropdown choice record."
+        },
+        {
+          "info": {
+            "name": "DELETE /datacollectionfielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/datacollectionfielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "230--CarColor--Red",
+                "type": "path",
+                "description": "Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+              }
+            ]
+          },
+          "docs": "Delete a single data collection field dropdown choice record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

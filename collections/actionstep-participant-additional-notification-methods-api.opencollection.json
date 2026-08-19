@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Additional Notification Methods API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participant Additional Notification Methods",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /participantadditionalnotificationmethods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantadditionalnotificationmethods"
+          },
+          "docs": "Returns a list of all Participant Additional Notification Methods."
+        },
+        {
+          "info": {
+            "name": "POST /participantadditionalnotificationmethods",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/participantadditionalnotificationmethods",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Participant Additional Notification Method."
+        },
+        {
+          "info": {
+            "name": "GET /participantadditionalnotificationmethods/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantadditionalnotificationmethods/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "5410",
+                "type": "path",
+                "description": "Unique identifier for the Participant Additional Notification Method."
+              }
+            ]
+          },
+          "docs": "Returns a single Participant Additional Notification Method."
+        },
+        {
+          "info": {
+            "name": "PUT /participantadditionalnotificationmethods/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/participantadditionalnotificationmethods/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1176",
+                "type": "path",
+                "description": "Unique identifier for a single Participant Additional Notification Method record."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single Participant Additional Notification Method record."
+        },
+        {
+          "info": {
+            "name": "DELETE /participantadditionalnotificationmethods/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/participantadditionalnotificationmethods/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "5410",
+                "type": "path",
+                "description": "Unique identifier for the Participant Additional Notification Method record."
+              }
+            ]
+          },
+          "docs": "Delete a single Participant Additional Notification Method record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

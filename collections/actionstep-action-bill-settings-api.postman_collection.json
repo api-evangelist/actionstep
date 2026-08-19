@@ -1,0 +1,291 @@
+{
+  "item": [
+    {
+      "id": "eeb829e8-6929-4322-adab-195092e467f2",
+      "name": "Action Bill Settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a8aa7b3-4931-4e84-be69-7301b8c4a05a",
+          "name": "Returns a summary of bill settings for all matters.",
+          "request": {
+            "name": "Returns a summary of bill settings for all matters.",
+            "description": {
+              "content": "Returns a summary of bill settings for all matters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionbillsettings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ed9ad7c-6357-451a-80a9-738caacfe429",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionbillsettings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"actionbillsettings\": [\n    {\n      \"id\": 5850,\n      \"billType\": \"Hourly\",\n      \"sendToEmailAddress\": \"john.smith@mybigcompany.com\",\n      \"quotedAmountIncludes\": \"Fees and costs\",\n      \"quotedAmount\": 5750.75,\n      \"isBillable\": \"T\",\n      \"isUtbmsEnabled\": \"F\",\n      \"utbmsTaskCategoryCode\": \"Activity Codes\",\n      \"defaultTimeEntryBehavior\": \"Bill\",\n      \"salesTaxAppliesTo\": \"Fees\",\n      \"discountType\": \"Amount\",\n      \"discountAmount\": 550.5,\n      \"isSalesTaxEnabled\": \"T\",\n      \"links\": {\n        \"defaultRate\": 3,\n        \"currency\": \"USD\",\n        \"salesTaxRate\": 3945\n      }\n    },\n    {\n      \"id\": 5850,\n      \"billType\": \"Hourly\",\n      \"sendToEmailAddress\": \"john.smith@mybigcompany.com\",\n      \"quotedAmountIncludes\": \"Fees and costs\",\n      \"quotedAmount\": 5750.75,\n      \"isBillable\": \"T\",\n      \"isUtbmsEnabled\": \"F\",\n      \"utbmsTaskCategoryCode\": \"Activity Codes\",\n      \"defaultTimeEntryBehavior\": \"Bill\",\n      \"salesTaxAppliesTo\": \"Fees\",\n      \"discountType\": \"Amount\",\n      \"discountAmount\": 550.5,\n      \"isSalesTaxEnabled\": \"T\",\n      \"links\": {\n        \"defaultRate\": 3,\n        \"currency\": \"USD\",\n        \"salesTaxRate\": 3945\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"actionbillsettings\": {\n        \"recordCount\": 360,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionbillsettings?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionbillsettings?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdd0e4b5-6fd7-46a5-a906-7a0f6a83087c",
+          "name": "Returns a summary of bill settings for an individual matter.",
+          "request": {
+            "name": "Returns a summary of bill settings for an individual matter.",
+            "description": {
+              "content": "Returns a summary of bill settings for an individual matter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionbillsettings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a matter."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3de452e2-475f-4df4-950e-4b7b2bf2ae94",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionbillsettings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a matter."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5850,\n  \"billType\": \"Hourly\",\n  \"sendToEmailAddress\": \"john.smith@mybigcompany.com\",\n  \"quotedAmountIncludes\": \"Fees and costs\",\n  \"quotedAmount\": 5750.75,\n  \"isBillable\": \"T\",\n  \"isUtbmsEnabled\": \"F\",\n  \"utbmsTaskCategoryCode\": \"Activity Codes\",\n  \"defaultTimeEntryBehavior\": \"Bill\",\n  \"salesTaxAppliesTo\": \"Fees\",\n  \"discountType\": \"Amount\",\n  \"discountAmount\": 550.5,\n  \"isSalesTaxEnabled\": \"T\",\n  \"links\": {\n    \"defaultRate\": 3,\n    \"currency\": \"USD\",\n    \"salesTaxRate\": 3945\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43e9d1fa-9acd-4812-add8-28f3ad04de00",
+          "name": "Updates the bill settings for a single matter.",
+          "request": {
+            "name": "Updates the bill settings for a single matter.",
+            "description": {
+              "content": "Updates the bill settings for a single matter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionbillsettings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a matter."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"billType\": \"<string>\",\n  \"sendToEmailAddress\": \"<string>\",\n  \"quotedAmountIncludes\": \"<string>\",\n  \"quotedAmount\": \"<money>\",\n  \"isUtbmsEnabled\": \"<string>\",\n  \"utbmsTaskCategoryCode\": \"<string>\",\n  \"defaultTimeEntryBehavior\": \"<string>\",\n  \"salesTaxAppliesTo\": \"<string>\",\n  \"discountType\": \"<string>\",\n  \"discountAmount\": \"<money>\",\n  \"isSalesTaxEnabled\": \"<string>\",\n  \"links\": {\n    \"defaultRate\": \"<integer>\",\n    \"salesTaxRate\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "45912cd5-5e3b-461b-8ebb-bbdbbe2bbb65",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionbillsettings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a matter."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5850,\n  \"billType\": \"Hourly\",\n  \"sendToEmailAddress\": \"john.smith@mybigcompany.com\",\n  \"quotedAmountIncludes\": \"Fees and costs\",\n  \"quotedAmount\": 5750.75,\n  \"isBillable\": \"T\",\n  \"isUtbmsEnabled\": \"F\",\n  \"utbmsTaskCategoryCode\": \"Activity Codes\",\n  \"defaultTimeEntryBehavior\": \"Bill\",\n  \"salesTaxAppliesTo\": \"Fees\",\n  \"discountType\": \"Amount\",\n  \"discountAmount\": 550.5,\n  \"isSalesTaxEnabled\": \"T\",\n  \"links\": {\n    \"defaultRate\": 3,\n    \"currency\": \"USD\",\n    \"salesTaxRate\": 3945\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5eac4b89-f470-4667-8544-5d566ac621a9",
+    "name": "Action (Matter) Bill Settings Action Bill Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "7df488c9-54de-43ba-a642-1ec8909fcc69",
+      "name": "Tasks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e2a46695-ceb0-4de1-a401-0b3a10b528a5",
+          "name": "Returns a collection of tasks",
+          "request": {
+            "name": "Returns a collection of tasks",
+            "description": {
+              "content": "Returns a collection of tasks",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d92d12d8-0836-4991-bd2b-cca30a6adb21",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tasks\": [\n    {\n      \"id\": 2347,\n      \"name\": \"Research.\",\n      \"status\": \"Complete\",\n      \"priority\": \"High\",\n      \"dueTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"startedTimestamp\": \"2022-05-02 00:09:00+12:00\",\n      \"completedTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"lastModifiedTimestamp\": \"2022-05-03 00:10:35+12:00\",\n      \"actualHours\": 2.5,\n      \"billableHours\": 2.5,\n      \"description\": \"Research into the concrete manufacturing process.\",\n      \"assignedBy\": \"Smith, John\",\n      \"completeDuringStep\": 91764,\n      \"completeBeforeStep\": 93299,\n      \"mustStartBeforeTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"expectedDurationValue\": 400,\n      \"expectedDurationUnits\": \"hours\",\n      \"isBillingHold\": \"F\",\n      \"isPartBilled\": \"F\",\n      \"confirmedNonBillable\": \"F\",\n      \"confirmedNonBillableTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"hasTriggerDate\": \"T\",\n      \"triggerField\": \"DueDate\",\n      \"triggerOffset\": -2,\n      \"triggerWeekdaysOnly\": \"T\",\n      \"links\": {\n        \"triggerDataCollection\": 8834,\n        \"action\": 34,\n        \"assignee\": 14,\n        \"rate\": 17,\n        \"confirmedNonBillableBy\": 383,\n        \"linkedDocumentTemplate\": 9642,\n        \"linkedDataCollection\": 4248,\n        \"template\": 23\n      }\n    },\n    {\n      \"id\": 2347,\n      \"name\": \"Research.\",\n      \"status\": \"Complete\",\n      \"priority\": \"High\",\n      \"dueTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"startedTimestamp\": \"2022-05-02 00:09:00+12:00\",\n      \"completedTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"lastModifiedTimestamp\": \"2022-05-03 00:10:35+12:00\",\n      \"actualHours\": 2.5,\n      \"billableHours\": 2.5,\n      \"description\": \"Research into the concrete manufacturing process.\",\n      \"assignedBy\": \"Smith, John\",\n      \"completeDuringStep\": 91764,\n      \"completeBeforeStep\": 93299,\n      \"mustStartBeforeTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"expectedDurationValue\": 400,\n      \"expectedDurationUnits\": \"hours\",\n      \"isBillingHold\": \"F\",\n      \"isPartBilled\": \"F\",\n      \"confirmedNonBillable\": \"F\",\n      \"confirmedNonBillableTimestamp\": \"2022-05-03 00:10:30+12:00\",\n      \"hasTriggerDate\": \"T\",\n      \"triggerField\": \"DueDate\",\n      \"triggerOffset\": -2,\n      \"triggerWeekdaysOnly\": \"T\",\n      \"links\": {\n        \"triggerDataCollection\": 8834,\n        \"action\": 34,\n        \"assignee\": 14,\n        \"rate\": 17,\n        \"confirmedNonBillableBy\": 383,\n        \"linkedDocumentTemplate\": 9642,\n        \"linkedDataCollection\": 4248,\n        \"template\": 23\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"tasks\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/tasks?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/tasks?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5cf6574e-04be-4a6a-9114-e66f379a722a",
+          "name": "Create a new task.",
+          "request": {
+            "name": "Create a new task.",
+            "description": {
+              "content": "Create a new task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"status\": \"Incomplete\",\n  \"dueTimestamp\": \"<timestamp>\",\n  \"priority\": \"Normal\",\n  \"startedTimestamp\": \"<timestamp>\",\n  \"completedTimestamp\": \"<timestamp>\",\n  \"lastModifiedTimestamp\": \"<timestamp>\",\n  \"actualHours\": \"<number>\",\n  \"billableHours\": \"<number>\",\n  \"description\": \"<string>\",\n  \"assignedBy\": \"<string>\",\n  \"completeDuringStep\": \"<integer>\",\n  \"completeBeforeStep\": \"<integer>\",\n  \"mustStartBeforeTimestamp\": \"<timestamp>\",\n  \"expectedDurationValue\": \"<integer>\",\n  \"expectedDurationUnits\": \"<string>\",\n  \"isBillingHold\": \"<string>\",\n  \"isPartBilled\": \"<string>\",\n  \"confirmedNonBillable\": \"<string>\",\n  \"confirmedNonBillableTimestamp\": \"<timestamp>\",\n  \"hasTriggerDate\": \"<string>\",\n  \"triggerField\": \"<string>\",\n  \"triggerOffset\": \"<integer>\",\n  \"triggerWeekdaysOnly\": \"<string>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"assignee\": \"<integer>\",\n    \"triggerDataCollection\": \"<integer>\",\n    \"rate\": \"<integer>\",\n    \"confirmedNonBillableBy\": \"<integer>\",\n    \"linkedDocumentTemplate\": \"<integer>\",\n    \"linkedDataCollection\": \"<integer>\",\n    \"template\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d21205f4-a40a-4136-92a1-c2dda5a0bd65",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"Research.\",\n  \"status\": \"Complete\",\n  \"priority\": \"High\",\n  \"dueTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"startedTimestamp\": \"2022-05-02 00:09:00+12:00\",\n  \"completedTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"lastModifiedTimestamp\": \"2022-05-03 00:10:35+12:00\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"description\": \"Research into the concrete manufacturing process.\",\n  \"assignedBy\": \"Smith, John\",\n  \"completeDuringStep\": 91764,\n  \"completeBeforeStep\": 93299,\n  \"mustStartBeforeTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"expectedDurationValue\": 400,\n  \"expectedDurationUnits\": \"hours\",\n  \"isBillingHold\": \"F\",\n  \"isPartBilled\": \"F\",\n  \"confirmedNonBillable\": \"F\",\n  \"confirmedNonBillableTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"hasTriggerDate\": \"T\",\n  \"triggerField\": \"DueDate\",\n  \"triggerOffset\": -2,\n  \"triggerWeekdaysOnly\": \"T\",\n  \"links\": {\n    \"triggerDataCollection\": 8834,\n    \"action\": 34,\n    \"assignee\": 14,\n    \"rate\": 17,\n    \"confirmedNonBillableBy\": 383,\n    \"linkedDocumentTemplate\": 9642,\n    \"linkedDataCollection\": 4248,\n    \"template\": 23\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f3bda16-ec16-45b7-8ac1-c6ba650ade5b",
+          "name": "Returns a single task.",
+          "request": {
+            "name": "Returns a single task.",
+            "description": {
+              "content": "Returns a single task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a task."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95b8fa23-c141-4033-a935-5b7c20292018",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a task."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"Research.\",\n  \"status\": \"Complete\",\n  \"priority\": \"High\",\n  \"dueTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"startedTimestamp\": \"2022-05-02 00:09:00+12:00\",\n  \"completedTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"lastModifiedTimestamp\": \"2022-05-03 00:10:35+12:00\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"description\": \"Research into the concrete manufacturing process.\",\n  \"assignedBy\": \"Smith, John\",\n  \"completeDuringStep\": 91764,\n  \"completeBeforeStep\": 93299,\n  \"mustStartBeforeTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"expectedDurationValue\": 400,\n  \"expectedDurationUnits\": \"hours\",\n  \"isBillingHold\": \"F\",\n  \"isPartBilled\": \"F\",\n  \"confirmedNonBillable\": \"F\",\n  \"confirmedNonBillableTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"hasTriggerDate\": \"T\",\n  \"triggerField\": \"DueDate\",\n  \"triggerOffset\": -2,\n  \"triggerWeekdaysOnly\": \"T\",\n  \"links\": {\n    \"triggerDataCollection\": 8834,\n    \"action\": 34,\n    \"assignee\": 14,\n    \"rate\": 17,\n    \"confirmedNonBillableBy\": 383,\n    \"linkedDocumentTemplate\": 9642,\n    \"linkedDataCollection\": 4248,\n    \"template\": 23\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9f5d2e5-9aa5-4fd4-9d10-f744d3a45955",
+          "name": "Update a task.",
+          "request": {
+            "name": "Update a task.",
+            "description": {
+              "content": "Update a task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a task."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"status\": \"Incomplete\",\n  \"dueTimestamp\": \"<timestamp>\",\n  \"priority\": \"Normal\",\n  \"startedTimestamp\": \"<timestamp>\",\n  \"completedTimestamp\": \"<timestamp>\",\n  \"lastModifiedTimestamp\": \"<timestamp>\",\n  \"actualHours\": \"<number>\",\n  \"billableHours\": \"<number>\",\n  \"description\": \"<string>\",\n  \"assignedBy\": \"<string>\",\n  \"completeDuringStep\": \"<integer>\",\n  \"completeBeforeStep\": \"<integer>\",\n  \"mustStartBeforeTimestamp\": \"<timestamp>\",\n  \"expectedDurationValue\": \"<integer>\",\n  \"expectedDurationUnits\": \"<string>\",\n  \"isBillingHold\": \"<string>\",\n  \"isPartBilled\": \"<string>\",\n  \"confirmedNonBillable\": \"<string>\",\n  \"confirmedNonBillableTimestamp\": \"<timestamp>\",\n  \"hasTriggerDate\": \"<string>\",\n  \"triggerField\": \"<string>\",\n  \"triggerOffset\": \"<integer>\",\n  \"triggerWeekdaysOnly\": \"<string>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"assignee\": \"<integer>\",\n    \"triggerDataCollection\": \"<integer>\",\n    \"rate\": \"<integer>\",\n    \"confirmedNonBillableBy\": \"<integer>\",\n    \"linkedDocumentTemplate\": \"<integer>\",\n    \"linkedDataCollection\": \"<integer>\",\n    \"template\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5cd1afe8-fa2a-4c28-b6a5-79619394beaa",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a task."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"name\": \"Research.\",\n  \"status\": \"Complete\",\n  \"priority\": \"High\",\n  \"dueTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"startedTimestamp\": \"2022-05-02 00:09:00+12:00\",\n  \"completedTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"lastModifiedTimestamp\": \"2022-05-03 00:10:35+12:00\",\n  \"actualHours\": 2.5,\n  \"billableHours\": 2.5,\n  \"description\": \"Research into the concrete manufacturing process.\",\n  \"assignedBy\": \"Smith, John\",\n  \"completeDuringStep\": 91764,\n  \"completeBeforeStep\": 93299,\n  \"mustStartBeforeTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"expectedDurationValue\": 400,\n  \"expectedDurationUnits\": \"hours\",\n  \"isBillingHold\": \"F\",\n  \"isPartBilled\": \"F\",\n  \"confirmedNonBillable\": \"F\",\n  \"confirmedNonBillableTimestamp\": \"2022-05-03 00:10:30+12:00\",\n  \"hasTriggerDate\": \"T\",\n  \"triggerField\": \"DueDate\",\n  \"triggerOffset\": -2,\n  \"triggerWeekdaysOnly\": \"T\",\n  \"links\": {\n    \"triggerDataCollection\": 8834,\n    \"action\": 34,\n    \"assignee\": 14,\n    \"rate\": 17,\n    \"confirmedNonBillableBy\": 383,\n    \"linkedDocumentTemplate\": 9642,\n    \"linkedDataCollection\": 4248,\n    \"template\": 23\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b45518da-44d0-4d91-bb0d-e638a7959a85",
+          "name": "Delete a task.",
+          "request": {
+            "name": "Delete a task.",
+            "description": {
+              "content": "Delete a task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tasks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a task."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61b361eb-f551-4f99-b663-08cc390d7d70",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a task."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "116b968b-144a-43e6-8f9f-43dafae98996",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

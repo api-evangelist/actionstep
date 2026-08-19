@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings File Notes API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: File Notes
@@ -156,7 +158,8 @@ components:
           example: 8376
           type: integer
         tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag.
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier
+            for the tag.
           example:
           - 1283
           - 1934
@@ -175,7 +178,9 @@ components:
           example: 8376
           type: integer
         tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag. The supplied list of tags will replace in totality any existing tags. To remove all tags specify an empty array.
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier
+            for the tag. The supplied list of tags will replace in totality any existing tags. To remove
+            all tags specify an empty array.
           example:
           - 1283
           - 1934
@@ -246,7 +251,8 @@ components:
           type: integer
           readOnly: true
         tags:
-          description: Zero or more tags associated with the file note. Each tag is the unique identifier for the tag.
+          description: Zero or more tags associated with the file note. Each tag is the unique identifier
+            for the tag.
           example:
           - 1283
           - 1934
@@ -292,3 +298,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

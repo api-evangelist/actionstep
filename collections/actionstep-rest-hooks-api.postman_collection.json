@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "4ca55cd5-985d-430a-8349-e442168010f4",
+      "name": "REST Hooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f257049-2297-4d89-abd7-2bd55ddc0bdb",
+          "name": "Returns a collection of REST hooks.",
+          "request": {
+            "name": "Returns a collection of REST hooks.",
+            "description": {
+              "content": "Returns a collection of REST hooks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resthooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "166bceec-3568-479a-9aeb-3c50d686f514",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resthooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resthooks\": [\n    {\n      \"id\": 685,\n      \"eventName\": \"ActionDocumentCreated.\",\n      \"targetUrl\": \"https://0486-222-152-188-245.ngrok-free.app/api/resthook\",\n      \"status\": \"Disabled\",\n      \"triggeredCount\": 870,\n      \"triggeredLastTimestamp\": \"2022-05-03 00:09:00+12:00\"\n    },\n    {\n      \"id\": 685,\n      \"eventName\": \"ActionDocumentCreated.\",\n      \"targetUrl\": \"https://0486-222-152-188-245.ngrok-free.app/api/resthook\",\n      \"status\": \"Disabled\",\n      \"triggeredCount\": 870,\n      \"triggeredLastTimestamp\": \"2022-05-03 00:09:00+12:00\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"resthooks\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/resthooks?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/resthooks?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df2792c8-98d7-4b6c-97a7-5c46f6754186",
+          "name": "Create a new REST hook.",
+          "request": {
+            "name": "Create a new REST hook.",
+            "description": {
+              "content": "Create a new REST hook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resthooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventName\": \"<string>\",\n  \"targetUrl\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "111112f2-4760-43e2-8444-d9ff6dfee778",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resthooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 685,\n  \"eventName\": \"ActionDocumentCreated.\",\n  \"targetUrl\": \"https://0486-222-152-188-245.ngrok-free.app/api/resthook\",\n  \"status\": \"Disabled\",\n  \"triggeredCount\": 870,\n  \"triggeredLastTimestamp\": \"2022-05-03 00:09:00+12:00\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2b067ed-53ba-4a5b-a873-f6f967623aff",
+          "name": "Returns a single REST hook.",
+          "request": {
+            "name": "Returns a single REST hook.",
+            "description": {
+              "content": "Returns a single REST hook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resthooks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a REST hook."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "825399ec-90b8-4174-adc1-05adb3b4e19f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resthooks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a REST hook."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 685,\n  \"eventName\": \"ActionDocumentCreated.\",\n  \"targetUrl\": \"https://0486-222-152-188-245.ngrok-free.app/api/resthook\",\n  \"status\": \"Disabled\",\n  \"triggeredCount\": 870,\n  \"triggeredLastTimestamp\": \"2022-05-03 00:09:00+12:00\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6aa867c1-9dc8-4117-9066-bc99964019ed",
+          "name": "Update a REST hook.",
+          "request": {
+            "name": "Update a REST hook.",
+            "description": {
+              "content": "Update a REST hook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resthooks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a REST hook."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventName\": \"<string>\",\n  \"targetUrl\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4061e1b-0169-4beb-a2bd-89cfb43fd19b",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resthooks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a REST hook."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 685,\n  \"eventName\": \"ActionDocumentCreated.\",\n  \"targetUrl\": \"https://0486-222-152-188-245.ngrok-free.app/api/resthook\",\n  \"status\": \"Disabled\",\n  \"triggeredCount\": 870,\n  \"triggeredLastTimestamp\": \"2022-05-03 00:09:00+12:00\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47d28aae-5862-4d0f-a978-2273c8bef60a",
+          "name": "Delete a REST hook.",
+          "request": {
+            "name": "Delete a REST hook.",
+            "description": {
+              "content": "Delete a REST hook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resthooks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a REST hook."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a21cc69-bdaa-40fa-ad28-5dea3f906ae3",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resthooks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a REST hook."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b32d79e5-f12d-4160-a7fe-7d083dd8f2ea",
+    "name": "Action (Matter) Bill Settings Action Bill Settings REST Hooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

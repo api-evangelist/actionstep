@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "id": "b6aceb86-8804-44ef-9d6c-672f212d1043",
+      "name": "Data Collection Records",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3a48cbe4-8da1-4889-b9b2-49d377b7a17b",
+          "name": "Returns a collection of data collection records.",
+          "request": {
+            "name": "Returns a collection of data collection records.",
+            "description": {
+              "content": "Returns a collection of data collection records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e1ed7a1-59ba-4e0e-92f1-60cc63b56005",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datacollectionrecords\": [\n    {\n      \"id\": 4910,\n      \"canWrite\": \"F\",\n      \"canDelete\": \"F\",\n      \"links\": {\n        \"action\": 822,\n        \"dataCollection\": 50\n      }\n    },\n    {\n      \"id\": 4910,\n      \"canWrite\": \"F\",\n      \"canDelete\": \"F\",\n      \"links\": {\n        \"action\": 822,\n        \"dataCollection\": 50\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"datacollectionrecords\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecords?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecords?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec4c99a2-b2ac-41f9-af0f-493bf63b8f93",
+          "name": "Create a new data collection record.",
+          "request": {
+            "name": "Create a new data collection record.",
+            "description": {
+              "content": "Create a new data collection record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"canWrite\": \"<string>\",\n  \"canDelete\": \"<string>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"dataCollection\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86427cba-da68-4e1b-822c-97f53bbb1801",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4910,\n  \"canWrite\": \"F\",\n  \"canDelete\": \"F\",\n  \"links\": {\n    \"action\": 822,\n    \"dataCollection\": 50\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4321ecfa-d110-4036-a3d4-461ee02df7dc",
+          "name": "Returns a single data collection record.",
+          "request": {
+            "name": "Returns a single data collection record.",
+            "description": {
+              "content": "Returns a single data collection record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecords",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection record."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91246e5d-f5ab-4941-858e-97c8d6ffe3cf",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecords",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection record."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4910,\n  \"canWrite\": \"F\",\n  \"canDelete\": \"F\",\n  \"links\": {\n    \"action\": 822,\n    \"dataCollection\": 50\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56369738-414d-4a2c-bc9c-e671b8b746a1",
+          "name": "Delete a data collection record.",
+          "request": {
+            "name": "Delete a data collection record.",
+            "description": {
+              "content": "Delete a data collection record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecords",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection record."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "970ee649-a943-4d1e-8ebe-b8719aafd334",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecords",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection record."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "008329be-4973-43e0-85eb-15558c71c4d9",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Records API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

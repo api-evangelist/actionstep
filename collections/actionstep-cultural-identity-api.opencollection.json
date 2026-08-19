@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Cultural Identity API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cultural Identity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /culturalidentity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/culturalidentity"
+          },
+          "docs": "Returns the list of available cultural identity values."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

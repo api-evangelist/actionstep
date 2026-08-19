@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "7f2cff13-d4b2-4bcb-b78d-341f295bb627",
+      "name": "Primary Language",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "38712a9c-97fc-4c44-86c6-18fc000e60a7",
+          "name": "Returns the list of available primary languages.",
+          "request": {
+            "name": "Returns the list of available primary languages.",
+            "description": {
+              "content": "Returns the list of available primary languages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "primarylanguage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c74e92a5-5edb-44e9-84e8-7a97af68ffba",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "primarylanguage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primarylanguage\": [\n    {\n      \"language\": \"Alngith\"\n    },\n    {\n      \"language\": \"Alngith\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"primarylanguage\": {\n        \"recordCount\": 4,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/primarylanguage?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/primarylanguage?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c20f6bb9-7cf1-4849-95bb-79dec5946acf",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Primary Language API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

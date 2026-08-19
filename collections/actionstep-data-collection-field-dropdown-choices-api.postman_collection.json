@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "f5bde5af-d391-4d21-abb5-f887a61d47cc",
+      "name": "Data Collection Field Dropdown Choices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e94f5039-09bc-47a5-a213-88591c69452a",
+          "name": "Returns the collection of all data collection field dropdown choice records.",
+          "request": {
+            "name": "Returns the collection of all data collection field dropdown choice records.",
+            "description": {
+              "content": "Returns the collection of all data collection field dropdown choice records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfielddropdownchoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4969a398-fcb4-4933-bd04-30031b928fce",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfielddropdownchoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datacollectionfielddropdownchoices\": [\n    {\n      \"id\": \"230--CarColor--Red\",\n      \"name\": \"Metallic Red\",\n      \"value\": \"red\",\n      \"listOrder\": 3,\n      \"isDefault\": \"T\",\n      \"parentValue\": \"Country\",\n      \"links\": {\n        \"dataField\": \"230--CarColor\",\n        \"dataCollection\": 230\n      }\n    },\n    {\n      \"id\": \"230--CarColor--Red\",\n      \"name\": \"Metallic Red\",\n      \"value\": \"red\",\n      \"listOrder\": 3,\n      \"isDefault\": \"T\",\n      \"parentValue\": \"Country\",\n      \"links\": {\n        \"dataField\": \"230--CarColor\",\n        \"dataCollection\": 230\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"datacollectionfielddropdownchoices\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionfielddropdownchoices?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionfielddropdownchoices?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6378f215-58da-4a6f-bfbf-7799d55c878b",
+          "name": "Create a new data collection field dropdown choice record.",
+          "request": {
+            "name": "Create a new data collection field dropdown choice record.",
+            "description": {
+              "content": "Create a new data collection field dropdown choice record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfielddropdownchoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"listOrder\": 0,\n  \"isDefault\": \"<string>\",\n  \"parentValue\": \"<string>\",\n  \"links\": {\n    \"dataField\": \"<string>\",\n    \"dataCollection\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a79b5fa-ec63-49b4-901b-8c0a04cb123e",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfielddropdownchoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"230--CarColor--Red\",\n  \"name\": \"Metallic Red\",\n  \"value\": \"red\",\n  \"listOrder\": 3,\n  \"isDefault\": \"T\",\n  \"parentValue\": \"Country\",\n  \"links\": {\n    \"dataField\": \"230--CarColor\",\n    \"dataCollection\": 230\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56d3c080-ecf5-45a5-a62d-80bd8fda320e",
+          "name": "Returns a single data collection field dropdown choice record.",
+          "request": {
+            "name": "Returns a single data collection field dropdown choice record.",
+            "description": {
+              "content": "Returns a single data collection field dropdown choice record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72be1b02-5dbc-49b0-a518-72150a45d32f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"230--CarColor--Red\",\n  \"name\": \"Metallic Red\",\n  \"value\": \"red\",\n  \"listOrder\": 3,\n  \"isDefault\": \"T\",\n  \"parentValue\": \"Country\",\n  \"links\": {\n    \"dataField\": \"230--CarColor\",\n    \"dataCollection\": 230\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95fac792-e45b-4c62-9ffc-d63f038acff8",
+          "name": "Updates a single data collection field dropdown choice record.",
+          "request": {
+            "name": "Updates a single data collection field dropdown choice record.",
+            "description": {
+              "content": "Updates a single data collection field dropdown choice record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"listOrder\": 0,\n  \"isDefault\": \"<string>\",\n  \"parentValue\": \"<string>\",\n  \"links\": {\n    \"dataField\": \"<string>\",\n    \"dataCollection\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f20932d-a46f-4c8b-a88b-4178841aa64a",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"230--CarColor--Red\",\n  \"name\": \"Metallic Red\",\n  \"value\": \"red\",\n  \"listOrder\": 3,\n  \"isDefault\": \"T\",\n  \"parentValue\": \"Country\",\n  \"links\": {\n    \"dataField\": \"230--CarColor\",\n    \"dataCollection\": 230\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "158d0ce2-b7d4-4a7f-ada5-2c54313f75bf",
+          "name": "Delete a single data collection field dropdown choice record.",
+          "request": {
+            "name": "Delete a single data collection field dropdown choice record.",
+            "description": {
+              "content": "Delete a single data collection field dropdown choice record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfielddropdownchoices",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50c71e2d-4b65-4569-8132-8e67a368eec9",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfielddropdownchoices",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single data collection field dropdown choice record. Note the unique identifier is a composite primary key comprising of the data collection identifier, the data field name, and the name associated with the dropdown choice, delimited by '--'."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b57818cd-66ce-4dba-8f13-a26304b5de19",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Field Dropdown Choices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

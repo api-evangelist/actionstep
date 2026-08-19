@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Relationship Types API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participant Relationship Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /participantrelationshiptypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantrelationshiptypes"
+          },
+          "docs": "Returns a list of all Participant Relationship Types."
+        },
+        {
+          "info": {
+            "name": "POST /participantrelationshiptypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/participantrelationshiptypes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new participant relationship type."
+        },
+        {
+          "info": {
+            "name": "GET /participantrelationshiptypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantrelationshiptypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "IndividualToIndividual--Acquaintance",
+                "type": "path",
+                "description": "Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+              }
+            ]
+          },
+          "docs": "Returns a single participant relationship type."
+        },
+        {
+          "info": {
+            "name": "DELETE /participantrelationshiptypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/participantrelationshiptypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "IndividualToIndividual--Acquaintance",
+                "type": "path",
+                "description": "Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'."
+              }
+            ]
+          },
+          "docs": "Delete a single participant relationship type."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

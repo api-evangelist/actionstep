@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Time Entries API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Time Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /timeentries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/timeentries"
+          },
+          "docs": "Returns a collection of time entries."
+        },
+        {
+          "info": {
+            "name": "POST /timeentries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/timeentries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new time entry."
+        },
+        {
+          "info": {
+            "name": "GET /timeentries/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/timeentries/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "9287",
+                "type": "path",
+                "description": "Unique identifier for a time entry."
+              }
+            ]
+          },
+          "docs": "Returns a single time entry."
+        },
+        {
+          "info": {
+            "name": "PUT /timeentries/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/timeentries/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a time entry."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a time entry."
+        },
+        {
+          "info": {
+            "name": "DELETE /timeentries/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/timeentries/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a time entry."
+              }
+            ]
+          },
+          "docs": "Delete a time entry."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

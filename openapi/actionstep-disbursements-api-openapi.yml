@@ -1,14 +1,17 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Disbursements API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Disbursements
 paths:
   /disbursements:
     get:
-      description: Returns a collection of disbursements. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.
+      description: Returns a collection of disbursements. For information on how to construct requests
+        filtering by various properties, please refer to the API Developer Portal.
       tags:
       - Disbursements
       responses:
@@ -148,7 +151,8 @@ components:
           example: PH383
           type: string
         importExternalReference:
-          description: Meta data property to hold an external reference. Typically used when importing data into Actionstep.
+          description: Meta data property to hold an external reference. Typically used when importing
+            data into Actionstep.
           example: U37303-73730
           type: string
         isAnticipated:
@@ -226,7 +230,8 @@ components:
           example: PH383
           type: string
         importExternalReference:
-          description: Meta data property to hold an external reference. Typically used when importing data into Actionstep.
+          description: Meta data property to hold an external reference. Typically used when importing
+            data into Actionstep.
           example: U37303-73730
           type: string
         enteredTimestamp:
@@ -319,7 +324,8 @@ components:
           example: PH383
           type: string
         importExternalReference:
-          description: Meta data property to hold an external reference. Typically used when importing data into Actionstep.
+          description: Meta data property to hold an external reference. Typically used when importing
+            data into Actionstep.
           example: U37303-73730
           type: string
         isAnticipated:
@@ -383,3 +389,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

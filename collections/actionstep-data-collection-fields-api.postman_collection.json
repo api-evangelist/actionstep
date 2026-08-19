@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "128f620c-e35f-4505-9c18-60dce278eaa2",
+      "name": "Data Collection Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35ce0906-c413-48de-86d0-09f94ffd04ba",
+          "name": "Returns a collection of data collection fields.",
+          "request": {
+            "name": "Returns a collection of data collection fields.",
+            "description": {
+              "content": "Returns a collection of data collection fields.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "700cb256-14b3-46d4-bcfc-6ad7d5e905ce",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datacollectionfields\": [\n    {\n      \"id\": \"100--ContractDate\",\n      \"name\": \"ContractDate\",\n      \"dataType\": \"Number\",\n      \"label\": \"Contract Date\",\n      \"formOrder\": 5,\n      \"listOrder\": 3,\n      \"required\": \"F\",\n      \"description\": \"The contract date required by the client.\",\n      \"customHtmlBelow\": \"<p>Please ensure supplied date is a weekday.</p>\",\n      \"customHtmlAbove\": \"<p>Important</p>\",\n      \"links\": {\n        \"dataCollection\": 100,\n        \"tag\": 20\n      }\n    },\n    {\n      \"id\": \"100--ContractDate\",\n      \"name\": \"ContractDate\",\n      \"dataType\": \"Number\",\n      \"label\": \"Contract Date\",\n      \"formOrder\": 5,\n      \"listOrder\": 3,\n      \"required\": \"F\",\n      \"description\": \"The contract date required by the client.\",\n      \"customHtmlBelow\": \"<p>Please ensure supplied date is a weekday.</p>\",\n      \"customHtmlAbove\": \"<p>Important</p>\",\n      \"links\": {\n        \"dataCollection\": 100,\n        \"tag\": 20\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"datacollectionfields\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionfields?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionfields?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8dd1189-1ecd-4a67-96e6-90eb84237c1d",
+          "name": "Create a new data collection field.",
+          "request": {
+            "name": "Create a new data collection field.",
+            "description": {
+              "content": "Create a new data collection field.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"dataType\": \"<string>\",\n  \"label\": \"<string>\",\n  \"formOrder\": \"<integer>\",\n  \"listOrder\": \"<integer>\",\n  \"required\": \"<string>\",\n  \"description\": \"<string>\",\n  \"customHtmlBelow\": \"<string>\",\n  \"customHtmlAbove\": \"<string>\",\n  \"links\": {\n    \"dataCollection\": \"<integer>\",\n    \"tag\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2abff1e7-42aa-430a-b39d-6743d60ae56d",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"100--ContractDate\",\n  \"name\": \"ContractDate\",\n  \"dataType\": \"Number\",\n  \"label\": \"Contract Date\",\n  \"formOrder\": 5,\n  \"listOrder\": 3,\n  \"required\": \"F\",\n  \"description\": \"The contract date required by the client.\",\n  \"customHtmlBelow\": \"<p>Please ensure supplied date is a weekday.</p>\",\n  \"customHtmlAbove\": \"<p>Important</p>\",\n  \"links\": {\n    \"dataCollection\": 100,\n    \"tag\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bfe81f9-5a68-41c5-a4e3-8d63a509ea29",
+          "name": "Returns a single data collection field.",
+          "request": {
+            "name": "Returns a single data collection field.",
+            "description": {
+              "content": "Returns a single data collection field.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfield",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d06198b-f317-4dd4-ad26-8e899e3d1459",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfield",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"100--ContractDate\",\n  \"name\": \"ContractDate\",\n  \"dataType\": \"Number\",\n  \"label\": \"Contract Date\",\n  \"formOrder\": 5,\n  \"listOrder\": 3,\n  \"required\": \"F\",\n  \"description\": \"The contract date required by the client.\",\n  \"customHtmlBelow\": \"<p>Please ensure supplied date is a weekday.</p>\",\n  \"customHtmlAbove\": \"<p>Important</p>\",\n  \"links\": {\n    \"dataCollection\": 100,\n    \"tag\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c296de95-27e6-4c3c-a289-b9e5f9bb899d",
+          "name": "Update a data collection field.",
+          "request": {
+            "name": "Update a data collection field.",
+            "description": {
+              "content": "Update a data collection field.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfield",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataType\": \"<string>\",\n  \"label\": \"<string>\",\n  \"formOrder\": \"<integer>\",\n  \"listOrder\": \"<integer>\",\n  \"required\": \"<string>\",\n  \"description\": \"<string>\",\n  \"customHtmlBelow\": \"<string>\",\n  \"customHtmlAbove\": \"<string>\",\n  \"links\": {\n    \"dataCollection\": \"<integer>\",\n    \"tag\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d3214b67-3c0f-42b3-a583-d0278e5360f6",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfield",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"100--ContractDate\",\n  \"name\": \"ContractDate\",\n  \"dataType\": \"Number\",\n  \"label\": \"Contract Date\",\n  \"formOrder\": 5,\n  \"listOrder\": 3,\n  \"required\": \"F\",\n  \"description\": \"The contract date required by the client.\",\n  \"customHtmlBelow\": \"<p>Please ensure supplied date is a weekday.</p>\",\n  \"customHtmlAbove\": \"<p>Important</p>\",\n  \"links\": {\n    \"dataCollection\": 100,\n    \"tag\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bf77e8d-e9fd-4adb-a9fa-4aa2805a14d0",
+          "name": "Delete a data collection field.",
+          "request": {
+            "name": "Delete a data collection field.",
+            "description": {
+              "content": "Delete a data collection field.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionfield",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b7f7c47-8f2a-41c8-845f-3112ba4d0031",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionfield",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "feff4d2f-2453-4c4f-b972-b62966c1d6b4",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

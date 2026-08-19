@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Fields API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Collection Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /datacollectionfields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionfields"
+          },
+          "docs": "Returns a collection of data collection fields."
+        },
+        {
+          "info": {
+            "name": "POST /datacollectionfields",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/datacollectionfields",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new data collection field."
+        },
+        {
+          "info": {
+            "name": "GET /datacollectionfield/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionfield/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "100--ContractDate",
+                "type": "path",
+                "description": "Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Returns a single data collection field."
+        },
+        {
+          "info": {
+            "name": "PUT /datacollectionfield/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/datacollectionfield/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "100--ContractDate",
+                "type": "path",
+                "description": "Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a data collection field."
+        },
+        {
+          "info": {
+            "name": "DELETE /datacollectionfield/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/datacollectionfield/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "100--ContractDate",
+                "type": "path",
+                "description": "Unique identifier for a data collection field. Please note this is a composite identifier composed from the data collection unique identifier and the data field name separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Delete a data collection field."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

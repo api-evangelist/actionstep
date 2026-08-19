@@ -1,0 +1,374 @@
+{
+  "item": [
+    {
+      "id": "ac021e8b-f320-44ab-941a-09dbd4fc5b5e",
+      "name": "Data Collection Record Values",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b3c1440-979b-496c-a9b9-e73d622ea4dc",
+          "name": "Returns a collection of data collection record values.",
+          "request": {
+            "name": "Returns a collection of data collection record values.",
+            "description": {
+              "content": "Returns a collection of data collection record values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecordvalues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a313198-4a5d-4aff-898b-cda483f97df2",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecordvalues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datacollectionrecordvalues\": [\n    {\n      \"id\": \"148--victim_age--6234\",\n      \"stringValue\": \"2023-12-25\",\n      \"last_modified_time_stamp\": \"2023-06-03 00:09:30+12:00\",\n      \"last_modified_by_user_id\": 7837,\n      \"links\": {\n        \"action\": 500,\n        \"dataCollectionField\": \"148--victim_age\",\n        \"dataCollectionRecord\": 6234,\n        \"dataCollection\": 148\n      }\n    },\n    {\n      \"id\": \"148--victim_age--6234\",\n      \"stringValue\": \"2023-12-25\",\n      \"last_modified_time_stamp\": \"2023-06-03 00:09:30+12:00\",\n      \"last_modified_by_user_id\": 7837,\n      \"links\": {\n        \"action\": 500,\n        \"dataCollectionField\": \"148--victim_age\",\n        \"dataCollectionRecord\": 6234,\n        \"dataCollection\": 148\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"datacollectionrecordvalues\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecordvalues?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecordvalues?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48d8de41-06ef-4b16-89bb-0a6907af9eda",
+          "name": "Create a new data collection record value.",
+          "request": {
+            "name": "Create a new data collection record value.",
+            "description": {
+              "content": "Create a new data collection record value.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecordvalues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stringValue\": \"<string>\",\n  \"last_modified_time_stamp\": \"<timestamp>\",\n  \"last_modified_by_user_id\": \"<integer>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"dataCollectionField\": \"<string>\",\n    \"dataCollectionRecord\": \"<integer>\",\n    \"dataCollection\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecff997e-96c6-4eb2-9147-9f59bc76e1ae",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecordvalues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"148--victim_age--6234\",\n  \"stringValue\": \"2023-12-25\",\n  \"last_modified_time_stamp\": \"2023-06-03 00:09:30+12:00\",\n  \"last_modified_by_user_id\": 7837,\n  \"links\": {\n    \"action\": 500,\n    \"dataCollectionField\": \"148--victim_age\",\n    \"dataCollectionRecord\": 6234,\n    \"dataCollection\": 148\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8360cb71-7f5a-43e0-86e2-34158cbbc057",
+          "name": "Returns a single data collection record value.",
+          "request": {
+            "name": "Returns a single data collection record value.",
+            "description": {
+              "content": "Returns a single data collection record value.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecordvalues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection record value."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c097f8fb-28a0-4a5d-96f3-2d574669300a",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecordvalues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection record value."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"148--victim_age--6234\",\n  \"stringValue\": \"2023-12-25\",\n  \"last_modified_time_stamp\": \"2023-06-03 00:09:30+12:00\",\n  \"last_modified_by_user_id\": 7837,\n  \"links\": {\n    \"action\": 500,\n    \"dataCollectionField\": \"148--victim_age\",\n    \"dataCollectionRecord\": 6234,\n    \"dataCollection\": 148\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04ba1dc1-d07b-419e-bac1-d647834f6ce3",
+          "name": "Update a data collection record value.",
+          "request": {
+            "name": "Update a data collection record value.",
+            "description": {
+              "content": "Update a data collection record value.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "datacollectionrecordvalues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a data collection record value."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stringValue\": \"<string>\",\n  \"last_modified_time_stamp\": \"<timestamp>\",\n  \"last_modified_by_user_id\": \"<integer>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"dataCollectionField\": \"<string>\",\n    \"dataCollectionRecord\": \"<integer>\",\n    \"dataCollection\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "766cf770-4949-44d5-b524-04f87f6dc20c",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datacollectionrecordvalues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a data collection record value."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"148--victim_age--6234\",\n  \"stringValue\": \"2023-12-25\",\n  \"last_modified_time_stamp\": \"2023-06-03 00:09:30+12:00\",\n  \"last_modified_by_user_id\": 7837,\n  \"links\": {\n    \"action\": 500,\n    \"dataCollectionField\": \"148--victim_age\",\n    \"dataCollectionRecord\": 6234,\n    \"dataCollection\": 148\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b3e44f3b-ec59-4728-b851-e3805c0b89b2",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Record Values API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "26e8f22c-c974-4f8e-8066-005cf00bd05e",
+      "name": "UTBMS Codes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0ec376c-a05c-4520-b53b-2d8f2208dabe",
+          "name": "Returns the collection of all UTBMS codes.",
+          "request": {
+            "name": "Returns the collection of all UTBMS codes.",
+            "description": {
+              "content": "Returns the collection of all UTBMS codes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utbmscodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "132e5092-8366-4f95-a87a-7a11d60b1d45",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utbmscodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"UTBMSCodes\": [\n    {\n      \"id\": \"A100\",\n      \"categoryCode\": \"Activity codes\",\n      \"parentUtbmsCode\": \"AA10\",\n      \"description\": \"Research\",\n      \"overrideDescription\": \"Case history research.\",\n      \"enabled\": \"T\"\n    },\n    {\n      \"id\": \"A100\",\n      \"categoryCode\": \"Activity codes\",\n      \"parentUtbmsCode\": \"AA10\",\n      \"description\": \"Research\",\n      \"overrideDescription\": \"Case history research.\",\n      \"enabled\": \"T\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"UTBMSCodes\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/utbmscodes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/utbmscodes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfdfef62-e571-495c-8013-c565f72e2b6e",
+          "name": "Create a new UTBMS code.",
+          "request": {
+            "name": "Create a new UTBMS code.",
+            "description": {
+              "content": "Create a new UTBMS code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utbmscodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"utbmsCode\": \"<string>\",\n  \"categoryCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"T\",\n  \"parentUtbmsCode\": \"<string>\",\n  \"overrideDescription\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "39dafdb4-a032-46b5-880d-38d7f4cdbe5a",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utbmscodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"A100\",\n  \"categoryCode\": \"Activity codes\",\n  \"parentUtbmsCode\": \"AA10\",\n  \"description\": \"Research\",\n  \"overrideDescription\": \"Case history research.\",\n  \"enabled\": \"T\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca26d682-7a5d-4a5a-939f-35bbc11b3f05",
+          "name": "Returns a single UTBMS code.",
+          "request": {
+            "name": "Returns a single UTBMS code.",
+            "description": {
+              "content": "Returns a single UTBMS code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utbmscodes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single UTBMS code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74b5a723-19b1-4b28-8420-41c62c5023c0",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utbmscodes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single UTBMS code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"A100\",\n  \"categoryCode\": \"Activity codes\",\n  \"parentUtbmsCode\": \"AA10\",\n  \"description\": \"Research\",\n  \"overrideDescription\": \"Case history research.\",\n  \"enabled\": \"T\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39364718-9287-41c4-80a4-5416062d66ba",
+          "name": "Updates a single UTBMS code.",
+          "request": {
+            "name": "Updates a single UTBMS code.",
+            "description": {
+              "content": "Updates a single UTBMS code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utbmscodes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single UTBMS code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryCode\": \"<string>\",\n  \"parentUtbmsCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"overrideDescription\": \"<string>\",\n  \"enabled\": \"T\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7708c18c-881e-4bd6-a0d5-0d143a7e6cf1",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utbmscodes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single UTBMS code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"A100\",\n  \"categoryCode\": \"Activity codes\",\n  \"parentUtbmsCode\": \"AA10\",\n  \"description\": \"Research\",\n  \"overrideDescription\": \"Case history research.\",\n  \"enabled\": \"T\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e97f3ae2-720d-47c9-8ce5-085278e7c9fd",
+          "name": "Deletes a single UTBMS code.",
+          "request": {
+            "name": "Deletes a single UTBMS code.",
+            "description": {
+              "content": "Deletes a single UTBMS code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "utbmscodes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single UTBMS code."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "08c0f3e4-18d8-44ed-a91d-ab22665457eb",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "utbmscodes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single UTBMS code."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1713f076-c53d-450a-9b8f-528df9d3a611",
+    "name": "Action (Matter) Bill Settings Action Bill Settings UTBMS Codes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

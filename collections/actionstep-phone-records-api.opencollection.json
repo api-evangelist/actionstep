@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Phone Records API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Phone Records",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /phonerecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/phonerecords"
+          },
+          "docs": "Returns the collection of all phone records."
+        },
+        {
+          "info": {
+            "name": "POST /phonerecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/phonerecords",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new phone record."
+        },
+        {
+          "info": {
+            "name": "GET /phonerecords/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/phonerecords/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1176",
+                "type": "path",
+                "description": "Unique identifier for a single phone record."
+              }
+            ]
+          },
+          "docs": "Returns a single phone record."
+        },
+        {
+          "info": {
+            "name": "PUT /phonerecords/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/phonerecords/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1176",
+                "type": "path",
+                "description": "Unique identifier for a single phone record."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single phone record."
+        },
+        {
+          "info": {
+            "name": "DELETE /phonerecords/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/phonerecords/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1176",
+                "type": "path",
+                "description": "Unique identifier for a single phone record."
+              }
+            ]
+          },
+          "docs": "Delete a single phone record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

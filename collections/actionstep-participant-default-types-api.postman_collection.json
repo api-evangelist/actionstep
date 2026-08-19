@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "8b00d1af-bdaa-473c-aa82-48bade0e5b2e",
+      "name": "Participant Default Types",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b7c8eb51-e587-463b-bf3f-aacc8559b69c",
+          "name": "Returns a list of participant default types for each Contact.",
+          "request": {
+            "name": "Returns a list of participant default types for each Contact.",
+            "description": {
+              "content": "Returns a list of participant default types for each Contact.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdefaulttypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "638b22b7-c271-4b82-874a-e10e075e617b",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdefaulttypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"participantdefaulttypes\": [\n    {\n      \"id\": \"1024--31\",\n      \"links\": {\n        \"participantType\": 31,\n        \"participant\": 1024\n      }\n    },\n    {\n      \"id\": \"1024--31\",\n      \"links\": {\n        \"participantType\": 31,\n        \"participant\": 1024\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"participantdefaulttypes\": {\n        \"recordCount\": 23,\n        \"pageCount\": 47,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantdefaulttypes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/participantdefaulttypes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a06abc78-4f93-403f-9b00-f7c9723a0d29",
+          "name": "Add an existing participant default type to an existing Contact.",
+          "request": {
+            "name": "Add an existing participant default type to an existing Contact.",
+            "description": {
+              "content": "Add an existing participant default type to an existing Contact.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdefaulttypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"participantdefaulttypes\": {\n    \"links\": {\n      \"participantType\": \"<integer>\",\n      \"participant\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dd659c3e-1252-4cd2-99a1-1586bc09a404",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdefaulttypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"1024--31\",\n  \"links\": {\n    \"participantType\": 31,\n    \"participant\": 1024\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48e5b130-ac69-412c-bb01-97e4fa06fa7a",
+          "name": "Removes a participant default type from a Contact.",
+          "request": {
+            "name": "Removes a participant default type from a Contact.",
+            "description": {
+              "content": "Removes a participant default type from a Contact.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "participantdefaulttypes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a participant default type. The identifier is a composite value composed from the participant (contact) identifier and the participant type identifier, separated by \"--\"."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18a10ccb-351f-4122-bfdf-b9477ee22d25",
+              "name": "Success, No content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "participantdefaulttypes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a participant default type. The identifier is a composite value composed from the participant (contact) identifier and the participant type identifier, separated by \"--\"."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "47900f6b-b737-4468-b57c-c45de1c73ed1",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Default Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

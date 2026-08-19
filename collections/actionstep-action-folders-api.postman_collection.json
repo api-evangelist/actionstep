@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "9c402783-3b37-458b-b4e0-ea13e6f57906",
+      "name": "Action Folders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aba04950-bd68-406d-b470-bfc55361ee6e",
+          "name": "Returns the collection of all folders for all Matters. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+          "request": {
+            "name": "Returns the collection of all folders for all Matters. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+            "description": {
+              "content": "Returns the collection of all folders for all Matters. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionfolders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7712ea00-d33e-4c36-99af-cc7744982395",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionfolders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"actionfolders\": [\n    {\n      \"id\": 1050,\n      \"name\": \"Purchase Documents\",\n      \"links\": {\n        \"action\": 4580,\n        \"parentFolder\": 443\n      }\n    },\n    {\n      \"id\": 1050,\n      \"name\": \"Purchase Documents\",\n      \"links\": {\n        \"action\": 4580,\n        \"parentFolder\": 6495\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"actionfolders\": {\n        \"recordCount\": 1346,\n        \"pageCount\": 27,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionfolders?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionfolders?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34ce9324-5c2f-4a78-a3f9-56bed9dc02d6",
+          "name": "Returns a single Matter folder.",
+          "request": {
+            "name": "Returns a single Matter folder.",
+            "description": {
+              "content": "Returns a single Matter folder.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionfolders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a Matter folder."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b96a2ea9-6ab6-469f-bdd1-7824b91f06a8",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionfolders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a Matter folder."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1050,\n  \"name\": \"Purchase Documents\",\n  \"links\": {\n    \"action\": 4580,\n    \"parentFolder\": 9028\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "10e92672-b79c-4a9b-a2f0-c57d8e1fbb85",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action Folders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

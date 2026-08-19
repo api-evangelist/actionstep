@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "87f38ae5-b1a8-432f-b8c9-7d13c4ac8c7d",
+      "name": "Disability Status",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9a67cd8-98c0-4009-a189-4a9a3e7f0028",
+          "name": "Returns the list of available disability status values.",
+          "request": {
+            "name": "Returns the list of available disability status values.",
+            "description": {
+              "content": "Returns the list of available disability status values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "disabilitystatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3cf5bc26-b8e0-46ed-8bdc-793b465f4926",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "disabilitystatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"disabilitystatus\": [\n    {\n      \"status\": \"Physical\"\n    },\n    {\n      \"status\": \"Physical\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"disabilitystatus\": {\n        \"recordCount\": 4,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/disabilitystatus?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/disabilitystatus?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1f766990-08fc-4817-9a4a-290d168c13f5",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Disability Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

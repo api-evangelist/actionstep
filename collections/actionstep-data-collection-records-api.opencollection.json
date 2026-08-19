@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Records API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Collection Records",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /datacollectionrecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionrecords"
+          },
+          "docs": "Returns a collection of data collection records."
+        },
+        {
+          "info": {
+            "name": "POST /datacollectionrecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/datacollectionrecords",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new data collection record."
+        },
+        {
+          "info": {
+            "name": "GET /datacollectionrecords/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionrecords/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "380",
+                "type": "path",
+                "description": "Unique identifier for a data collection record."
+              }
+            ]
+          },
+          "docs": "Returns a single data collection record."
+        },
+        {
+          "info": {
+            "name": "DELETE /datacollectionrecords/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/datacollectionrecords/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a data collection record."
+              }
+            ]
+          },
+          "docs": "Delete a data collection record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "63332c8f-f0e4-45c7-9dda-d459ef53edef",
+      "name": "Bills",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c356c44-7c9d-4ddf-bcf2-d1766b55c89e",
+          "name": "Returns a collection of bills (invoices). For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+          "request": {
+            "name": "Returns a collection of bills (invoices). For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+            "description": {
+              "content": "Returns a collection of bills (invoices). For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bills"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00c035ac-1595-4d9c-80da-6e2ee2785b67",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bills"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"id\": 833,\n      \"status\": \"Open\",\n      \"ourReference\": \"string\",\n      \"theirReference\": \"YEH-D-9393\",\n      \"currency\": \"USD\",\n      \"invoiceDate\": \"2023-12-25\",\n      \"dueDate\": \"2024-01-25\",\n      \"totalInclusive\": 500,\n      \"totalExclusive\": 450,\n      \"totalSalesTax\": 50,\n      \"totalPaid\": 500,\n      \"totalDue\": 0,\n      \"createdTimestamp\": \"2019-11-05 14:23:48+13:00\",\n      \"modifiedTimestamp\": \"2019-11-05 14:23:48+13:00\",\n      \"deletedTimestamp\": \"string\",\n      \"links\": {\n        \"division\": 1,\n        \"action\": [\n          1093,\n          2232\n        ],\n        \"theirParticipant\": \"string\"\n      }\n    },\n    {\n      \"id\": 833,\n      \"status\": \"Open\",\n      \"ourReference\": \"string\",\n      \"theirReference\": \"YEH-D-9393\",\n      \"currency\": \"USD\",\n      \"invoiceDate\": \"2023-12-25\",\n      \"dueDate\": \"2024-01-25\",\n      \"totalInclusive\": 500,\n      \"totalExclusive\": 450,\n      \"totalSalesTax\": 50,\n      \"totalPaid\": 500,\n      \"totalDue\": 0,\n      \"createdTimestamp\": \"2019-11-05 14:23:48+13:00\",\n      \"modifiedTimestamp\": \"2019-11-05 14:23:48+13:00\",\n      \"deletedTimestamp\": \"string\",\n      \"links\": {\n        \"division\": 1,\n        \"action\": [\n          1093,\n          2232\n        ],\n        \"theirParticipant\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"participants\": {\n        \"recordCount\": 2317,\n        \"pageCount\": 47,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/bills?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/bills?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9cd7b220-76c7-4312-b702-3bbc18262b12",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Bills API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

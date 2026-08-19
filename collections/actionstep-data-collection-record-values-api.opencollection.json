@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collection Record Values API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Collection Record Values",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /datacollectionrecordvalues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionrecordvalues"
+          },
+          "docs": "Returns a collection of data collection record values."
+        },
+        {
+          "info": {
+            "name": "POST /datacollectionrecordvalues",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/datacollectionrecordvalues",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new data collection record value."
+        },
+        {
+          "info": {
+            "name": "GET /datacollectionrecordvalues/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollectionrecordvalues/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "380",
+                "type": "path",
+                "description": "Unique identifier for a data collection record value."
+              }
+            ]
+          },
+          "docs": "Returns a single data collection record value."
+        },
+        {
+          "info": {
+            "name": "PUT /datacollectionrecordvalues/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/datacollectionrecordvalues/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a data collection record value."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a data collection record value."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "ef8b0d93-0282-4a81-8be7-0def197a9407",
+      "name": "Gender Types",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67683947-2108-49d8-b9f9-28093f1724e5",
+          "name": "Returns a list of custom gender types.",
+          "request": {
+            "name": "Returns a list of custom gender types.",
+            "description": {
+              "content": "Returns a list of custom gender types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gendertypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bf56d7c0-92e2-4f96-8171-e870dcc3ffa2",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gendertypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gendertypes\": [\n    {\n      \"genderTypeName\": \"Transgender\",\n      \"pronounType\": \"Neutral\"\n    },\n    {\n      \"genderTypeName\": \"Transgender\",\n      \"pronounType\": \"Neutral\"\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"gendertypes\": {\n        \"recordCount\": 4,\n        \"pageCount\": 8,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86e7d7b7-7f31-4f08-a40d-0638124ac4f1",
+          "name": "Create a new custom gender type.",
+          "request": {
+            "name": "Create a new custom gender type.",
+            "description": {
+              "content": "Create a new custom gender type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gendertypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"genderTypeName\": \"<string>\",\n  \"pronounType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b2e28688-faff-446a-9ffe-0da8dda91b7a",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gendertypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"genderTypeName\": \"Transgender\",\n  \"pronounType\": \"Neutral\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fab8b922-a0fa-4dfb-a4e9-990100aa3c6f",
+          "name": "Returns a single custom gender type.",
+          "request": {
+            "name": "Returns a single custom gender type.",
+            "description": {
+              "content": "Returns a single custom gender type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gendertypes",
+                ":genderTypeName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "genderTypeName",
+                  "description": "(Required) Name of the custom gender type."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3096bec9-8c0b-4690-9c97-0a12b063a3fd",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gendertypes",
+                    ":genderTypeName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "genderTypeName",
+                      "description": "(Required) Name of the custom gender type."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"genderTypeName\": \"Transgender\",\n  \"pronounType\": \"Neutral\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c6bd449-bff3-45a4-a199-6c5d0fe060c5",
+          "name": "Update a single custom gender type.",
+          "request": {
+            "name": "Update a single custom gender type.",
+            "description": {
+              "content": "Update a single custom gender type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gendertypes",
+                ":genderTypeName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "genderTypeName",
+                  "description": "(Required) Name of the custom gender type."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pronounType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e78ac73f-62b7-4163-a1d1-480c5e8d1c6f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gendertypes",
+                    ":genderTypeName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "genderTypeName",
+                      "description": "(Required) Name of the custom gender type."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"genderTypeName\": \"Transgender\",\n  \"pronounType\": \"Neutral\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3516460e-519b-4001-a2d8-5b5dd3c6860c",
+          "name": "Delete a custom gender type. Please note - you cannot delete a custom gender type if it is already assigned to an existing participant record.",
+          "request": {
+            "name": "Delete a custom gender type. Please note - you cannot delete a custom gender type if it is already assigned to an existing participant record.",
+            "description": {
+              "content": "Delete a custom gender type. Please note - you cannot delete a custom gender type if it is already assigned to an existing participant record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gendertypes",
+                ":genderTypeName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "genderTypeName",
+                  "description": "(Required) Name of the custom gender type."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1dbf091c-6844-47f5-906b-dcf13aabf6fc",
+              "name": "Success, No content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gendertypes",
+                    ":genderTypeName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "genderTypeName",
+                      "description": "(Required) Name of the custom gender type."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "424aeef9-6c84-47bb-965d-cd191390ca17",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Gender Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

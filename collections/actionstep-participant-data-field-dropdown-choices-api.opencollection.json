@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Data Field Dropdown Choices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participant Data Field Dropdown Choices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /participantdatafielddropdownchoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantdatafielddropdownchoices"
+          },
+          "docs": "Returns a list of Participant Data Field Dropdown Choices."
+        },
+        {
+          "info": {
+            "name": "POST /participantdatafielddropdownchoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/participantdatafielddropdownchoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new participant data field dropdown choice."
+        },
+        {
+          "info": {
+            "name": "GET /participantdatafielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantdatafielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "637--Colour",
+                "type": "path",
+                "description": "Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+              }
+            ]
+          },
+          "docs": "Returns a single participant data field dropdown choice."
+        },
+        {
+          "info": {
+            "name": "PUT /participantdatafielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/participantdatafielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "637--Colour",
+                "type": "path",
+                "description": "Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a single participant data field dropdown choice."
+        },
+        {
+          "info": {
+            "name": "DELETE /participantdatafielddropdownchoices/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/participantdatafielddropdownchoices/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "637--Colour",
+                "type": "path",
+                "description": "Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'."
+              }
+            ]
+          },
+          "docs": "Delete a single participant data field dropdown choice."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Default Types API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participant Default Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /participantdefaulttypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participantdefaulttypes"
+          },
+          "docs": "Returns a list of participant default types for each Contact."
+        },
+        {
+          "info": {
+            "name": "POST /participantdefaulttypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/participantdefaulttypes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an existing participant default type to an existing Contact."
+        },
+        {
+          "info": {
+            "name": "DELETE /participantdefaulttypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/participantdefaulttypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1024--31",
+                "type": "path",
+                "description": "Unique identifier for a participant default type. The identifier is a composite value composed from the participant (contact) identifier and the participant type identifier, separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Removes a participant default type from a Contact."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

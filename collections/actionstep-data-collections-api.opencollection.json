@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Data Collections API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /datacollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollections"
+          },
+          "docs": "Returns a collection of data collections."
+        },
+        {
+          "info": {
+            "name": "POST /datacollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/datacollections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new data collection."
+        },
+        {
+          "info": {
+            "name": "GET /datacollection/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/datacollection/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "380",
+                "type": "path",
+                "description": "Unique identifier for a data collection."
+              }
+            ]
+          },
+          "docs": "Returns a single data collection."
+        },
+        {
+          "info": {
+            "name": "PUT /datacollection/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/datacollection/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a data collection."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a data collection."
+        },
+        {
+          "info": {
+            "name": "DELETE /datacollection/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/datacollection/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a data collection."
+              }
+            ]
+          },
+          "docs": "Delete a data collection."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

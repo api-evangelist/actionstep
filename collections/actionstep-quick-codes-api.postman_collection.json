@@ -1,0 +1,374 @@
+{
+  "item": [
+    {
+      "id": "f3dbc961-3d90-4c16-a0ea-7b1bf95b0b05",
+      "name": "Quick Codes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27cc9a9b-94e9-48a7-933a-6040f30b40bb",
+          "name": "Returns the collection of all Quick Codes.",
+          "request": {
+            "name": "Returns the collection of all Quick Codes.",
+            "description": {
+              "content": "Returns the collection of all Quick Codes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "quickcodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b297c02b-13a1-47d5-bd66-676573e32ba5",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quickcodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"QuickCodes\": [\n    {\n      \"id\": 300,\n      \"quickCode\": \"Client Communications\",\n      \"description\": \"For all client communications.\",\n      \"useForRetainerTransfers\": \"T\",\n      \"useForReceipts\": \"T\",\n      \"useForTasks\": \"T\",\n      \"useForTimeEntry\": \"T\",\n      \"useForWithdrawals\": \"T\",\n      \"links\": {\n        \"rate\": 546\n      }\n    },\n    {\n      \"id\": 300,\n      \"quickCode\": \"Client Communications\",\n      \"description\": \"For all client communications.\",\n      \"useForRetainerTransfers\": \"T\",\n      \"useForReceipts\": \"T\",\n      \"useForTasks\": \"T\",\n      \"useForTimeEntry\": \"T\",\n      \"useForWithdrawals\": \"T\",\n      \"links\": {\n        \"rate\": 546\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"QuickCodes\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/quickcodes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/quickcodes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85ccaca5-d074-48f6-9fb7-cd333f68c180",
+          "name": "Create a new Quick Code.",
+          "request": {
+            "name": "Create a new Quick Code.",
+            "description": {
+              "content": "Create a new Quick Code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "quickcodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quickCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"useForRetainerTransfers\": \"T\",\n  \"useForReceipts\": \"T\",\n  \"useForTasks\": \"T\",\n  \"useForTimeEntry\": \"T\",\n  \"useForWithdrawals\": \"T\",\n  \"links\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b4ca2cd-d8f5-4dec-a9db-5606f20fe335",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quickcodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 300,\n  \"quickCode\": \"Client Communications\",\n  \"description\": \"For all client communications.\",\n  \"useForRetainerTransfers\": \"T\",\n  \"useForReceipts\": \"T\",\n  \"useForTasks\": \"T\",\n  \"useForTimeEntry\": \"T\",\n  \"useForWithdrawals\": \"T\",\n  \"links\": {\n    \"rate\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "158a1323-df9b-49da-9681-391830c9c774",
+          "name": "Returns a single Quick Code.",
+          "request": {
+            "name": "Returns a single Quick Code.",
+            "description": {
+              "content": "Returns a single Quick Code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "quickcodes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single Quick Code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27572253-1e49-469f-a80a-faafb45c6395",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quickcodes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single Quick Code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 300,\n  \"quickCode\": \"Client Communications\",\n  \"description\": \"For all client communications.\",\n  \"useForRetainerTransfers\": \"T\",\n  \"useForReceipts\": \"T\",\n  \"useForTasks\": \"T\",\n  \"useForTimeEntry\": \"T\",\n  \"useForWithdrawals\": \"T\",\n  \"links\": {\n    \"rate\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a3f2179-7305-472d-84e9-99824484f24d",
+          "name": "Updates a single Quick Code.",
+          "request": {
+            "name": "Updates a single Quick Code.",
+            "description": {
+              "content": "Updates a single Quick Code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "quickcodes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single Quick Code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quickCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"useForRetainerTransfers\": \"T\",\n  \"useForReceipts\": \"T\",\n  \"useForTasks\": \"T\",\n  \"useForTimeEntry\": \"T\",\n  \"useForWithdrawals\": \"T\",\n  \"links\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "773d9b36-ed06-46a3-b292-dce5f44e4f76",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "quickcodes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single Quick Code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 300,\n  \"quickCode\": \"Client Communications\",\n  \"description\": \"For all client communications.\",\n  \"useForRetainerTransfers\": \"T\",\n  \"useForReceipts\": \"T\",\n  \"useForTasks\": \"T\",\n  \"useForTimeEntry\": \"T\",\n  \"useForWithdrawals\": \"T\",\n  \"links\": {\n    \"rate\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8565773d-a667-42cc-94e4-454748927934",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Quick Codes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

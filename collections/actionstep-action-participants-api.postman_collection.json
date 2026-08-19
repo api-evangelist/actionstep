@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "id": "dde00f11-265d-4a65-aa59-8de5db55081f",
+      "name": "Action Participants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1d325c33-e18b-4cf1-8fce-31a78ae8c265",
+          "name": "Returns a collection of Matter participants. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+          "request": {
+            "name": "Returns a collection of Matter participants. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+            "description": {
+              "content": "Returns a collection of Matter participants. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionparticipants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f14528b9-51f4-424c-a6e0-b4d3d8e0c158",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionparticipants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"actionparticipants\": [\n    {\n      \"id\": \"1024--31--11\",\n      \"participantNumber\": 3,\n      \"links\": {\n        \"action\": 1024,\n        \"participantType\": 31,\n        \"participant\": 11\n      }\n    },\n    {\n      \"id\": \"1024--31--11\",\n      \"participantNumber\": 3,\n      \"links\": {\n        \"action\": 1024,\n        \"participantType\": 31,\n        \"participant\": 11\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"actionparticipants\": {\n        \"recordCount\": 2317,\n        \"pageCount\": 47,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionparticipants?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/actionparticipants?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65caa35d-b211-4c27-8f4b-723476b8f4b0",
+          "name": "Create a new Matter participant.",
+          "request": {
+            "name": "Create a new Matter participant.",
+            "description": {
+              "content": "Create a new Matter participant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionparticipants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actionparticipants\": {\n    \"links\": {\n      \"action\": \"<integer>\",\n      \"participantType\": \"<integer>\",\n      \"participant\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d6c0b15-9413-48d7-90b5-c5f3d2364f35",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionparticipants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"1024--31--11\",\n  \"participantNumber\": 3,\n  \"links\": {\n    \"action\": 1024,\n    \"participantType\": 31,\n    \"participant\": 11\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bde36c5-74b8-4675-b486-f805f1d59579",
+          "name": "Returns a single Matter participant.",
+          "request": {
+            "name": "Returns a single Matter participant.",
+            "description": {
+              "content": "Returns a single Matter participant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionparticipants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a Matter Participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2dcffe60-73ef-4468-9fa8-ef11943acdff",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionparticipants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a Matter Participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"1024--31--11\",\n  \"participantNumber\": 3,\n  \"links\": {\n    \"action\": 1024,\n    \"participantType\": 31,\n    \"participant\": 11\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b37e8467-1f76-4c7b-bcff-6296db8993cb",
+          "name": "Removes a participant from a Matter.",
+          "request": {
+            "name": "Removes a participant from a Matter.",
+            "description": {
+              "content": "Removes a participant from a Matter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actionparticipants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for an Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by \"--\"."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c1bbf8f-d817-409f-9260-0d4f76b7711e",
+              "name": "Success, No content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actionparticipants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for an Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by \"--\"."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "df4b0712-21e8-4a75-bab5-8002a5d3975a",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action Participants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

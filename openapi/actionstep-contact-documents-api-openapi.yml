@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Contact Documents API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Contact Documents
@@ -139,13 +141,15 @@ components:
           format: string
           example: Contract Terms and Conditions
         createdTimestamp:
-          description: Timestamp for when the contact document was created. This is not the created date for the underlying document.
+          description: Timestamp for when the contact document was created. This is not the created date
+            for the underlying document.
           type: string
           format: string
           example: 2025-05-13 14:36:33+12:00
           readOnly: true
         modifiedTimestamp:
-          description: Timestamp for when the contact document was last modified. This is not the last modified date for the underlying document.
+          description: Timestamp for when the contact document was last modified. This is not the last
+            modified date for the underlying document.
           type: string
           format: string
           example: 2025-09-17 09:12:32+12:00
@@ -202,7 +206,8 @@ components:
           example: https://ap-southeast-2.actionstep.com/t/o/redstone/c/master/di/171049652/e/1750203825/u/94/dv/1/h/NTczOWVhYj/cddf/p/41845/d/1/driving%20license%20scan.png
           readOnly: true
         file:
-          description: An internal reference for the contact document used for downloading the underlying file.
+          description: An internal reference for the contact document used for downloading the underlying
+            file.
           type: string
           format: string
           example: CD::Contacts::63727::13
@@ -275,7 +280,9 @@ components:
           format: string
           example: Updated KYC report.
         file:
-          description: The indentifier for the uploaded file used to create the contact document. The format of the file parameter is important. It must include both the unique file id and the file name (including the file extension) in the format {file_id};{file_name_with_extension}
+          description: The indentifier for the uploaded file used to create the contact document. The
+            format of the file parameter is important. It must include both the unique file id and the
+            file name (including the file extension) in the format {file_id};{file_name_with_extension}
           type: string
           format: string
           example: 1740278677tYhvZ7HgvIzLWKFqnBt9mvyb9grF2mvb;Contract Terms.pdf
@@ -310,3 +317,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

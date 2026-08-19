@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Tasks API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/tasks"
+          },
+          "docs": "Returns a collection of tasks"
+        },
+        {
+          "info": {
+            "name": "POST /tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new task."
+        },
+        {
+          "info": {
+            "name": "GET /tasks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/tasks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "9287",
+                "type": "path",
+                "description": "Unique identifier for a task."
+              }
+            ]
+          },
+          "docs": "Returns a single task."
+        },
+        {
+          "info": {
+            "name": "PUT /tasks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/tasks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a task."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a task."
+        },
+        {
+          "info": {
+            "name": "DELETE /tasks/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/tasks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a task."
+              }
+            ]
+          },
+          "docs": "Delete a task."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

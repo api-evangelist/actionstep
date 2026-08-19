@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Participant Type Data Fields API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Participant Type Data Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /participanttypedatafields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participanttypedatafields"
+          },
+          "docs": "Returns the collection of all participant type data fields."
+        },
+        {
+          "info": {
+            "name": "POST /participanttypedatafields",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/participanttypedatafields",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new participant type data field."
+        },
+        {
+          "info": {
+            "name": "GET /participanttypedatafields/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/participanttypedatafields/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single participant type data field record."
+              }
+            ]
+          },
+          "docs": "Returns a single participant type data field record."
+        },
+        {
+          "info": {
+            "name": "PUT /participanttypedatafields/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/participanttypedatafields/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single participant type data field record."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single participant type data field record."
+        },
+        {
+          "info": {
+            "name": "DELETE /participanttypedatafields/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/participanttypedatafields/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "7384",
+                "type": "path",
+                "description": "Unique identifier for a single participant type data field record."
+              }
+            ]
+          },
+          "docs": "Deletes a single participant type data field record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

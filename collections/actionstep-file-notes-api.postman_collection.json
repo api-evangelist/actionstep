@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "54ff7381-072e-4d67-b413-7bbdde843272",
+      "name": "File Notes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d2f38ca-085d-4646-a92d-534b895c806e",
+          "name": "Returns a collection of file notes.",
+          "request": {
+            "name": "Returns a collection of file notes.",
+            "description": {
+              "content": "Returns a collection of file notes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filenotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce915979-f2aa-45fa-b2e3-6c2964abcafb",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filenotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"filenotes\": [\n    {\n      \"id\": 2347,\n      \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"text\": \"Client is requesting follow up meeting this week.\",\n      \"enteredBy\": \"Smith, John\",\n      \"source\": \"User\",\n      \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n      \"links\": {\n        \"action\": 34,\n        \"document\": 8376,\n        \"participant\": 546,\n        \"tags\": [\n          1283,\n          1934\n        ]\n      }\n    },\n    {\n      \"id\": 2347,\n      \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"text\": \"Client is requesting follow up meeting this week.\",\n      \"enteredBy\": \"Smith, John\",\n      \"source\": \"User\",\n      \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n      \"links\": {\n        \"action\": 34,\n        \"document\": 8376,\n        \"participant\": 546,\n        \"tags\": [\n          1283,\n          1934\n        ]\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"filenotes\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/filenotes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/filenotes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "575b095b-85f4-4323-a146-7f8586e45db8",
+          "name": "Create a new file note.",
+          "request": {
+            "name": "Create a new file note.",
+            "description": {
+              "content": "Create a new file note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filenotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"source\": \"<string>\",\n  \"noteTimestamp\": \"<timestamp>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"document\": \"<integer>\",\n    \"tags\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9189332-4c2e-401f-bb16-493c5f1b60cd",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filenotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Client is requesting follow up meeting this week.\",\n  \"enteredBy\": \"Smith, John\",\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"action\": 34,\n    \"document\": 8376,\n    \"participant\": 546,\n    \"tags\": [\n      1283,\n      1934\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59fe9bb2-1f59-4b8c-ad65-b91f8e8ce126",
+          "name": "Returns a single file note.",
+          "request": {
+            "name": "Returns a single file note.",
+            "description": {
+              "content": "Returns a single file note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filenotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a file note."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "728fe802-7dcc-4b96-8b6a-8e0751687981",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filenotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a file note."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Client is requesting follow up meeting this week.\",\n  \"enteredBy\": \"Smith, John\",\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"action\": 34,\n    \"document\": 8376,\n    \"participant\": 546,\n    \"tags\": [\n      1283,\n      1934\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1880339-42f6-42ae-88f5-252c05dcaf3c",
+          "name": "Update a file note.",
+          "request": {
+            "name": "Update a file note.",
+            "description": {
+              "content": "Update a file note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filenotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a file note."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"noteTimestamp\": \"<timestamp>\",\n  \"links\": {\n    \"action\": \"<integer>\",\n    \"document\": \"<integer>\",\n    \"tags\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4ade0fc-f7ff-4bb2-bf61-4057760e3f92",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filenotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a file note."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Client is requesting follow up meeting this week.\",\n  \"enteredBy\": \"Smith, John\",\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"action\": 34,\n    \"document\": 8376,\n    \"participant\": 546,\n    \"tags\": [\n      1283,\n      1934\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6609fb0-90a9-4387-b2c9-e4445d88e9fd",
+          "name": "Delete a file note.",
+          "request": {
+            "name": "Delete a file note.",
+            "description": {
+              "content": "Delete a file note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filenotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a file note."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f78a3454-70ac-4399-bf0a-8423e71d4969",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filenotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a file note."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c7d867d8-6e01-4d4a-9e9e-80f6c299a5aa",
+    "name": "Action (Matter) Bill Settings Action Bill Settings File Notes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

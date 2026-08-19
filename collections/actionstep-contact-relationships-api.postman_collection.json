@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "id": "83330d7b-7622-4cfc-a875-9a05b437db99",
+      "name": "Contact Relationships",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dacd0d57-ad55-4c17-8e92-bbc9f0848dba",
+          "name": "Returns the collection of all contact relationships.",
+          "request": {
+            "name": "Returns the collection of all contact relationships.",
+            "description": {
+              "content": "Returns the collection of all contact relationships.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactrelationships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a30cbfb5-7f79-4f53-907c-89b73144b55f",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactrelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactrelationships\": [\n    {\n      \"id\": \"Father-41854-845258\",\n      \"relationship\": \"Father\",\n      \"links\": {\n        \"fromContact\": 41854,\n        \"toContact\": 321845\n      }\n    },\n    {\n      \"id\": \"Father-41854-845258\",\n      \"relationship\": \"Father\",\n      \"links\": {\n        \"fromContact\": 41854,\n        \"toContact\": 321845\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"contactrelationships\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactrelationships?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactrelationships?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fca81b32-d1be-4fa5-95a6-b97e7ddba24c",
+          "name": "Create a new contact relationship.",
+          "request": {
+            "name": "Create a new contact relationship.",
+            "description": {
+              "content": "Create a new contact relationship.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactrelationships"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relationship\": \"<string>\",\n  \"links\": {\n    \"fromContact\": \"<integer>\",\n    \"toContact\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b352feb-d976-4f80-90fe-031e2221f8ac",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactrelationships"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"relationship\": \"Father\",\n  \"links\": {\n    \"fromContact\": 41854,\n    \"toContact\": 321845\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a7bbcee-9b7d-4b23-a790-d785ace01916",
+          "name": "Returns a single contact relationship record.",
+          "request": {
+            "name": "Returns a single contact relationship record.",
+            "description": {
+              "content": "Returns a single contact relationship record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactrelationships",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17bf603a-6fe2-48ca-be7f-d141d096ea4b",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactrelationships",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"Father-41854-845258\",\n  \"relationship\": \"Father\",\n  \"links\": {\n    \"fromContact\": 41854,\n    \"toContact\": 321845\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2f83bdb-a5fc-46db-8e94-5ae59f433e64",
+          "name": "Deletes a single contact relationship record.",
+          "request": {
+            "name": "Deletes a single contact relationship record.",
+            "description": {
+              "content": "Deletes a single contact relationship record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactrelationships",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3743f42c-c8bf-4d39-9871-e03a69dbfb50",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactrelationships",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by \"--\"."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4e338928-ed11-4f19-8e8d-b33363b381f5",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Relationships API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

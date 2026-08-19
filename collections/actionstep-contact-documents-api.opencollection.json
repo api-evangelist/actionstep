@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Documents API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /contactdocuments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactdocuments"
+          },
+          "docs": "Returns the collection of all contact documents."
+        },
+        {
+          "info": {
+            "name": "POST /contactdocuments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/contactdocuments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new contact document."
+        },
+        {
+          "info": {
+            "name": "GET /contactdocuments/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactdocuments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single contact document."
+              }
+            ]
+          },
+          "docs": "Returns a single contact document."
+        },
+        {
+          "info": {
+            "name": "PUT /contactdocuments/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/contactdocuments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single contact document."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single contact document."
+        },
+        {
+          "info": {
+            "name": "DELETE /contactdocuments/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/contactdocuments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "568",
+                "type": "path",
+                "description": "Unique identifier for a single contact document."
+              }
+            ]
+          },
+          "docs": "Delete a single contact document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

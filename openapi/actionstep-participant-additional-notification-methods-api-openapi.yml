@@ -1,7 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Participant Additional Notification Methods API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Action (Matter) Bill Settings Action Bill Settings Participant Additional Notification Methods
+    API
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Participant Additional Notification Methods
@@ -108,7 +111,8 @@ components:
       type: object
       properties:
         recordCount:
-          description: The total number of Participant Additional Notification Methods returned by the underlying query.
+          description: The total number of Participant Additional Notification Methods returned by the
+            underlying query.
           type: integer
           example: 4
         pageCount:
@@ -170,7 +174,8 @@ components:
       - participant
       properties:
         participant:
-          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          description: Unique identifier of the participant to whom this additional notification method
+            is to be associated.
           example: 8945
           type: integer
     UpdateParticipantAdditionalNotificationMethod:
@@ -212,7 +217,8 @@ components:
       - participant
       properties:
         participant:
-          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          description: Unique identifier of the participant to whom this additional notification method
+            is to be associated.
           example: 8945
           type: integer
     PageMetaData:
@@ -224,7 +230,8 @@ components:
       type: object
       properties:
         participant:
-          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          description: Unique identifier of the participant to whom this additional notification method
+            is to be associated.
           example: 8945
           type: integer
     ParticipantAdditionalNotificationMethod:
@@ -271,3 +278,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml

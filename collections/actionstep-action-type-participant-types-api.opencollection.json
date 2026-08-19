@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Action Type Participant Types API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Action Type Participant Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /actiontypeparticipanttypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actiontypeparticipanttypes"
+          },
+          "docs": "Returns the collection of all participant types for all matter types."
+        },
+        {
+          "info": {
+            "name": "POST /actiontypeparticipanttypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/actiontypeparticipanttypes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an existing participant type to an existing matter type."
+        },
+        {
+          "info": {
+            "name": "GET /actiontypeparticipanttypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/actiontypeparticipanttypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "14--54",
+                "type": "path",
+                "description": "Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Returns a single matter type participant type record."
+        },
+        {
+          "info": {
+            "name": "PUT /actiontypeparticipanttypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/actiontypeparticipanttypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "14--54",
+                "type": "path",
+                "description": "Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a single matter type participant type record."
+        },
+        {
+          "info": {
+            "name": "DELETE /actiontypeparticipanttypes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/actiontypeparticipanttypes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "14--54",
+                "type": "path",
+                "description": "Unique identifier for a single record. The identifier is composed from the matter type identifier and the participant type identifier separated by \"--\"."
+              }
+            ]
+          },
+          "docs": "Deletes a single matter type participant type record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,450 @@
+{
+  "item": [
+    {
+      "id": "6d267d4f-421b-4a07-8b7f-67e70e1579ad",
+      "name": "Contact Notes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df694ed9-542b-4e3e-80e7-eae47ae92016",
+          "name": "Returns a collection of contact notes.",
+          "request": {
+            "name": "Returns a collection of contact notes.",
+            "description": {
+              "content": "Returns a collection of contact notes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactnotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ac7161f-39ee-4682-acce-998dd363651b",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactnotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactnotes\": [\n    {\n      \"id\": 2347,\n      \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"text\": \"Please review AML status.\",\n      \"enteredBy\": \"Smith, John\",\n      \"enteredByParticipant\": 842,\n      \"source\": \"User\",\n      \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n      \"links\": {\n        \"participant\": 546\n      }\n    },\n    {\n      \"id\": 2347,\n      \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n      \"text\": \"Please review AML status.\",\n      \"enteredBy\": \"Smith, John\",\n      \"enteredByParticipant\": 842,\n      \"source\": \"User\",\n      \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n      \"links\": {\n        \"participant\": 546\n      }\n    }\n  ],\n  \"meta\": {\n    \"paging\": {\n      \"contactnotes\": {\n        \"recordCount\": 2487,\n        \"pageCount\": 50,\n        \"page\": 2,\n        \"pageSize\": 50,\n        \"prevPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactnotes?page=1\",\n        \"nextPage\": \"https://ap-southeast-2.actionstep.com/api/rest/contactnotes?page=3\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7c46f21-2e0c-4a9a-a25e-0b160f0eb63c",
+          "name": "Create a new contact note.",
+          "request": {
+            "name": "Create a new contact note.",
+            "description": {
+              "content": "Create a new contact note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactnotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"source\": \"<string>\",\n  \"noteTimestamp\": \"<timestamp>\",\n  \"links\": {\n    \"participant\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "405fbceb-8d87-4b29-a0d7-70e2fe4331c6",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactnotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Please review AML status.\",\n  \"enteredBy\": \"Smith, John\",\n  \"enteredByParticipant\": 842,\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"participant\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "657a7b58-b639-4973-9f3a-c09cf78b9756",
+          "name": "Returns a single contact note.",
+          "request": {
+            "name": "Returns a single contact note.",
+            "description": {
+              "content": "Returns a single contact note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactnotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a contact note."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "059d12da-8898-4b51-af30-b3009df0e2a5",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactnotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a contact note."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Please review AML status.\",\n  \"enteredBy\": \"Smith, John\",\n  \"enteredByParticipant\": 842,\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"participant\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e6642bc-fda6-4f7c-8dc3-ddc558098883",
+          "name": "Update a contact note.",
+          "request": {
+            "name": "Update a contact note.",
+            "description": {
+              "content": "Update a contact note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactnotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a contact note."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"noteTimestamp\": \"<timestamp>\",\n  \"links\": {\n    \"participant\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9946f2f6-a8c0-44e3-a43e-4db5650c2c9b",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactnotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a contact note."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2347,\n  \"enteredTimestamp\": \"2022-05-03 00:09:00+12:00\",\n  \"text\": \"Please review AML status.\",\n  \"enteredBy\": \"Smith, John\",\n  \"enteredByParticipant\": 842,\n  \"source\": \"User\",\n  \"noteTimestamp\": \"2023-06-03 00:09:30+12:00\",\n  \"links\": {\n    \"participant\": 546\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96f7a3e3-733c-4c09-a8a7-d304b3c813c3",
+          "name": "Delete a contact note.",
+          "request": {
+            "name": "Delete a contact note.",
+            "description": {
+              "content": "Delete a contact note.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contactnotes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for a contact note."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fcd013b-445b-4971-99de-6ad1b2c02746",
+              "name": "Success, No Content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contactnotes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for a contact note."
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.actionstep.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8d20b306-cc00-4d92-8d8d-3a2e5518d2c4",
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Notes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.",
+      "type": "text/plain"
+    }
+  }
+}

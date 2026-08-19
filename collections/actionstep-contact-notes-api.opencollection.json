@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Action (Matter) Bill Settings Action Bill Settings Contact Notes API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contact Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /contactnotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactnotes"
+          },
+          "docs": "Returns a collection of contact notes."
+        },
+        {
+          "info": {
+            "name": "POST /contactnotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.actionstep.com/contactnotes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new contact note."
+        },
+        {
+          "info": {
+            "name": "GET /contactnotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.actionstep.com/contactnotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "9287",
+                "type": "path",
+                "description": "Unique identifier for a contact note."
+              }
+            ]
+          },
+          "docs": "Returns a single contact note."
+        },
+        {
+          "info": {
+            "name": "PUT /contactnotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.actionstep.com/contactnotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a contact note."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a contact note."
+        },
+        {
+          "info": {
+            "name": "DELETE /contactnotes/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.actionstep.com/contactnotes/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "608",
+                "type": "path",
+                "description": "Unique identifier for a contact note."
+              }
+            ]
+          },
+          "docs": "Delete a contact note."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,7 +1,9 @@
 openapi: 3.0.3
 info:
   title: Action (Matter) Bill Settings Action Bill Settings Participant Data Field Dropdown Choices API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
+    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
+    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Participant Data Field Dropdown Choices
@@ -39,7 +41,9 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        description: Unique identifier for the participant data field dropdown choice. This is a composite
+          key composed from the participant data field identifier and the choice item's name, separated
+          by '--'.
         required: true
         schema:
           type: string
@@ -58,7 +62,9 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        description: Unique identifier for the participant data field dropdown choice. This is a composite
+          key composed from the participant data field identifier and the choice item's name, separated
+          by '--'.
         required: true
         schema:
           type: string
@@ -79,7 +85,9 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant data field dropdown choice. This is a composite key composed from the participant data field identifier and the choice item's name, separated by '--'.
+        description: Unique identifier for the participant data field dropdown choice. This is a composite
+          key composed from the participant data field identifier and the choice item's name, separated
+          by '--'.
         required: true
         schema:
           type: string
@@ -93,13 +101,15 @@ components:
       type: object
       properties:
         participantType:
-          description: Unique identifier for the underlying participant type to which this data field dropdown choice is associated.
+          description: Unique identifier for the underlying participant type to which this data field
+            dropdown choice is associated.
           type: integer
           format: string
           example: 7383
           readOnly: true
         participantDataField:
-          description: Unique identifier for the participant data field associated with this data field dropdown choice.
+          description: Unique identifier for the participant data field associated with this data field
+            dropdown choice.
           type: integer
           format: string
           example: 2300
@@ -107,19 +117,25 @@ components:
       type: object
       properties:
         name:
-          description: Name for the participant data field dropdown choice. This is the display name shown on the UI.
+          description: Name for the participant data field dropdown choice. This is the display name shown
+            on the UI.
           type: string
           example: Red
         value:
-          description: The value that will be copied when the participant data field dropdown choice is selected.
+          description: The value that will be copied when the participant data field dropdown choice is
+            selected.
           type: string
           example: red
         listOrder:
-          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          description: The order in which the participant data field dropdown choice appears in the dropdown
+            list. If a listOrder value shares the same value as another choice, the choices are displayed
+            in name order.
           type: integer
           example: 5
         isDefault:
-          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for a single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          description: Indicates if the choice item is the default selected item displayed in the dropdown
+            list. A list can only contain one default item for a single select dropdown, but can have
+            multiple defaults for a multi-select dropdown.
           type: string
           enum:
           - T
@@ -131,15 +147,20 @@ components:
       type: object
       properties:
         value:
-          description: The value that will be copied when the participant data field dropdown choice is selected.
+          description: The value that will be copied when the participant data field dropdown choice is
+            selected.
           type: string
           example: red
         listOrder:
-          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          description: The order in which the participant data field dropdown choice appears in the dropdown
+            list. If a listOrder value shares the same value as another choice, the choices are displayed
+            in name order.
           type: integer
           example: 5
         isDefault:
-          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          description: Indicates if the choice item is the default selected item displayed in the dropdown
+            list. A list can only contain one default item for single select dropdown, but can have multiple
+            defaults for a multi-select dropdown.
           type: string
           enum:
           - T
@@ -155,19 +176,25 @@ components:
       - participantDataField
       properties:
         name:
-          description: Name for the participant data field dropdown choice. This is the display name shown on the UI. The name must be unique.
+          description: Name for the participant data field dropdown choice. This is the display name shown
+            on the UI. The name must be unique.
           type: string
           example: Red
         value:
-          description: The value that will be copied when the participant data field dropdown choice is selected.
+          description: The value that will be copied when the participant data field dropdown choice is
+            selected.
           type: string
           example: red
         listOrder:
-          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          description: The order in which the participant data field dropdown choice appears in the dropdown
+            list. If a listOrder value shares the same value as another choice, the choices are displayed
+            in name order.
           type: integer
           example: 5
         isDefault:
-          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          description: Indicates if the choice item is the default selected item displayed in the dropdown
+            list. A list can only contain one default item for single select dropdown, but can have multiple
+            defaults for a multi-select dropdown.
           type: string
           enum:
           - T
@@ -179,7 +206,8 @@ components:
       type: object
       properties:
         participantDataField:
-          description: Unique identifier for the participant data field associated with this data field dropdown choice.
+          description: Unique identifier for the participant data field associated with this data field
+            dropdown choice.
           type: integer
           format: string
           example: 2300
@@ -197,7 +225,8 @@ components:
       type: object
       properties:
         recordCount:
-          description: The total number of Participant Data Field Dropdown Choices returned by the underlying query.
+          description: The total number of Participant Data Field Dropdown Choices returned by the underlying
+            query.
           type: integer
           example: 4
         pageCount:
@@ -243,3 +272,6 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
+servers:
+- url: https://api.actionstep.com
+  description: Base URL reconciled from apis.yml
