@@ -34,6 +34,16 @@ tags:
   - Documents
   - Trust Accounting
   - Contacts
+  - Workflows
+tags_raw:
+  - Legal
+  - Practice Management
+  - Law Firm
+  - Matters
+  - Billing
+  - Documents
+  - Trust Accounting
+  - Contacts
   - Workflow
 apis:
 - aid: actionstep:actionstep-action-bill-settings-api
@@ -892,6 +902,8 @@ apis:
   humanURL: https://docs.actionstep.com/
   baseURL: https://api.actionstep.com
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
