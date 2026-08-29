@@ -1,0 +1,36 @@
+slug: actionstep
+provider: Actionstep
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: REST Hooks
+  spec_file: actionstep-rest-hooks-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.8
+  evidence: GET /resthooks, POST /resthooks, DELETE /resthooks/{id}, schemas `CreateRESTHook`, `UpdateRESTHook`
+  reason: The operations create, list, update and delete REST hook (outbound webhook) subscriptions on
+    the vendor's public API, which is webhook and event subscription lifecycle management in the developer-platform
+    capability.
+- tag: Actions
+  spec_file: actionstep-actions-api-openapi.yml
+  capability_id: BC-150.50
+  capability_id_l1: BC-150
+  capability_name: Legal Operations Management
+  confidence: 0.7
+  evidence: For historical reasons Matters are referred to as *actions* in this version of the API; GET
+    /actions, PATCH /actions/{id}
+  reason: Actions are legal matters in this legal practice management platform; CRUD over matters is matter
+    management within Legal Operations Management. Some ambiguity between BC-150.50 and general legal
+    management, hence moderate confidence.

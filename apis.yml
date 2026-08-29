@@ -989,6 +989,9 @@ apis:
   - type: Postman
     url: https://docs.actionstep.com/
 common:
+  - type: CapabilityMap
+    url: capabilities/actionstep-capability-edges.yml
+    name: Actionstep Business Capability Map
   - type: AgenticAccess
     url: agentic-access/actionstep-agentic-access.yml
   - type: TrustCenter
