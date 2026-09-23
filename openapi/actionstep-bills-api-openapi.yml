@@ -1,17 +1,14 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Bills API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: (Invoices) Bills API
+  description: For retrieving Bills. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Bills
 paths:
   /bills:
     get:
-      description: Returns a collection of bills (invoices). For information on how to construct requests
-        filtering by various properties, please refer to the API Developer Portal.
+      description: Returns a collection of bills (invoices). For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.
       tags:
       - Bills
       responses:
@@ -21,42 +18,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedBills'
+      summary: Get bills
+      x-summary-source: derived
+      operationId: getBills
+      x-operation-id-source: derived
 components:
   schemas:
-    BillLinks:
-      type: object
-      properties:
-        division:
-          description: Unique identifier of the division to which the bill is associated.
-          example: 1
-          type: integer
-        action:
-          description: List of matters to which this bill is associated.
-          example:
-          - 1093
-          - 2232
-          type: array
-          items:
-            type: integer
-        theirParticipant:
-          description: Unique identifier of the person to whom the bill is associated.
-          example: 964
-          format: integer
-          type: string
-    PagedBills:
-      type: object
-      properties:
-        bills:
-          type: array
-          items:
-            $ref: '#/components/schemas/Bill'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    PagingData:
-      type: object
-      properties:
-        participants:
-          $ref: '#/components/schemas/BillsPageData'
     BillsPageData:
       type: object
       properties:
@@ -84,6 +51,31 @@ components:
           description: A URL to the next page of bills.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/bills?page=3
+    PagingData:
+      type: object
+      properties:
+        participants:
+          $ref: '#/components/schemas/BillsPageData'
+    BillLinks:
+      type: object
+      properties:
+        division:
+          description: Unique identifier of the division to which the bill is associated.
+          example: 1
+          type: integer
+        action:
+          description: List of matters to which this bill is associated.
+          example:
+          - 1093
+          - 2232
+          type: array
+          items:
+            type: integer
+        theirParticipant:
+          description: Unique identifier of the person to whom the bill is associated.
+          example: 964
+          format: integer
+          type: string
     PageMetaData:
       type: object
       properties:
@@ -169,9 +161,15 @@ components:
           format: timestamp
         links:
           $ref: '#/components/schemas/BillLinks'
+    PagedBills:
+      type: object
+      properties:
+        bills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bill'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

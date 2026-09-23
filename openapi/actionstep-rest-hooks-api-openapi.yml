@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings REST Hooks API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: REST Hooks API
+  description: For retrieving and managing REST hooks. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: REST Hooks
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedRESTHooks'
+      summary: Get resthooks
+      x-summary-source: derived
+      operationId: getResthooks
+      x-operation-id-source: derived
     post:
       description: Create a new REST hook.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RESTHook'
+      summary: Create resthooks
+      x-summary-source: derived
+      operationId: postResthooks
+      x-operation-id-source: derived
   /resthooks/{id}:
     get:
       description: Returns a single REST hook.
@@ -54,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RESTHook'
+      summary: Get resthooks by id
+      x-summary-source: derived
+      operationId: getResthooksById
+      x-operation-id-source: derived
     put:
       description: Update a REST hook.
       tags:
@@ -76,6 +86,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RESTHook'
+      summary: Replace resthooks by id
+      x-summary-source: derived
+      operationId: putResthooksById
+      x-operation-id-source: derived
     delete:
       description: Delete a REST hook.
       tags:
@@ -92,9 +106,13 @@ paths:
       responses:
         '204':
           description: Success, No Content.
+      summary: Delete resthooks by id
+      x-summary-source: derived
+      operationId: deleteResthooksById
+      x-operation-id-source: derived
 components:
   schemas:
-    CreateRESTHook:
+    UpdateRESTHook:
       type: object
       required:
       - eventName
@@ -105,18 +123,21 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer
-              Portal.
+            description: For the complete list of supported events please reference the API Developer Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
           example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
           type: string
-    PagingData:
+    PagedRESTHooks:
       type: object
       properties:
         resthooks:
-          $ref: '#/components/schemas/RESTHooksPageData'
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTHook'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     RESTHooksPageData:
       type: object
       properties:
@@ -144,12 +165,17 @@ components:
           description: A URL to the next page of REST hooks.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/resthooks?page=3
+    PagingData:
+      type: object
+      properties:
+        resthooks:
+          $ref: '#/components/schemas/RESTHooksPageData'
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    UpdateRESTHook:
+    CreateRESTHook:
       type: object
       required:
       - eventName
@@ -160,22 +186,12 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer
-              Portal.
+            description: For the complete list of supported events please reference the API Developer Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
           example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
           type: string
-    PagedRESTHooks:
-      type: object
-      properties:
-        resthooks:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTHook'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     RESTHook:
       type: object
       properties:
@@ -188,8 +204,7 @@ components:
           example: ActionDocumentCreated.
           type: string
           externalDocs:
-            description: For the complete list of supported events please reference the API Developer
-              Portal.
+            description: For the complete list of supported events please reference the API Developer Portal.
             url: https://docs.actionstep.com/webhooks/
         targetUrl:
           description: Url to be called.
@@ -225,6 +240,3 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

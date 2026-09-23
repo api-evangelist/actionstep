@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Tasks API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Tasks API
+  description: For retrieving and managing tasks. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Tasks
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedTasks'
+      summary: Get tasks
+      x-summary-source: derived
+      operationId: getTasks
+      x-operation-id-source: derived
     post:
       description: Create a new task.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Task'
+      summary: Create tasks
+      x-summary-source: derived
+      operationId: postTasks
+      x-operation-id-source: derived
   /tasks/{id}:
     get:
       description: Returns a single task.
@@ -54,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Task'
+      summary: Get tasks by id
+      x-summary-source: derived
+      operationId: getTasksById
+      x-operation-id-source: derived
     put:
       description: Update a task.
       tags:
@@ -76,6 +86,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Task'
+      summary: Replace tasks by id
+      x-summary-source: derived
+      operationId: putTasksById
+      x-operation-id-source: derived
     delete:
       description: Delete a task.
       tags:
@@ -92,18 +106,11 @@ paths:
       responses:
         '204':
           description: Success, No Content.
+      summary: Delete tasks by id
+      x-summary-source: derived
+      operationId: deleteTasksById
+      x-operation-id-source: derived
 components:
-  requestBodies:
-    UpdateTask:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateTask'
-    CreateTask:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateTask'
   schemas:
     UpdateTaskLinks:
       type: object
@@ -143,12 +150,52 @@ components:
           description: Unique identifier for a task template used for the task.
           example: 23
           type: integer
+    TaskLinks:
+      type: object
+      properties:
+        triggerDataCollection:
+          description: Unique identifier for the data collection containing the trigger field.
+          example: 8834
+          type: integer
+        action:
+          description: Unique identifier of the matter to which the task is associated.
+          example: 34
+          type: integer
+        assignee:
+          description: Actionstep user to whom this task has been assigned.
+          example: 14
+          type: integer
+        rate:
+          description: (Deprecated) Unique identifier of the rate table entry applicable to the task.
+          example: 17
+          type: integer
+        confirmedNonBillableBy:
+          description: (Deprecated) Actionstep user who confirmed the task as non-billable.
+          example: 383
+          type: integer
+        linkedDocumentTemplate:
+          description: Unique identifier for a document template linked to the task.
+          example: 9642
+          type: integer
+        linkedDataCollection:
+          description: Unique identifier for the data collection linked with the task.
+          example: 4248
+          type: integer
+        template:
+          description: Unique identifier for a task template used for the task.
+          example: 23
+          type: integer
     PagingData:
       type: object
       properties:
         tasks:
           $ref: '#/components/schemas/TasksPageData'
-    CreateTask:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    UpdateTask:
       type: object
       required:
       - name
@@ -275,8 +322,7 @@ components:
           example: DueDate
           type: string
         triggerOffset:
-          description: Offset (in days) from the trigger field value that is used to trigger a workflow
-            process. For example, 2 days before the due date trigger a workflow to send an email reminder.
+          description: Offset (in days) from the trigger field value that is used to trigger a workflow process. For example, 2 days before the due date trigger a workflow to send an email reminder.
           example: -2
           type: integer
         triggerWeekdaysOnly:
@@ -287,7 +333,7 @@ components:
           example: T
           type: string
         links:
-          $ref: '#/components/schemas/CreateTaskLinks'
+          $ref: '#/components/schemas/UpdateTaskLinks'
     PagedTasks:
       type: object
       properties:
@@ -297,44 +343,6 @@ components:
             $ref: '#/components/schemas/Task'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    CreateTaskLinks:
-      type: object
-      required:
-      - action
-      - assignee
-      properties:
-        triggerDataCollection:
-          description: Unique identifier for the data collection containing the trigger field.
-          example: 8834
-          type: integer
-        action:
-          description: Unique identifier of the matter to which the task is associated.
-          example: 34
-          type: integer
-        assignee:
-          description: Actionstep user to whom this task has been assigned.
-          example: 14
-          type: integer
-        rate:
-          description: (Deprecated) Unique identifier of the rate table entry applicable to the task.
-          example: 17
-          type: integer
-        confirmedNonBillableBy:
-          description: (Deprecated) Actionstep user who confirmed the task as non-billable.
-          example: 383
-          type: integer
-        linkedDocumentTemplate:
-          description: Unique identifier for a document template linked to the task.
-          example: 9642
-          type: integer
-        linkedDataCollection:
-          description: Unique identifier for the data collection linked with the task.
-          example: 4248
-          type: integer
-        template:
-          description: Unique identifier for a task template used for the task.
-          example: 23
-          type: integer
     Task:
       type: object
       properties:
@@ -462,8 +470,7 @@ components:
           example: DueDate
           type: string
         triggerOffset:
-          description: Offset (in days) from the trigger field value that is used to trigger a workflow
-            process. For example, 2 days before the due date trigger a workflow to send an email reminder.
+          description: Offset (in days) from the trigger field value that is used to trigger a workflow process. For example, 2 days before the due date trigger a workflow to send an email reminder.
           example: -2
           type: integer
         triggerWeekdaysOnly:
@@ -502,47 +509,7 @@ components:
           description: A URL to the next page of tasks.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/tasks?page=3
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    TaskLinks:
-      type: object
-      properties:
-        triggerDataCollection:
-          description: Unique identifier for the data collection containing the trigger field.
-          example: 8834
-          type: integer
-        action:
-          description: Unique identifier of the matter to which the task is associated.
-          example: 34
-          type: integer
-        assignee:
-          description: Actionstep user to whom this task has been assigned.
-          example: 14
-          type: integer
-        rate:
-          description: (Deprecated) Unique identifier of the rate table entry applicable to the task.
-          example: 17
-          type: integer
-        confirmedNonBillableBy:
-          description: (Deprecated) Actionstep user who confirmed the task as non-billable.
-          example: 383
-          type: integer
-        linkedDocumentTemplate:
-          description: Unique identifier for a document template linked to the task.
-          example: 9642
-          type: integer
-        linkedDataCollection:
-          description: Unique identifier for the data collection linked with the task.
-          example: 4248
-          type: integer
-        template:
-          description: Unique identifier for a task template used for the task.
-          example: 23
-          type: integer
-    UpdateTask:
+    CreateTask:
       type: object
       required:
       - name
@@ -669,8 +636,7 @@ components:
           example: DueDate
           type: string
         triggerOffset:
-          description: Offset (in days) from the trigger field value that is used to trigger a workflow
-            process. For example, 2 days before the due date trigger a workflow to send an email reminder.
+          description: Offset (in days) from the trigger field value that is used to trigger a workflow process. For example, 2 days before the due date trigger a workflow to send an email reminder.
           example: -2
           type: integer
         triggerWeekdaysOnly:
@@ -681,10 +647,56 @@ components:
           example: T
           type: string
         links:
-          $ref: '#/components/schemas/UpdateTaskLinks'
+          $ref: '#/components/schemas/CreateTaskLinks'
+    CreateTaskLinks:
+      type: object
+      required:
+      - action
+      - assignee
+      properties:
+        triggerDataCollection:
+          description: Unique identifier for the data collection containing the trigger field.
+          example: 8834
+          type: integer
+        action:
+          description: Unique identifier of the matter to which the task is associated.
+          example: 34
+          type: integer
+        assignee:
+          description: Actionstep user to whom this task has been assigned.
+          example: 14
+          type: integer
+        rate:
+          description: (Deprecated) Unique identifier of the rate table entry applicable to the task.
+          example: 17
+          type: integer
+        confirmedNonBillableBy:
+          description: (Deprecated) Actionstep user who confirmed the task as non-billable.
+          example: 383
+          type: integer
+        linkedDocumentTemplate:
+          description: Unique identifier for a document template linked to the task.
+          example: 9642
+          type: integer
+        linkedDataCollection:
+          description: Unique identifier for the data collection linked with the task.
+          example: 4248
+          type: integer
+        template:
+          description: Unique identifier for a task template used for the task.
+          example: 23
+          type: integer
+  requestBodies:
+    CreateTask:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateTask'
+    UpdateTask:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateTask'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

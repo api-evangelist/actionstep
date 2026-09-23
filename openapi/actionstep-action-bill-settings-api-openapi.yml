@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Action (Matter) Bill Settings Action Bill Settings API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as *actions* in this version of the API. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Action Bill Settings
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedActionBillSettings'
+      summary: Get actionbillsettings
+      x-summary-source: derived
+      operationId: getActionbillsettings
+      x-operation-id-source: derived
   /actionbillsettings/{id}:
     get:
       description: Returns a summary of bill settings for an individual matter.
@@ -41,6 +43,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActionBillSettings'
+      summary: Get actionbillsettings by id
+      x-summary-source: derived
+      operationId: getActionbillsettingsById
+      x-operation-id-source: derived
     put:
       description: Updates the bill settings for a single matter.
       tags:
@@ -63,86 +69,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActionBillSettings'
+      summary: Replace actionbillsettings by id
+      x-summary-source: derived
+      operationId: putActionbillsettingsById
+      x-operation-id-source: derived
 components:
   schemas:
-    UpdateBillSettings:
+    UpdateLinks:
       type: object
       properties:
-        billType:
-          description: Indicates the billing arrangement being applied to the matter.
-          enum:
-          - Hourly
-          - Fixed fee
-          example: Hourly
-          type: string
-        sendToEmailAddress:
-          description: The default email address to which finalized bills are sent for this matter.
-          example: john.smith@mybigcompany.com
-          type: string
-        quotedAmountIncludes:
-          description: Indicates whether any quoted amount includes fees and/or costs (disbursements).
-          enum:
-          - Fees
-          - Costs
-          - Fees and costs
-          example: Fees and costs
-          type: string
-        quotedAmount:
-          description: A quoted amount for this matter.
-          example: 5750.75
-          type: number
-          multipleOf: 0.01
-          format: money
-        isUtbmsEnabled:
-          description: Flag to indicate if UTBMS is enabled for this matter.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        utbmsTaskCategoryCode:
-          description: UTBMS task category code.
-          example: Activity Codes
-          type: string
-        defaultTimeEntryBehavior:
-          description: Default behavior for time entries.
-          enum:
-          - Bill
-          - Hide
-          - No Charge
-          example: Bill
-          type: string
-        salesTaxAppliesTo:
-          description: Indicates what sales tax is applied to.
-          enum:
-          - Fees
-          - Expenses
-          - All
-          example: Fees
-          type: string
-        discountType:
-          description: The discount type applicable for the matter.
-          enum:
-          - Amount
-          - Percentage
-          - None
-          example: Amount
-          type: string
-        discountAmount:
-          description: The amount of any discount.
-          example: 550.5
-          type: number
-          multipleOf: 0.01
-          format: money
-        isSalesTaxEnabled:
-          description: Flag to indicate if sales tax is enabled for the matter.
-          enum:
-          - T
-          - F
-          example: T
-          type: string
-        links:
-          $ref: '#/components/schemas/UpdateLinks'
+        defaultRate:
+          description: Unique identifier for the default rate applicable to this matter.
+          example: 3
+          type: integer
+        salesTaxRate:
+          description: Unique identifier for the sales tax rate applicable to the bill settings.
+          example: 3945
+          type: integer
     PagingData:
       type: object
       properties:
@@ -175,17 +118,6 @@ components:
           description: A URL to the next page of matter bill settings.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionbillsettings?page=3
-    UpdateLinks:
-      type: object
-      properties:
-        defaultRate:
-          description: Unique identifier for the default rate applicable to this matter.
-          example: 3
-          type: integer
-        salesTaxRate:
-          description: Unique identifier for the sales tax rate applicable to the bill settings.
-          example: 3945
-          type: integer
     PageMetaData:
       type: object
       properties:
@@ -281,15 +213,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/Links'
-    PagedActionBillSettings:
-      type: object
-      properties:
-        actionbillsettings:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionBillSettings'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     Links:
       type: object
       properties:
@@ -306,6 +229,93 @@ components:
           description: Unique identifier for the sales tax rate applicable to the bill settings.
           example: 3945
           type: integer
+    PagedActionBillSettings:
+      type: object
+      properties:
+        actionbillsettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionBillSettings'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    UpdateBillSettings:
+      type: object
+      properties:
+        billType:
+          description: Indicates the billing arrangement being applied to the matter.
+          enum:
+          - Hourly
+          - Fixed fee
+          example: Hourly
+          type: string
+        sendToEmailAddress:
+          description: The default email address to which finalized bills are sent for this matter.
+          example: john.smith@mybigcompany.com
+          type: string
+        quotedAmountIncludes:
+          description: Indicates whether any quoted amount includes fees and/or costs (disbursements).
+          enum:
+          - Fees
+          - Costs
+          - Fees and costs
+          example: Fees and costs
+          type: string
+        quotedAmount:
+          description: A quoted amount for this matter.
+          example: 5750.75
+          type: number
+          multipleOf: 0.01
+          format: money
+        isUtbmsEnabled:
+          description: Flag to indicate if UTBMS is enabled for this matter.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        utbmsTaskCategoryCode:
+          description: UTBMS task category code.
+          example: Activity Codes
+          type: string
+        defaultTimeEntryBehavior:
+          description: Default behavior for time entries.
+          enum:
+          - Bill
+          - Hide
+          - No Charge
+          example: Bill
+          type: string
+        salesTaxAppliesTo:
+          description: Indicates what sales tax is applied to.
+          enum:
+          - Fees
+          - Expenses
+          - All
+          example: Fees
+          type: string
+        discountType:
+          description: The discount type applicable for the matter.
+          enum:
+          - Amount
+          - Percentage
+          - None
+          example: Amount
+          type: string
+        discountAmount:
+          description: The amount of any discount.
+          example: 550.5
+          type: number
+          multipleOf: 0.01
+          format: money
+        isSalesTaxEnabled:
+          description: Flag to indicate if sales tax is enabled for the matter.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        links:
+          $ref: '#/components/schemas/UpdateLinks'
   requestBodies:
     UpdateActionBillSettings:
       content:
@@ -315,6 +325,3 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

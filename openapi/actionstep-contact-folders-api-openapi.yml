@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Contact Folders API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Contact (Document) Folders Contact Folders API
+  description: Actionstep provide a feature to store and manage documents against individual contacts. Similarly to matter documents, contact documents can be stored in a folder hierarchy. This endpoint provides functionality for the management of contact folders. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Contact Folders
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedContactFolders'
+      summary: Get contactfolders
+      x-summary-source: derived
+      operationId: getContactfolders
+      x-operation-id-source: derived
     post:
       description: Create a new contact folder.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContactFolder'
+      summary: Create contactfolders
+      x-summary-source: derived
+      operationId: postContactfolders
+      x-operation-id-source: derived
   /contactfolders/{id}:
     get:
       description: Returns a single contact folder record.
@@ -54,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContactFolder'
+      summary: Get contactfolders by id
+      x-summary-source: derived
+      operationId: getContactfoldersById
+      x-operation-id-source: derived
     put:
       description: Updates a single folder.
       tags:
@@ -76,6 +86,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContactFolder'
+      summary: Replace contactfolders by id
+      x-summary-source: derived
+      operationId: putContactfoldersById
+      x-operation-id-source: derived
     delete:
       description: Deletes a single contact folder record.
       tags:
@@ -92,6 +106,10 @@ paths:
       responses:
         '204':
           description: Success, No Content.
+      summary: Delete contactfolders by id
+      x-summary-source: derived
+      operationId: deleteContactfoldersById
+      x-operation-id-source: derived
 components:
   requestBodies:
     UpdateContactFolder:
@@ -105,6 +123,57 @@ components:
           schema:
             $ref: '#/components/schemas/CreateContactFolder'
   schemas:
+    ContactFolderLinks:
+      type: object
+      properties:
+        parentFolder:
+          description: Unique identifier for a parent folder. Null means root folder.
+          example: 8263
+          type: string
+          readOnly: true
+        participant:
+          description: Unique identifier for the contact associated with the folder.
+          example: 321845
+          type: integer
+          readOnly: true
+    PagingData:
+      type: object
+      properties:
+        contactfolders:
+          $ref: '#/components/schemas/ContactFoldersPageData'
+    CreateContactFolder:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          description: Name of the folder.
+          type: string
+          format: string
+          example: Weekly Correspondence
+        links:
+          $ref: '#/components/schemas/CreateContactFolderLinks'
+    ContactFolder:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for a single contact folder record.
+          type: integer
+          format: integer
+          example: 7384
+          readOnly: true
+        name:
+          description: Name of the folder.
+          type: string
+          format: string
+          example: Weekly Correspondence
+        links:
+          $ref: '#/components/schemas/ContactFolderLinks'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     ContactFoldersPageData:
       type: object
       properties:
@@ -132,6 +201,15 @@ components:
           description: A URL to the next page of contact folder records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/contactfolders?page=3
+    PagedContactFolders:
+      type: object
+      properties:
+        contactfolders:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactFolder'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     CreateContactFolderLinks:
       type: object
       required:
@@ -146,53 +224,6 @@ components:
           description: Unique identifier for the contact associated with the folder.
           example: 321845
           type: integer
-    ContactFolder:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for a single contact folder record.
-          type: integer
-          format: integer
-          example: 7384
-          readOnly: true
-        name:
-          description: Name of the folder.
-          type: string
-          format: string
-          example: Weekly Correspondence
-        links:
-          $ref: '#/components/schemas/ContactFolderLinks'
-    PagingData:
-      type: object
-      properties:
-        contactfolders:
-          $ref: '#/components/schemas/ContactFoldersPageData'
-    PagedContactFolders:
-      type: object
-      properties:
-        contactfolders:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactFolder'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    CreateContactFolder:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          description: Name of the folder.
-          type: string
-          format: string
-          example: Weekly Correspondence
-        links:
-          $ref: '#/components/schemas/CreateContactFolderLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
     UpdateContactFolder:
       type: object
       properties:
@@ -203,19 +234,6 @@ components:
           example: Weekly Correspondence
         links:
           $ref: '#/components/schemas/UpdateContactFolderLinks'
-    ContactFolderLinks:
-      type: object
-      properties:
-        parentFolder:
-          description: Unique identifier for a parent folder. Null means root folder.
-          example: 8263
-          type: string
-          readOnly: true
-        participant:
-          description: Unique identifier for the contact associated with the folder.
-          example: 321845
-          type: integer
-          readOnly: true
     UpdateContactFolderLinks:
       type: object
       required:
@@ -229,9 +247,3 @@ components:
           description: Unique identifier for the contact associated with the folder.
           example: 321845
           type: integer
-externalDocs:
-  description: API Developer Portal - Constructing API Requests
-  url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Participant Relationship Types API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Participant Relationship Types API
+  description: For managing the collection of Participant Relationship Types. E&OE.
   version: '1.0'
 tags:
 - name: Participant Relationship Types
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/participantrelationshiptypes'
+      summary: Get participantrelationshiptypes
+      x-summary-source: derived
+      operationId: getParticipantrelationshiptypes
+      x-operation-id-source: derived
     post:
       description: Create a new participant relationship type.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParticipantRelationshipType'
+      summary: Create participantrelationshiptypes
+      x-summary-source: derived
+      operationId: postParticipantrelationshiptypes
+      x-operation-id-source: derived
   /participantrelationshiptypes/{id}:
     get:
       description: Returns a single participant relationship type.
@@ -41,8 +47,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant relationship type. This is a composite key
-          composed from the category and relationship properties, separated by '--'.
+        description: Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'.
         required: true
         schema:
           type: string
@@ -54,6 +59,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParticipantRelationshipType'
+      summary: Get participantrelationshiptypes by id
+      x-summary-source: derived
+      operationId: getParticipantrelationshiptypesById
+      x-operation-id-source: derived
     delete:
       description: Delete a single participant relationship type.
       tags:
@@ -61,8 +70,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for the participant relationship type. This is a composite key
-          composed from the category and relationship properties, separated by '--'.
+        description: Unique identifier for the participant relationship type. This is a composite key composed from the category and relationship properties, separated by '--'.
         required: true
         schema:
           type: string
@@ -70,10 +78,31 @@ paths:
       responses:
         '204':
           description: Success, No content.
+      summary: Delete participantrelationshiptypes by id
+      x-summary-source: derived
+      operationId: deleteParticipantrelationshiptypesById
+      x-operation-id-source: derived
 components:
   schemas:
-    ParticipantRelationshipType:
+    participantrelationshiptypes:
       type: object
+      properties:
+        participantrelationshiptypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParticipantRelationshipType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PagingData:
+      type: object
+      properties:
+        participantrelationshiptypes:
+          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
+    CreateParticipantRelationshipType:
+      type: object
+      required:
+      - category
+      - relationship
       properties:
         category:
           description: The category for the relationship type.
@@ -86,10 +115,15 @@ components:
           format: string
           example: IndividualToIndividual
         relationshipType:
-          description: The name for the relationship type.
+          description: The name for the relationship type. A relationship type must be unique within a category.
           type: string
           format: string
           example: Acquaintance
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     ParticipantRelationshipTypePageData:
       type: object
       properties:
@@ -117,30 +151,8 @@ components:
           description: A URL to the next page of Participant Relationship Types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participantrelationshiptypes?page=3
-    PagingData:
+    ParticipantRelationshipType:
       type: object
-      properties:
-        participantrelationshiptypes:
-          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
-    participantrelationshiptypes:
-      type: object
-      properties:
-        participantrelationshiptypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParticipantRelationshipType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    CreateParticipantRelationshipType:
-      type: object
-      required:
-      - category
-      - relationship
       properties:
         category:
           description: The category for the relationship type.
@@ -153,8 +165,7 @@ components:
           format: string
           example: IndividualToIndividual
         relationshipType:
-          description: The name for the relationship type. A relationship type must be unique within a
-            category.
+          description: The name for the relationship type.
           type: string
           format: string
           example: Acquaintance
@@ -164,9 +175,3 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateParticipantRelationshipType'
-externalDocs:
-  description: API Developer Portal - Constructing API Requests
-  url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

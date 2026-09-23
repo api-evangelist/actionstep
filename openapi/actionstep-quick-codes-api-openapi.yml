@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Quick Codes API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Quick Codes API
+  description: This endpoint provides functionality for the management of Quick Codes. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Quick Codes
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedQuickCodes'
+      summary: Get quickcodes
+      x-summary-source: derived
+      operationId: getQuickcodes
+      x-operation-id-source: derived
     post:
       description: Create a new Quick Code.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/QuickCode'
+      summary: Create quickcodes
+      x-summary-source: derived
+      operationId: postQuickcodes
+      x-operation-id-source: derived
   /quickcodes/{id}:
     get:
       description: Returns a single Quick Code.
@@ -54,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/QuickCode'
+      summary: Get quickcodes by id
+      x-summary-source: derived
+      operationId: getQuickcodesById
+      x-operation-id-source: derived
     put:
       description: Updates a single Quick Code.
       tags:
@@ -76,9 +86,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/QuickCode'
+      summary: Replace quickcodes by id
+      x-summary-source: derived
+      operationId: putQuickcodesById
+      x-operation-id-source: derived
 components:
   schemas:
-    CreateQuickCodeLinks:
+    QuickCodeLinks:
       type: object
       properties:
         rate:
@@ -86,6 +100,19 @@ components:
           example: 546
           type: integer
           readOnly: true
+    UpdateQuickCodeLinks:
+      type: object
+      properties:
+        rate:
+          description: Unique identifier for a rate associated with the quick code.
+          example: 546
+          type: integer
+          readOnly: true
+    PagingData:
+      type: object
+      properties:
+        QuickCodes:
+          $ref: '#/components/schemas/QuickCodesPageData'
     QuickCodesPageData:
       type: object
       properties:
@@ -113,91 +140,11 @@ components:
           description: A URL to the next page of Quick Codes.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/quickcodes?page=3
-    PagedQuickCodes:
+    PageMetaData:
       type: object
       properties:
-        QuickCodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/QuickCode'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    QuickCodeLinks:
-      type: object
-      properties:
-        rate:
-          description: Unique identifier for a rate associated with the quick code.
-          example: 546
-          type: integer
-          readOnly: true
-    CreateQuickCode:
-      type: object
-      required:
-      - quickCode
-      - description
-      properties:
-        quickCode:
-          description: The value for the quick code.
-          type: string
-          format: string
-          example: Client Communications
-        description:
-          description: A description for the quick code.
-          type: string
-          format: string
-          example: For all client communications.
-        useForRetainerTransfers:
-          description: Indicates if the quick code is available for retainer transfers.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-        useForReceipts:
-          description: Indicates if the quick code is available for receipts.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-        useForTasks:
-          description: Indicates if the quick code is available for tasks.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-        useForTimeEntry:
-          description: Indicates if the quick code is available for time entry.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-        useForWithdrawals:
-          description: Indicates if the quick code is available for withdrawals.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-        links:
-          $ref: '#/components/schemas/CreateQuickCodeLinks'
-    PagingData:
-      type: object
-      properties:
-        QuickCodes:
-          $ref: '#/components/schemas/QuickCodesPageData'
+        paging:
+          $ref: '#/components/schemas/PagingData'
     QuickCode:
       type: object
       properties:
@@ -264,11 +211,14 @@ components:
           example: T
         links:
           $ref: '#/components/schemas/QuickCodeLinks'
-    PageMetaData:
+    CreateQuickCodeLinks:
       type: object
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        rate:
+          description: Unique identifier for a rate associated with the quick code.
+          example: 546
+          type: integer
+          readOnly: true
     UpdateQuickCode:
       type: object
       properties:
@@ -329,28 +279,89 @@ components:
           example: T
         links:
           $ref: '#/components/schemas/UpdateQuickCodeLinks'
-    UpdateQuickCodeLinks:
+    PagedQuickCodes:
       type: object
       properties:
-        rate:
-          description: Unique identifier for a rate associated with the quick code.
-          example: 546
-          type: integer
-          readOnly: true
+        QuickCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickCode'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    CreateQuickCode:
+      type: object
+      required:
+      - quickCode
+      - description
+      properties:
+        quickCode:
+          description: The value for the quick code.
+          type: string
+          format: string
+          example: Client Communications
+        description:
+          description: A description for the quick code.
+          type: string
+          format: string
+          example: For all client communications.
+        useForRetainerTransfers:
+          description: Indicates if the quick code is available for retainer transfers.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+        useForReceipts:
+          description: Indicates if the quick code is available for receipts.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+        useForTasks:
+          description: Indicates if the quick code is available for tasks.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+        useForTimeEntry:
+          description: Indicates if the quick code is available for time entry.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+        useForWithdrawals:
+          description: Indicates if the quick code is available for withdrawals.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+        links:
+          $ref: '#/components/schemas/CreateQuickCodeLinks'
   requestBodies:
-    UpdateQuickCode:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateQuickCode'
     CreateQuickCode:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateQuickCode'
+    UpdateQuickCode:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateQuickCode'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

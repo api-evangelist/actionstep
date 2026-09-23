@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Primary Language API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Primary Language API
+  description: For retrieving primary language lookup values used by the Demograhic Information section of a participant data record. **NB:** Applicable for ANZ CLC systems only. E&OE.
   version: '1.0'
 tags:
 - name: Primary Language
@@ -20,21 +18,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedPrimaryLanguage'
+      summary: Get primarylanguage
+      x-summary-source: derived
+      operationId: getPrimarylanguage
+      x-operation-id-source: derived
 components:
   schemas:
-    PrimaryLanguage:
-      type: object
-      properties:
-        language:
-          description: Language name.
-          example: Alngith
-          type: string
-          format: string
     PagingData:
       type: object
       properties:
         primarylanguage:
           $ref: '#/components/schemas/PrimaryLanguagePageData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     PagedPrimaryLanguage:
       type: object
       properties:
@@ -44,6 +43,14 @@ components:
             $ref: '#/components/schemas/PrimaryLanguage'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    PrimaryLanguage:
+      type: object
+      properties:
+        language:
+          description: Language name.
+          example: Alngith
+          type: string
+          format: string
     PrimaryLanguagePageData:
       type: object
       properties:
@@ -71,14 +78,6 @@ components:
           description: A URL to the next page of primary languages.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/primarylanguage?page=3
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

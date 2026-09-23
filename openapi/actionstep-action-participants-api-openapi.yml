@@ -1,17 +1,14 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Action Participants API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Action (Matter) Participants Action Participants API
+  description: For retrieving Matter participants. For historical reasons Matters are referred to as *actions* in this version of the API. The Action Participants resource represents participants for an Matter. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: Action Participants
 paths:
   /actionparticipants:
     get:
-      description: Returns a collection of Matter participants. For information on how to construct requests
-        filtering by various properties, please refer to the API Developer Portal.
+      description: Returns a collection of Matter participants. For information on how to construct requests filtering by various properties, please refer to the API Developer Portal.
       tags:
       - Action Participants
       responses:
@@ -21,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedActionParticipants'
+      summary: Get actionparticipants
+      x-summary-source: derived
+      operationId: getActionparticipants
+      x-operation-id-source: derived
     post:
       description: Create a new Matter participant.
       tags:
@@ -34,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActionParticipants'
+      summary: Create actionparticipants
+      x-summary-source: derived
+      operationId: postActionparticipants
+      x-operation-id-source: derived
   /actionparticipants/{id}:
     get:
       description: Returns a single Matter participant.
@@ -42,9 +47,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for a Matter Participant. The identifier is a composite value composed
-          from the Matter identifier, the participant type identifier, and the participant identifier,
-          separated by "--".
+        description: Unique identifier for a Matter Participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by "--".
         required: true
         schema:
           type: string
@@ -56,6 +59,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActionParticipants'
+      summary: Get actionparticipants by id
+      x-summary-source: derived
+      operationId: getActionparticipantsById
+      x-operation-id-source: derived
     delete:
       description: Removes a participant from a Matter.
       tags:
@@ -63,9 +70,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for an Matter participant. The identifier is a composite value
-          composed from the Matter identifier, the participant type identifier, and the participant identifier,
-          separated by "--".
+        description: Unique identifier for an Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by "--".
         required: true
         schema:
           type: string
@@ -73,14 +78,23 @@ paths:
       responses:
         '204':
           description: Success, No content.
+      summary: Delete actionparticipants by id
+      x-summary-source: derived
+      operationId: deleteActionparticipantsById
+      x-operation-id-source: derived
 components:
   schemas:
-    CreateActionParticipants:
+    PagingData:
       type: object
       properties:
         actionparticipants:
-          $ref: '#/components/schemas/CreateActionParticipantsLinks'
-    CreateActionParticipantsLinksLink:
+          $ref: '#/components/schemas/ActionParticipantsPageData'
+    CreateActionParticipantsLinks:
+      type: object
+      properties:
+        links:
+          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
+    ActionParticipantsLinks:
       type: object
       properties:
         action:
@@ -95,26 +109,6 @@ components:
           description: Unique identifier of the participant.
           example: 11
           type: integer
-    ActionParticipants:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the Matter participant. The identifier is a composite value
-            composed from the Matter identifier, the participant type identifier, and the participant
-            identifier, separated by "--".
-          example: 1024--31--11
-          type: string
-        participantNumber:
-          description: The order the Matter participants were added to an action.
-          example: 3
-          type: integer
-        links:
-          $ref: '#/components/schemas/ActionParticipantsLinks'
-    PagingData:
-      type: object
-      properties:
-        actionparticipants:
-          $ref: '#/components/schemas/ActionParticipantsPageData'
     PageMetaData:
       type: object
       properties:
@@ -156,7 +150,7 @@ components:
             $ref: '#/components/schemas/ActionParticipants'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    ActionParticipantsLinks:
+    CreateActionParticipantsLinksLink:
       type: object
       properties:
         action:
@@ -171,11 +165,24 @@ components:
           description: Unique identifier of the participant.
           example: 11
           type: integer
-    CreateActionParticipantsLinks:
+    ActionParticipants:
       type: object
       properties:
+        id:
+          description: Unique identifier for the Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by "--".
+          example: 1024--31--11
+          type: string
+        participantNumber:
+          description: The order the Matter participants were added to an action.
+          example: 3
+          type: integer
         links:
-          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
+          $ref: '#/components/schemas/ActionParticipantsLinks'
+    CreateActionParticipants:
+      type: object
+      properties:
+        actionparticipants:
+          $ref: '#/components/schemas/CreateActionParticipantsLinks'
   requestBodies:
     CreateActionParticipants:
       content:
@@ -185,6 +192,3 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

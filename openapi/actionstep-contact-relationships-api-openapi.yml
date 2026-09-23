@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Contact Relationships API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Contact Relationships API
+  description: Actionstep provide a feature to manage relationships between contacts.
   version: '1.0'
 tags:
 - name: Contact Relationships
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedContactRelationships'
+      summary: Get contactrelationships
+      x-summary-source: derived
+      operationId: getContactrelationships
+      x-operation-id-source: derived
     post:
       description: Create a new contact relationship.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateContactRelationship'
+      summary: Create contactrelationships
+      x-summary-source: derived
+      operationId: postContactrelationships
+      x-operation-id-source: derived
   /contactrelationships/{id}:
     get:
       description: Returns a single contact relationship record.
@@ -41,8 +47,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for a single contact relationship record. The identifier is composed
-          from the relationship, fromContact, and toContact properties separated by "--".
+        description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
         required: true
         schema:
           type: string
@@ -55,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContactRelationship'
+      summary: Get contactrelationships by id
+      x-summary-source: derived
+      operationId: getContactrelationshipsById
+      x-operation-id-source: derived
     delete:
       description: Deletes a single contact relationship record.
       tags:
@@ -62,8 +71,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: Unique identifier for a single contact relationship record. The identifier is composed
-          from the relationship, fromContact, and toContact properties separated by "--".
+        description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
         required: true
         schema:
           type: string
@@ -72,8 +80,29 @@ paths:
       responses:
         '204':
           description: Success, No Content.
+      summary: Delete contactrelationships by id
+      x-summary-source: derived
+      operationId: deleteContactrelationshipsById
+      x-operation-id-source: derived
 components:
   schemas:
+    CreateContactRelationship:
+      type: object
+      required:
+      - relationship
+      properties:
+        relationship:
+          description: The relationship name between the two contacts.
+          type: string
+          format: string
+          example: Father
+        links:
+          $ref: '#/components/schemas/CreateContactRelationshipLinks'
+    PagingData:
+      type: object
+      properties:
+        contactrelationships:
+          $ref: '#/components/schemas/ContactRelationshipsPageData'
     ContactRelationshipsPageData:
       type: object
       properties:
@@ -101,12 +130,25 @@ components:
           description: A URL to the next page of contact relationship records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/contactrelationships?page=3
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    PagedContactRelationships:
+      type: object
+      properties:
+        contactrelationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactRelationship'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     ContactRelationship:
       type: object
       properties:
         id:
-          description: Unique identifier for a single contact relationship record. The identifier is composed
-            from the relationship, fromContact, and toContact properties separated by "--".
+          description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
           type: string
           format: string
           example: Father-41854-845258
@@ -118,15 +160,6 @@ components:
           example: Father
         links:
           $ref: '#/components/schemas/ContactRelationshipLinks'
-    PagedContactRelationships:
-      type: object
-      properties:
-        contactrelationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactRelationship'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     CreateContactRelationshipLinks:
       type: object
       required:
@@ -141,23 +174,6 @@ components:
           description: Unique identifier for the contact to which a relationship is to be established.
           example: 321845
           type: integer
-    PagingData:
-      type: object
-      properties:
-        contactrelationships:
-          $ref: '#/components/schemas/ContactRelationshipsPageData'
-    CreateContactRelationship:
-      type: object
-      required:
-      - relationship
-      properties:
-        relationship:
-          description: The relationship name between the two contacts.
-          type: string
-          format: string
-          example: Father
-        links:
-          $ref: '#/components/schemas/CreateContactRelationshipLinks'
     ContactRelationshipLinks:
       type: object
       properties:
@@ -171,11 +187,6 @@ components:
           example: 321845
           type: integer
           readOnly: true
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
   requestBodies:
     CreateContactRelationship:
       content:
@@ -183,8 +194,5 @@ components:
           schema:
             $ref: '#/components/schemas/CreateContactRelationship'
 externalDocs:
-  description: API Developer Portal - Constructing API Requests
-  url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml
+  description: Tutorial - Working with Contact Relationships
+  url: https://docs.actionstep.com/tutorial-contact-relationships/

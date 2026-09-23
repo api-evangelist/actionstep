@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Gender Types API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Gender Types API
+  description: For managing custom gender types. E&OE.
   version: '1.0'
 tags:
 - name: Gender Types
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedGenderTypes'
+      summary: Get gendertypes
+      x-summary-source: derived
+      operationId: getGendertypes
+      x-operation-id-source: derived
     post:
       description: Create a new custom gender type.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenderType'
+      summary: Create gendertypes
+      x-summary-source: derived
+      operationId: postGendertypes
+      x-operation-id-source: derived
   /gendertypes/{genderTypeName}:
     get:
       description: Returns a single custom gender type.
@@ -53,6 +59,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenderType'
+      summary: Get gendertypes by gender type name
+      x-summary-source: derived
+      operationId: getGendertypesByGenderTypeName
+      x-operation-id-source: derived
     put:
       description: Update a single custom gender type.
       tags:
@@ -74,9 +84,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenderType'
+      summary: Replace gendertypes by gender type name
+      x-summary-source: derived
+      operationId: putGendertypesByGenderTypeName
+      x-operation-id-source: derived
     delete:
-      description: Delete a custom gender type. Please note - you cannot delete a custom gender type if
-        it is already assigned to an existing participant record.
+      description: Delete a custom gender type. Please note - you cannot delete a custom gender type if it is already assigned to an existing participant record.
       tags:
       - Gender Types
       parameters:
@@ -90,8 +103,31 @@ paths:
       responses:
         '204':
           description: Success, No content.
+      summary: Delete gendertypes by gender type name
+      x-summary-source: derived
+      operationId: deleteGendertypesByGenderTypeName
+      x-operation-id-source: derived
 components:
   schemas:
+    UpdateGenderType:
+      type: object
+      required:
+      - pronounType
+      properties:
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
+    PagingData:
+      type: object
+      properties:
+        gendertypes:
+          $ref: '#/components/schemas/GenderTypesPageData'
     GenderType:
       type: object
       properties:
@@ -108,11 +144,11 @@ components:
           - Company
           example: Neutral
           type: string
-    PagingData:
+    PageMetaData:
       type: object
       properties:
-        gendertypes:
-          $ref: '#/components/schemas/GenderTypesPageData'
+        paging:
+          $ref: '#/components/schemas/PagingData'
     PagedGenderTypes:
       type: object
       properties:
@@ -141,11 +177,6 @@ components:
           - Company
           example: Neutral
           type: string
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
     GenderTypesPageData:
       type: object
       properties:
@@ -173,34 +204,14 @@ components:
           description: A URL to the next page of custom gender types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=3
-    UpdateGenderType:
-      type: object
-      required:
-      - pronounType
-      properties:
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
   requestBodies:
-    UpdateGenderType:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateGenderType'
     CreateGenderType:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateGenderType'
-externalDocs:
-  description: API Developer Portal - Constructing API Requests
-  url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml
+    UpdateGenderType:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateGenderType'

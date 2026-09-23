@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings File Notes API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: File Notes API
+  description: For retrieving and managing file notes. For information of how to construct requests utilising fieldsets, sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
   version: '1.0'
 tags:
 - name: File Notes
@@ -20,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PagedFileNotes'
+      summary: Get filenotes
+      x-summary-source: derived
+      operationId: getFilenotes
+      x-operation-id-source: derived
     post:
       description: Create a new file note.
       tags:
@@ -33,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FileNote'
+      summary: Create filenotes
+      x-summary-source: derived
+      operationId: postFilenotes
+      x-operation-id-source: derived
   /filenotes/{id}:
     get:
       description: Returns a single file note.
@@ -54,6 +60,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FileNote'
+      summary: Get filenotes by id
+      x-summary-source: derived
+      operationId: getFilenotesById
+      x-operation-id-source: derived
     put:
       description: Update a file note.
       tags:
@@ -76,6 +86,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FileNote'
+      summary: Replace filenotes by id
+      x-summary-source: derived
+      operationId: putFilenotesById
+      x-operation-id-source: derived
     delete:
       description: Delete a file note.
       tags:
@@ -92,8 +106,115 @@ paths:
       responses:
         '204':
           description: Success, No Content.
+      summary: Delete filenotes by id
+      x-summary-source: derived
+      operationId: deleteFilenotesById
+      x-operation-id-source: derived
 components:
   schemas:
+    FileNote:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the file note.
+          example: 2347
+          type: integer
+          readOnly: true
+        enteredTimestamp:
+          description: The date and time the file note is entered.
+          example: 2022-05-03 00:09:00+12:00
+          format: timestamp
+          type: string
+          readOnly: true
+        text:
+          description: Content of the file note.
+          example: Client is requesting follow up meeting this week.
+          type: string
+        enteredBy:
+          description: The Actionstep user who entered the file note.
+          example: Smith, John
+          type: string
+          readOnly: true
+        source:
+          description: Indicates the source of the file note.
+          enum:
+          - System
+          - User
+          example: User
+          type: string
+        noteTimestamp:
+          description: The date and time for the file note.
+          example: 2023-06-03 00:09:30+12:00
+          format: timestamp
+          type: string
+        links:
+          $ref: '#/components/schemas/FileNoteLinks'
+    UpdateFileNote:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          description: Content of the file note.
+          example: Client is requesting follow up meeting this week.
+          type: string
+        noteTimestamp:
+          description: The date and time for the file note.
+          example: 2023-06-03 00:09:30+12:00
+          format: timestamp
+          type: string
+        links:
+          $ref: '#/components/schemas/UpdateFileNoteLinks'
+    PagingData:
+      type: object
+      properties:
+        filenotes:
+          $ref: '#/components/schemas/FileNotesPageData'
+    UpdateFileNoteLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the file note is associated.
+          example: 34
+          type: integer
+        document:
+          description: Unique identifier of a document associated to the file note.
+          example: 8376
+          type: integer
+        tags:
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag. The supplied list of tags will replace in totality any existing tags. To remove all tags specify an empty array.
+          example:
+          - 1283
+          - 1934
+          type: array
+          items:
+            type: integer
+    CreateFileNoteLinks:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          description: Unique identifier of the matter to which the file note is associated.
+          example: 34
+          type: integer
+        document:
+          description: Unique identifier of a document associated to the file note.
+          example: 8376
+          type: integer
+        tags:
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag.
+          example:
+          - 1283
+          - 1934
+          type: array
+          items:
+            type: integer
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     CreateFileNote:
       type: object
       required:
@@ -144,96 +265,6 @@ components:
           description: A URL to the next page of file notes.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/filenotes?page=3
-    CreateFileNoteLinks:
-      type: object
-      required:
-      - action
-      properties:
-        action:
-          description: Unique identifier of the matter to which the file note is associated.
-          example: 34
-          type: integer
-        document:
-          description: Unique identifier of a document associated to the file note.
-          example: 8376
-          type: integer
-        tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier
-            for the tag.
-          example:
-          - 1283
-          - 1934
-          type: array
-          items:
-            type: integer
-    UpdateFileNoteLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the file note is associated.
-          example: 34
-          type: integer
-        document:
-          description: Unique identifier of a document associated to the file note.
-          example: 8376
-          type: integer
-        tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier
-            for the tag. The supplied list of tags will replace in totality any existing tags. To remove
-            all tags specify an empty array.
-          example:
-          - 1283
-          - 1934
-          type: array
-          items:
-            type: integer
-    PagingData:
-      type: object
-      properties:
-        filenotes:
-          $ref: '#/components/schemas/FileNotesPageData'
-    FileNote:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the file note.
-          example: 2347
-          type: integer
-          readOnly: true
-        enteredTimestamp:
-          description: The date and time the file note is entered.
-          example: 2022-05-03 00:09:00+12:00
-          format: timestamp
-          type: string
-          readOnly: true
-        text:
-          description: Content of the file note.
-          example: Client is requesting follow up meeting this week.
-          type: string
-        enteredBy:
-          description: The Actionstep user who entered the file note.
-          example: Smith, John
-          type: string
-          readOnly: true
-        source:
-          description: Indicates the source of the file note.
-          enum:
-          - System
-          - User
-          example: User
-          type: string
-        noteTimestamp:
-          description: The date and time for the file note.
-          example: 2023-06-03 00:09:30+12:00
-          format: timestamp
-          type: string
-        links:
-          $ref: '#/components/schemas/FileNoteLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
     FileNoteLinks:
       type: object
       properties:
@@ -251,30 +282,13 @@ components:
           type: integer
           readOnly: true
         tags:
-          description: Zero or more tags associated with the file note. Each tag is the unique identifier
-            for the tag.
+          description: Zero or more tags associated with the file note. Each tag is the unique identifier for the tag.
           example:
           - 1283
           - 1934
           type: array
           items:
             type: integer
-    UpdateFileNote:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          description: Content of the file note.
-          example: Client is requesting follow up meeting this week.
-          type: string
-        noteTimestamp:
-          description: The date and time for the file note.
-          example: 2023-06-03 00:09:30+12:00
-          format: timestamp
-          type: string
-        links:
-          $ref: '#/components/schemas/UpdateFileNoteLinks'
     PagedFileNotes:
       type: object
       properties:
@@ -298,6 +312,3 @@ components:
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml

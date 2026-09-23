@@ -1,10 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Action (Matter) Bill Settings Action Bill Settings Participant Additional Notification Methods
-    API
-  description: For retrieving Action Bill Settings. For historical reasons Matters are referred to as
-    *actions* in this version of the API. For information of how to construct requests utilising fieldsets,
-    sorting, paging, filters, and '*includes*', please refer to the API Developer Portal. E&OE.
+  title: Participant Additional Notification Methods API
+  description: For managing the collection of Participant Additional Notification Methods. E&OE.
   version: '1.0'
 tags:
 - name: Participant Additional Notification Methods
@@ -21,6 +18,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/participantadditionalnotificationmethods'
+      summary: Get participantadditionalnotificationmethods
+      x-summary-source: derived
+      operationId: getParticipantadditionalnotificationmethods
+      x-operation-id-source: derived
     post:
       description: Create a new Participant Additional Notification Method.
       tags:
@@ -34,6 +35,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParticipantAdditionalNotificationMethod'
+      summary: Create participantadditionalnotificationmethods
+      x-summary-source: derived
+      operationId: postParticipantadditionalnotificationmethods
+      x-operation-id-source: derived
   /participantadditionalnotificationmethods/{id}:
     get:
       description: Returns a single Participant Additional Notification Method.
@@ -54,6 +59,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParticipantAdditionalNotificationMethod'
+      summary: Get participantadditionalnotificationmethods by id
+      x-summary-source: derived
+      operationId: getParticipantadditionalnotificationmethodsById
+      x-operation-id-source: derived
     put:
       description: Updates a single Participant Additional Notification Method record.
       tags:
@@ -76,6 +85,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParticipantAdditionalNotificationMethod'
+      summary: Replace participantadditionalnotificationmethods by id
+      x-summary-source: derived
+      operationId: putParticipantadditionalnotificationmethodsById
+      x-operation-id-source: derived
     delete:
       description: Delete a single Participant Additional Notification Method record.
       tags:
@@ -91,8 +104,56 @@ paths:
       responses:
         '204':
           description: Success, No content.
+      summary: Delete participantadditionalnotificationmethods by id
+      x-summary-source: derived
+      operationId: deleteParticipantadditionalnotificationmethodsById
+      x-operation-id-source: derived
 components:
   schemas:
+    UpdateParticipantAdditionalNotificationMethodLinks:
+      type: object
+      required:
+      - participant
+      properties:
+        participant:
+          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          example: 8945
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        participantadditionalnotificationmethods:
+          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodPageData'
+    ParticipantAdditionalNotificationMethod:
+      type: object
+      properties:
+        notificationMethod:
+          description: The method of notification.
+          enum:
+          - E-Mail
+          - SMS
+          - Phone
+          - Fax
+          - Mail
+          - Skype
+          - Facebook
+          - IM
+          - Twitter
+          type: string
+          format: string
+          example: Facebook
+        address:
+          description: The address applicable to the notification method.
+          type: string
+          format: string
+          example: john.smith@mycompany.com
+        notes:
+          description: Optional notes for this notification method.
+          type: string
+          format: string
+          example: Phone number of secondary property.
+        links:
+          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodLinks'
     participantadditionalnotificationmethods:
       type: object
       properties:
@@ -102,39 +163,11 @@ components:
             $ref: '#/components/schemas/ParticipantAdditionalNotificationMethod'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    PagingData:
+    PageMetaData:
       type: object
       properties:
-        participantadditionalnotificationmethods:
-          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodPageData'
-    ParticipantAdditionalNotificationMethodPageData:
-      type: object
-      properties:
-        recordCount:
-          description: The total number of Participant Additional Notification Methods returned by the
-            underlying query.
-          type: integer
-          example: 4
-        pageCount:
-          description: The total number of pages generated by the underlying query.
-          type: integer
-          example: 8
-        page:
-          description: The page number for this page of Participant Additional Notification Methods.
-          type: integer
-          example: 2
-        pageSize:
-          description: Page size.
-          type: integer
-          example: 50
-        prevPage:
-          description: A URL to the previous page of Participant Additional Notification Methods.
-          type: string
-          example: https://ap-southeast-2.actionstep.com/api/rest/participantadditionalnotificationmethods?page=1
-        nextPage:
-          description: A URL to the next page of Participant Additional Notification Methods.
-          type: string
-          example: https://ap-southeast-2.actionstep.com/api/rest/participantadditionalnotificationmethods?page=3
+        paging:
+          $ref: '#/components/schemas/PagingData'
     CreateParticipantAdditionalNotificationMethod:
       type: object
       required:
@@ -168,14 +201,47 @@ components:
           example: Phone number of secondary property.
         links:
           $ref: '#/components/schemas/CreateParticipantAdditionalNotificationMethodLinks'
-    UpdateParticipantAdditionalNotificationMethodLinks:
+    ParticipantAdditionalNotificationMethodPageData:
+      type: object
+      properties:
+        recordCount:
+          description: The total number of Participant Additional Notification Methods returned by the underlying query.
+          type: integer
+          example: 4
+        pageCount:
+          description: The total number of pages generated by the underlying query.
+          type: integer
+          example: 8
+        page:
+          description: The page number for this page of Participant Additional Notification Methods.
+          type: integer
+          example: 2
+        pageSize:
+          description: Page size.
+          type: integer
+          example: 50
+        prevPage:
+          description: A URL to the previous page of Participant Additional Notification Methods.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/participantadditionalnotificationmethods?page=1
+        nextPage:
+          description: A URL to the next page of Participant Additional Notification Methods.
+          type: string
+          example: https://ap-southeast-2.actionstep.com/api/rest/participantadditionalnotificationmethods?page=3
+    ParticipantAdditionalNotificationMethodLinks:
+      type: object
+      properties:
+        participant:
+          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          example: 8945
+          type: integer
+    CreateParticipantAdditionalNotificationMethodLinks:
       type: object
       required:
       - participant
       properties:
         participant:
-          description: Unique identifier of the participant to whom this additional notification method
-            is to be associated.
+          description: Unique identifier of the participant to whom this additional notification method is to be associated.
           example: 8945
           type: integer
     UpdateParticipantAdditionalNotificationMethod:
@@ -211,59 +277,6 @@ components:
           example: Phone number of secondary property.
         links:
           $ref: '#/components/schemas/UpdateParticipantAdditionalNotificationMethodLinks'
-    CreateParticipantAdditionalNotificationMethodLinks:
-      type: object
-      required:
-      - participant
-      properties:
-        participant:
-          description: Unique identifier of the participant to whom this additional notification method
-            is to be associated.
-          example: 8945
-          type: integer
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    ParticipantAdditionalNotificationMethodLinks:
-      type: object
-      properties:
-        participant:
-          description: Unique identifier of the participant to whom this additional notification method
-            is to be associated.
-          example: 8945
-          type: integer
-    ParticipantAdditionalNotificationMethod:
-      type: object
-      properties:
-        notificationMethod:
-          description: The method of notification.
-          enum:
-          - E-Mail
-          - SMS
-          - Phone
-          - Fax
-          - Mail
-          - Skype
-          - Facebook
-          - IM
-          - Twitter
-          type: string
-          format: string
-          example: Facebook
-        address:
-          description: The address applicable to the notification method.
-          type: string
-          format: string
-          example: john.smith@mycompany.com
-        notes:
-          description: Optional notes for this notification method.
-          type: string
-          format: string
-          example: Phone number of secondary property.
-        links:
-          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodLinks'
   requestBodies:
     UpdateParticipantAdditionalNotificationMethod:
       content:
@@ -275,9 +288,3 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateParticipantAdditionalNotificationMethod'
-externalDocs:
-  description: API Developer Portal - Constructing API Requests
-  url: https://docs.actionstep.com/api-requests/
-servers:
-- url: https://api.actionstep.com
-  description: Base URL reconciled from apis.yml
