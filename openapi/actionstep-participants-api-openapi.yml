@@ -105,7 +105,12 @@ components:
           description: Unique identifier of the division to which the participant is associated.
           example: 1
           type: integer
-    ParticipantLinks:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    UpdateParticipantsLinks:
       type: object
       properties:
         physicalCountry:
@@ -125,9 +130,19 @@ components:
       properties:
         participants:
           $ref: '#/components/schemas/ParticipantsPageData'
-    UpdateParticipant:
+    CreateParticipant:
       type: object
+      required:
+      - displayName
       properties:
+        displayName:
+          description: Display name for the participant. This is typically the first name and last name displayed in the order specified by your system's settings.
+          example: Bond, James
+          type: string
+        displayInitials:
+          description: Initials for the participant (also referred to as Timekeeper Initials). Please note display initials must be unique across the whole system.
+          example: JB
+          type: string
         isCompany:
           description: Indicates if the participant is an individual or a company/organisation.
           example: F
@@ -151,10 +166,6 @@ components:
         lastName:
           description: Last name.
           example: Bond
-          type: string
-        displayInitials:
-          description: Initials for the participant (also referred to as Timekeeper Initials). Please note display initials must be unique across the whole system.
-          example: JB
           type: string
         suffix:
           description: Name suffix.
@@ -448,7 +459,7 @@ components:
           example: DDH-3838939-333
           type: string
         links:
-          $ref: '#/components/schemas/UpdateParticipantsLinks'
+          $ref: '#/components/schemas/CreateParticipantsLinks'
     Participant:
       type: object
       properties:
@@ -781,26 +792,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/ParticipantLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    UpdateParticipantsLinks:
-      type: object
-      properties:
-        physicalCountry:
-          description: The 2 character ISO code for the country.
-          example: NZ
-          type: string
-        mailingCountry:
-          description: The 2 character ISO code for the mailing country.
-          example: NZ
-          type: string
-        division:
-          description: Unique identifier of the division to which the participant is associated.
-          example: 1
-          type: integer
     ParticipantsPageData:
       type: object
       properties:
@@ -828,19 +819,9 @@ components:
           description: A URL to the next page of participants.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participants?page=3
-    CreateParticipant:
+    UpdateParticipant:
       type: object
-      required:
-      - displayName
       properties:
-        displayName:
-          description: Display name for the participant. This is typically the first name and last name displayed in the order specified by your system's settings.
-          example: Bond, James
-          type: string
-        displayInitials:
-          description: Initials for the participant (also referred to as Timekeeper Initials). Please note display initials must be unique across the whole system.
-          example: JB
-          type: string
         isCompany:
           description: Indicates if the participant is an individual or a company/organisation.
           example: F
@@ -864,6 +845,10 @@ components:
         lastName:
           description: Last name.
           example: Bond
+          type: string
+        displayInitials:
+          description: Initials for the participant (also referred to as Timekeeper Initials). Please note display initials must be unique across the whole system.
+          example: JB
           type: string
         suffix:
           description: Name suffix.
@@ -1157,7 +1142,22 @@ components:
           example: DDH-3838939-333
           type: string
         links:
-          $ref: '#/components/schemas/CreateParticipantsLinks'
+          $ref: '#/components/schemas/UpdateParticipantsLinks'
+    ParticipantLinks:
+      type: object
+      properties:
+        physicalCountry:
+          description: The 2 character ISO code for the country.
+          example: NZ
+          type: string
+        mailingCountry:
+          description: The 2 character ISO code for the mailing country.
+          example: NZ
+          type: string
+        division:
+          description: Unique identifier of the division to which the participant is associated.
+          example: 1
+          type: integer
     PagedParticipants:
       type: object
       properties:

@@ -111,36 +111,25 @@ paths:
       operationId: deleteContactfoldersById
       x-operation-id-source: derived
 components:
-  requestBodies:
-    UpdateContactFolder:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateContactFolder'
-    CreateContactFolder:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateContactFolder'
   schemas:
-    ContactFolderLinks:
+    PageMetaData:
       type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    UpdateContactFolderLinks:
+      type: object
+      required:
+      - participant
       properties:
         parentFolder:
           description: Unique identifier for a parent folder. Null means root folder.
           example: 8263
           type: string
-          readOnly: true
         participant:
           description: Unique identifier for the contact associated with the folder.
           example: 321845
           type: integer
-          readOnly: true
-    PagingData:
-      type: object
-      properties:
-        contactfolders:
-          $ref: '#/components/schemas/ContactFoldersPageData'
     CreateContactFolder:
       type: object
       required:
@@ -153,27 +142,21 @@ components:
           example: Weekly Correspondence
         links:
           $ref: '#/components/schemas/CreateContactFolderLinks'
-    ContactFolder:
+    UpdateContactFolder:
       type: object
       properties:
-        id:
-          description: Unique identifier for a single contact folder record.
-          type: integer
-          format: integer
-          example: 7384
-          readOnly: true
         name:
           description: Name of the folder.
           type: string
           format: string
           example: Weekly Correspondence
         links:
-          $ref: '#/components/schemas/ContactFolderLinks'
-    PageMetaData:
+          $ref: '#/components/schemas/UpdateContactFolderLinks'
+    PagingData:
       type: object
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        contactfolders:
+          $ref: '#/components/schemas/ContactFoldersPageData'
     ContactFoldersPageData:
       type: object
       properties:
@@ -201,6 +184,19 @@ components:
           description: A URL to the next page of contact folder records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/contactfolders?page=3
+    ContactFolderLinks:
+      type: object
+      properties:
+        parentFolder:
+          description: Unique identifier for a parent folder. Null means root folder.
+          example: 8263
+          type: string
+          readOnly: true
+        participant:
+          description: Unique identifier for the contact associated with the folder.
+          example: 321845
+          type: integer
+          readOnly: true
     PagedContactFolders:
       type: object
       properties:
@@ -210,6 +206,22 @@ components:
             $ref: '#/components/schemas/ContactFolder'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    ContactFolder:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for a single contact folder record.
+          type: integer
+          format: integer
+          example: 7384
+          readOnly: true
+        name:
+          description: Name of the folder.
+          type: string
+          format: string
+          example: Weekly Correspondence
+        links:
+          $ref: '#/components/schemas/ContactFolderLinks'
     CreateContactFolderLinks:
       type: object
       required:
@@ -224,26 +236,14 @@ components:
           description: Unique identifier for the contact associated with the folder.
           example: 321845
           type: integer
+  requestBodies:
     UpdateContactFolder:
-      type: object
-      properties:
-        name:
-          description: Name of the folder.
-          type: string
-          format: string
-          example: Weekly Correspondence
-        links:
-          $ref: '#/components/schemas/UpdateContactFolderLinks'
-    UpdateContactFolderLinks:
-      type: object
-      required:
-      - participant
-      properties:
-        parentFolder:
-          description: Unique identifier for a parent folder. Null means root folder.
-          example: 8263
-          type: string
-        participant:
-          description: Unique identifier for the contact associated with the folder.
-          example: 321845
-          type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateContactFolder'
+    CreateContactFolder:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateContactFolder'

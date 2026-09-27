@@ -111,34 +111,18 @@ paths:
       operationId: deleteDatacollectionfieldById
       x-operation-id-source: derived
 components:
+  requestBodies:
+    UpdateDataCollectionField:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateDataCollectionField'
+    CreateDataCollectionField:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateDataCollectionField'
   schemas:
-    PagingData:
-      type: object
-      properties:
-        datacollectionfields:
-          $ref: '#/components/schemas/DataCollectionFieldsPageData'
-    UpdateDataCollectionFieldLinks:
-      type: object
-      required:
-      - dataCollection
-      properties:
-        dataCollection:
-          description: Unique identifier of the data collection to which the data collection field is associated.
-          example: 100
-          type: integer
-        tag:
-          description: Unique identifier for a tag associated with this data collection field.
-          example: 20
-          type: integer
-    PagedDataCollectionFields:
-      type: object
-      properties:
-        datacollectionfields:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataCollectionField'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     DataCollectionField:
       type: object
       properties:
@@ -211,6 +195,109 @@ components:
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
+    CreateDataCollectionFieldLinks:
+      type: object
+      required:
+      - dataCollection
+      properties:
+        dataCollection:
+          description: Unique identifier of the data collection to which the data collection field is associated.
+          example: 100
+          type: integer
+        tag:
+          description: Unique identifier for a tag associated with this data collection field.
+          example: 20
+          type: integer
+    PagedDataCollectionFields:
+      type: object
+      properties:
+        datacollectionfields:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataCollectionField'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PagingData:
+      type: object
+      properties:
+        datacollectionfields:
+          $ref: '#/components/schemas/DataCollectionFieldsPageData'
+    DataCollectionFieldLinks:
+      type: object
+      properties:
+        dataCollection:
+          description: Unique identifier of the data collection to which the data collection field is associated.
+          example: 100
+          type: integer
+        tag:
+          description: Unique identifier for a tag associated with this data collection field.
+          example: 20
+          type: integer
+    CreateDataCollectionField:
+      type: object
+      required:
+      - name
+      - dataType
+      properties:
+        name:
+          description: Name for the data collection field. Please note the name cannot be changed after the data collection field has been created.
+          example: ContractDate
+          type: string
+        dataType:
+          description: Data type for the data collection field.
+          enum:
+          - Appointment
+          - AutoNumber
+          - AutoNumberDC
+          - Boolean
+          - Date
+          - DateNM
+          - DateTime
+          - DateTimeNM
+          - DropDown
+          - DropDownMulti
+          - HtmlReadOnly
+          - Money
+          - Number
+          - Participant
+          - Str255
+          - Str255Protected
+          - TextArea
+          example: Number
+          type: string
+        label:
+          description: Label for the data collection field.
+          example: Contract Date
+          type: string
+        formOrder:
+          description: The data field's display position on the form.
+          example: 5
+          type: integer
+        listOrder:
+          description: Unknown.
+          example: 2
+          type: integer
+        required:
+          description: Indicates if a value is required for the data field.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        description:
+          description: Description for the data collection field.
+          example: The contract date required by the client.
+          type: string
+        customHtmlBelow:
+          description: Fragment of HTML that is displayed after the data field.
+          example: <p>Please ensure supplied date is a weekday.</p>
+          type: string
+        customHtmlAbove:
+          description: Fragment of HTML that is displayed before the data field.
+          example: <p>Important</p>
+          type: string
+        links:
+          $ref: '#/components/schemas/CreateDataCollectionFieldLinks'
     DataCollectionFieldsPageData:
       type: object
       properties:
@@ -296,7 +383,7 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/UpdateDataCollectionFieldLinks'
-    CreateDataCollectionFieldLinks:
+    UpdateDataCollectionFieldLinks:
       type: object
       required:
       - dataCollection
@@ -309,93 +396,6 @@ components:
           description: Unique identifier for a tag associated with this data collection field.
           example: 20
           type: integer
-    CreateDataCollectionField:
-      type: object
-      required:
-      - name
-      - dataType
-      properties:
-        name:
-          description: Name for the data collection field. Please note the name cannot be changed after the data collection field has been created.
-          example: ContractDate
-          type: string
-        dataType:
-          description: Data type for the data collection field.
-          enum:
-          - Appointment
-          - AutoNumber
-          - AutoNumberDC
-          - Boolean
-          - Date
-          - DateNM
-          - DateTime
-          - DateTimeNM
-          - DropDown
-          - DropDownMulti
-          - HtmlReadOnly
-          - Money
-          - Number
-          - Participant
-          - Str255
-          - Str255Protected
-          - TextArea
-          example: Number
-          type: string
-        label:
-          description: Label for the data collection field.
-          example: Contract Date
-          type: string
-        formOrder:
-          description: The data field's display position on the form.
-          example: 5
-          type: integer
-        listOrder:
-          description: Unknown.
-          example: 2
-          type: integer
-        required:
-          description: Indicates if a value is required for the data field.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        description:
-          description: Description for the data collection field.
-          example: The contract date required by the client.
-          type: string
-        customHtmlBelow:
-          description: Fragment of HTML that is displayed after the data field.
-          example: <p>Please ensure supplied date is a weekday.</p>
-          type: string
-        customHtmlAbove:
-          description: Fragment of HTML that is displayed before the data field.
-          example: <p>Important</p>
-          type: string
-        links:
-          $ref: '#/components/schemas/CreateDataCollectionFieldLinks'
-    DataCollectionFieldLinks:
-      type: object
-      properties:
-        dataCollection:
-          description: Unique identifier of the data collection to which the data collection field is associated.
-          example: 100
-          type: integer
-        tag:
-          description: Unique identifier for a tag associated with this data collection field.
-          example: 20
-          type: integer
-  requestBodies:
-    CreateDataCollectionField:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateDataCollectionField'
-    UpdateDataCollectionField:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateDataCollectionField'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

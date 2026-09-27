@@ -109,27 +109,20 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    UpdateGenderType:
-      type: object
-      required:
-      - pronounType
-      properties:
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
-    PagingData:
+    PagedGenderTypes:
       type: object
       properties:
         gendertypes:
-          $ref: '#/components/schemas/GenderTypesPageData'
-    GenderType:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenderType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    CreateGenderType:
       type: object
+      required:
+      - genderTypeName
+      - pronounType
       properties:
         genderTypeName:
           description: Name of the custom gender type.
@@ -149,20 +142,13 @@ components:
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagedGenderTypes:
+    PagingData:
       type: object
       properties:
         gendertypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenderType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    CreateGenderType:
+          $ref: '#/components/schemas/GenderTypesPageData'
+    GenderType:
       type: object
-      required:
-      - genderTypeName
-      - pronounType
       properties:
         genderTypeName:
           description: Name of the custom gender type.
@@ -204,14 +190,28 @@ components:
           description: A URL to the next page of custom gender types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=3
+    UpdateGenderType:
+      type: object
+      required:
+      - pronounType
+      properties:
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
   requestBodies:
-    CreateGenderType:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateGenderType'
     UpdateGenderType:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/UpdateGenderType'
+    CreateGenderType:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateGenderType'

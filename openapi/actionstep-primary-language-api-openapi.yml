@@ -24,25 +24,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PagingData:
-      type: object
-      properties:
-        primarylanguage:
-          $ref: '#/components/schemas/PrimaryLanguagePageData'
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagedPrimaryLanguage:
+    PagingData:
       type: object
       properties:
         primarylanguage:
-          type: array
-          items:
-            $ref: '#/components/schemas/PrimaryLanguage'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/PrimaryLanguagePageData'
     PrimaryLanguage:
       type: object
       properties:
@@ -78,6 +69,15 @@ components:
           description: A URL to the next page of primary languages.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/primarylanguage?page=3
+    PagedPrimaryLanguage:
+      type: object
+      properties:
+        primarylanguage:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrimaryLanguage'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

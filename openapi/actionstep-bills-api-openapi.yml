@@ -51,11 +51,11 @@ components:
           description: A URL to the next page of bills.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/bills?page=3
-    PagingData:
+    PageMetaData:
       type: object
       properties:
-        participants:
-          $ref: '#/components/schemas/BillsPageData'
+        paging:
+          $ref: '#/components/schemas/PagingData'
     BillLinks:
       type: object
       properties:
@@ -76,11 +76,11 @@ components:
           example: 964
           format: integer
           type: string
-    PageMetaData:
+    PagingData:
       type: object
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        participants:
+          $ref: '#/components/schemas/BillsPageData'
     Bill:
       type: object
       properties:

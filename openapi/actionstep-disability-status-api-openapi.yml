@@ -24,16 +24,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PagingData:
-      type: object
-      properties:
-        disabilitystatus:
-          $ref: '#/components/schemas/DisabilityStatusPageData'
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
+    PagingData:
+      type: object
+      properties:
+        disabilitystatus:
+          $ref: '#/components/schemas/DisabilityStatusPageData'
     DisabilityStatus:
       type: object
       properties:

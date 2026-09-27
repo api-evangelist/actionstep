@@ -112,6 +112,32 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    PagingData:
+      type: object
+      properties:
+        filenotes:
+          $ref: '#/components/schemas/FileNotesPageData'
+    UpdateFileNote:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          description: Content of the file note.
+          example: Client is requesting follow up meeting this week.
+          type: string
+        noteTimestamp:
+          description: The date and time for the file note.
+          example: 2023-06-03 00:09:30+12:00
+          format: timestamp
+          type: string
+        links:
+          $ref: '#/components/schemas/UpdateFileNoteLinks'
     FileNote:
       type: object
       properties:
@@ -149,95 +175,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/FileNoteLinks'
-    UpdateFileNote:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          description: Content of the file note.
-          example: Client is requesting follow up meeting this week.
-          type: string
-        noteTimestamp:
-          description: The date and time for the file note.
-          example: 2023-06-03 00:09:30+12:00
-          format: timestamp
-          type: string
-        links:
-          $ref: '#/components/schemas/UpdateFileNoteLinks'
-    PagingData:
-      type: object
-      properties:
-        filenotes:
-          $ref: '#/components/schemas/FileNotesPageData'
-    UpdateFileNoteLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the file note is associated.
-          example: 34
-          type: integer
-        document:
-          description: Unique identifier of a document associated to the file note.
-          example: 8376
-          type: integer
-        tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag. The supplied list of tags will replace in totality any existing tags. To remove all tags specify an empty array.
-          example:
-          - 1283
-          - 1934
-          type: array
-          items:
-            type: integer
-    CreateFileNoteLinks:
-      type: object
-      required:
-      - action
-      properties:
-        action:
-          description: Unique identifier of the matter to which the file note is associated.
-          example: 34
-          type: integer
-        document:
-          description: Unique identifier of a document associated to the file note.
-          example: 8376
-          type: integer
-        tags:
-          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag.
-          example:
-          - 1283
-          - 1934
-          type: array
-          items:
-            type: integer
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    CreateFileNote:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          description: Content of the file note.
-          example: Client is requesting follow up meeting this week.
-          type: string
-        source:
-          description: Indicates the source of the file note.
-          enum:
-          - System
-          - User
-          example: User
-          type: string
-        noteTimestamp:
-          description: The date and time for the file note.
-          example: 2023-06-03 00:09:30+12:00
-          format: timestamp
-          type: string
-        links:
-          $ref: '#/components/schemas/CreateFileNoteLinks'
     FileNotesPageData:
       type: object
       properties:
@@ -289,6 +226,46 @@ components:
           type: array
           items:
             type: integer
+    CreateFileNoteLinks:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          description: Unique identifier of the matter to which the file note is associated.
+          example: 34
+          type: integer
+        document:
+          description: Unique identifier of a document associated to the file note.
+          example: 8376
+          type: integer
+        tags:
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag.
+          example:
+          - 1283
+          - 1934
+          type: array
+          items:
+            type: integer
+    UpdateFileNoteLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the file note is associated.
+          example: 34
+          type: integer
+        document:
+          description: Unique identifier of a document associated to the file note.
+          example: 8376
+          type: integer
+        tags:
+          description: Zero or more tags to be associated with the file note. Each tag is the unique identifier for the tag. The supplied list of tags will replace in totality any existing tags. To remove all tags specify an empty array.
+          example:
+          - 1283
+          - 1934
+          type: array
+          items:
+            type: integer
     PagedFileNotes:
       type: object
       properties:
@@ -298,6 +275,29 @@ components:
             $ref: '#/components/schemas/FileNote'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    CreateFileNote:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          description: Content of the file note.
+          example: Client is requesting follow up meeting this week.
+          type: string
+        source:
+          description: Indicates the source of the file note.
+          enum:
+          - System
+          - User
+          example: User
+          type: string
+        noteTimestamp:
+          description: The date and time for the file note.
+          example: 2023-06-03 00:09:30+12:00
+          format: timestamp
+          type: string
+        links:
+          $ref: '#/components/schemas/CreateFileNoteLinks'
   requestBodies:
     CreateFileNote:
       content:

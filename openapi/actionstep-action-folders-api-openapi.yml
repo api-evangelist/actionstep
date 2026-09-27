@@ -49,38 +49,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ActionFolder:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the Matter folder.
-          example: 1050
-          type: integer
-        name:
-          description: Name of the Matter folder.
-          example: Purchase Documents
-          type: string
-        links:
-          $ref: '#/components/schemas/ActionsFolderLinks'
-    PagingData:
-      type: object
-      properties:
-        actionfolders:
-          $ref: '#/components/schemas/ActionFolderPageData'
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagedActionFolders:
+    PagingData:
       type: object
       properties:
         actionfolders:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionFolder'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/ActionFolderPageData'
     ActionsFolderLinks:
       type: object
       properties:
@@ -119,6 +97,28 @@ components:
           description: A URL to the next page of Matter folders.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionfolders?page=3
+    ActionFolder:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the Matter folder.
+          example: 1050
+          type: integer
+        name:
+          description: Name of the Matter folder.
+          example: Purchase Documents
+          type: string
+        links:
+          $ref: '#/components/schemas/ActionsFolderLinks'
+    PagedActionFolders:
+      type: object
+      properties:
+        actionfolders:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionFolder'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

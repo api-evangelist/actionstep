@@ -112,42 +112,39 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CreateActionTypeParticipantTypeLinks:
+    CreateActionTypeParticipantType:
       type: object
-      required:
-      - participantType
       properties:
-        participantType:
-          description: Unique identifier for the participant type for this record.
-          example: 546
+        required:
+          description: A flag to indicate if a participant of the specified participant type is required for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        isPrimaryParticipantType:
+          description: A flag to indicate if a participant of the specified participant type is the primary participant type for a matter of the specified matter type. Value is either T for true, or F for false.
+          enum:
+          - T
+          - F
+          example: T
+          type: string
+        actionType:
+          description: The matter type for which participant types are being managed.
+          example: 14
           type: integer
-    ActionTypeParticipantTypeLinks:
-      type: object
-      properties:
-        participantType:
-          description: Unique identifier for the participant type for this record.
-          example: 546
-          type: integer
-          readOnly: true
-    PagingData:
-      type: object
-      properties:
-        actiontypeparticipanttypes:
-          $ref: '#/components/schemas/ActionTypeParticipantTypesPageData'
+        links:
+          $ref: '#/components/schemas/CreateActionTypeParticipantTypeLinks'
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagedActionTypeParticipantTypes:
+    PagingData:
       type: object
       properties:
         actiontypeparticipanttypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionTypeParticipantType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/ActionTypeParticipantTypesPageData'
     ActionTypeParticipantType:
       type: object
       properties:
@@ -177,23 +174,23 @@ components:
           type: integer
         links:
           $ref: '#/components/schemas/ActionTypeParticipantTypeLinks'
-    UpdateActionTypeParticipantType:
+    ActionTypeParticipantTypeLinks:
       type: object
       properties:
-        required:
-          description: A flag to indicate if a participant of the specified participant type is required for a matter of the specified matter type. Value is either T for true, or F for false.
-          enum:
-          - T
-          - F
-          example: T
-          type: string
-        isPrimaryParticipantType:
-          description: A flag to indicate if a participant of the specified participant type is the primary participant type for a matter of the specified matter type. Value is either T for true, or F for false.
-          enum:
-          - T
-          - F
-          example: T
-          type: string
+        participantType:
+          description: Unique identifier for the participant type for this record.
+          example: 546
+          type: integer
+          readOnly: true
+    PagedActionTypeParticipantTypes:
+      type: object
+      properties:
+        actiontypeparticipanttypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionTypeParticipantType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     ActionTypeParticipantTypesPageData:
       type: object
       properties:
@@ -221,7 +218,7 @@ components:
           description: A URL to the next page of matter type participant type records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actiontypeparticipanttypes?page=3
-    CreateActionTypeParticipantType:
+    UpdateActionTypeParticipantType:
       type: object
       properties:
         required:
@@ -238,12 +235,15 @@ components:
           - F
           example: T
           type: string
-        actionType:
-          description: The matter type for which participant types are being managed.
-          example: 14
+    CreateActionTypeParticipantTypeLinks:
+      type: object
+      required:
+      - participantType
+      properties:
+        participantType:
+          description: Unique identifier for the participant type for this record.
+          example: 546
           type: integer
-        links:
-          $ref: '#/components/schemas/CreateActionTypeParticipantTypeLinks'
   requestBodies:
     UpdateActionTypeParticipantType:
       content:
