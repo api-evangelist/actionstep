@@ -24,16 +24,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        disabilitystatus:
-          $ref: '#/components/schemas/DisabilityStatusPageData'
     DisabilityStatus:
       type: object
       properties:
@@ -51,6 +41,11 @@ components:
             $ref: '#/components/schemas/DisabilityStatus'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     DisabilityStatusPageData:
       type: object
       properties:
@@ -78,6 +73,11 @@ components:
           description: A URL to the next page of disability status values.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/disabilitystatus?page=3
+    PagingData:
+      type: object
+      properties:
+        disabilitystatus:
+          $ref: '#/components/schemas/DisabilityStatusPageData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

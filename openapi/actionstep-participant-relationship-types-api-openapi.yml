@@ -105,43 +105,6 @@ components:
           type: string
           format: string
           example: Acquaintance
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        participantrelationshiptypes:
-          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
-    ParticipantRelationshipType:
-      type: object
-      properties:
-        category:
-          description: The category for the relationship type.
-          enum:
-          - IndividualToIndividual
-          - IndividualToCompany
-          - CompanyToIndividual
-          - CompanyToCompany
-          type: string
-          format: string
-          example: IndividualToIndividual
-        relationshipType:
-          description: The name for the relationship type.
-          type: string
-          format: string
-          example: Acquaintance
-    participantrelationshiptypes:
-      type: object
-      properties:
-        participantrelationshiptypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParticipantRelationshipType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     ParticipantRelationshipTypePageData:
       type: object
       properties:
@@ -169,6 +132,43 @@ components:
           description: A URL to the next page of Participant Relationship Types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participantrelationshiptypes?page=3
+    ParticipantRelationshipType:
+      type: object
+      properties:
+        category:
+          description: The category for the relationship type.
+          enum:
+          - IndividualToIndividual
+          - IndividualToCompany
+          - CompanyToIndividual
+          - CompanyToCompany
+          type: string
+          format: string
+          example: IndividualToIndividual
+        relationshipType:
+          description: The name for the relationship type.
+          type: string
+          format: string
+          example: Acquaintance
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    participantrelationshiptypes:
+      type: object
+      properties:
+        participantrelationshiptypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParticipantRelationshipType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PagingData:
+      type: object
+      properties:
+        participantrelationshiptypes:
+          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
   requestBodies:
     CreateParticipantRelationshipType:
       content:

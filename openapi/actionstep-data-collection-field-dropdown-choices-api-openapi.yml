@@ -112,21 +112,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CreateDataCollectionFieldDropdownChoiceRecordLinks:
-      type: object
-      required:
-      - dataField
-      properties:
-        dataField:
-          description: Unique identifier for a single data collection field. Note the unique identifier is a composite primary key comprising of the data collection identifier and the data field name, delimited by '--'.
-          type: string
-          format: string
-          example: 230--CarColor
-        dataCollection:
-          description: Unique identifier for the parent data collection.
-          type: integer
-          format: string
-          example: 230
     DataCollectionFieldDropdownChoiceRecordPageData:
       type: object
       properties:
@@ -154,16 +139,21 @@ components:
           description: A URL to the next page of data collection field dropdown choice records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/datacollectionfielddropdownchoices?page=3
-    PageMetaData:
+    CreateDataCollectionFieldDropdownChoiceRecordLinks:
       type: object
+      required:
+      - dataField
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        datacollectionfielddropdownchoices:
-          $ref: '#/components/schemas/DataCollectionFieldDropdownChoiceRecordPageData'
+        dataField:
+          description: Unique identifier for a single data collection field. Note the unique identifier is a composite primary key comprising of the data collection identifier and the data field name, delimited by '--'.
+          type: string
+          format: string
+          example: 230--CarColor
+        dataCollection:
+          description: Unique identifier for the parent data collection.
+          type: integer
+          format: string
+          example: 230
     UpdateDataCollectionFieldDropdownChoiceRecord:
       type: object
       properties:
@@ -238,19 +228,6 @@ components:
           example: Country
         links:
           $ref: '#/components/schemas/DataCollectionFieldDropdownChoiceRecordLinks'
-    UpdateDataCollectionFieldDropdownChoiceRecordLinks:
-      type: object
-      properties:
-        dataField:
-          description: Unique identifier for a single data collection field. Note the unique identifier is a composite primary key comprising of the data collection identifier and the data field name, delimited by '--'.
-          type: string
-          format: string
-          example: 230--CarColor
-        dataCollection:
-          description: Unique identifier for the parent data collection.
-          type: integer
-          format: string
-          example: 230
     CreateDataCollectionFieldDropdownChoiceRecord:
       type: object
       required:
@@ -290,6 +267,33 @@ components:
           example: Country
         links:
           $ref: '#/components/schemas/CreateDataCollectionFieldDropdownChoiceRecordLinks'
+    PagedDataCollectionFieldDropdownChoices:
+      type: object
+      properties:
+        datacollectionfielddropdownchoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataCollectionFieldDropdownChoiceRecord'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    UpdateDataCollectionFieldDropdownChoiceRecordLinks:
+      type: object
+      properties:
+        dataField:
+          description: Unique identifier for a single data collection field. Note the unique identifier is a composite primary key comprising of the data collection identifier and the data field name, delimited by '--'.
+          type: string
+          format: string
+          example: 230--CarColor
+        dataCollection:
+          description: Unique identifier for the parent data collection.
+          type: integer
+          format: string
+          example: 230
     DataCollectionFieldDropdownChoiceRecordLinks:
       type: object
       properties:
@@ -303,15 +307,11 @@ components:
           type: integer
           format: string
           example: 230
-    PagedDataCollectionFieldDropdownChoices:
+    PagingData:
       type: object
       properties:
         datacollectionfielddropdownchoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataCollectionFieldDropdownChoiceRecord'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/DataCollectionFieldDropdownChoiceRecordPageData'
   requestBodies:
     UpdateDataCollectionFieldDropdownChoiceRecord:
       content:

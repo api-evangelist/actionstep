@@ -111,12 +111,55 @@ paths:
       operationId: deleteUtbmscodesById
       x-operation-id-source: derived
 components:
+  requestBodies:
+    CreateUTBMSCode:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateUTBMSCode'
+    UpdateUTBMSCode:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateUTBMSCode'
   schemas:
-    PageMetaData:
+    UpdateUTBMSCode:
       type: object
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        categoryCode:
+          description: The category code to which the UTBMS code is associated.
+          type: string
+          format: string
+          example: Activity codes
+        parentUtbmsCode:
+          description: The parent UTBMS code to which this UTBMS code is associated.
+          type: string
+          format: string
+          example: AA10
+        description:
+          description: A description for the UTBMS code.
+          type: string
+          format: string
+          example: Research
+        overrideDescription:
+          description: A custom description for the time entry description field. Only relevant for Activity codes.
+          type: string
+          format: string
+          example: Case history research.
+        enabled:
+          description: Indicates if the UTBMS code is enabled for use.
+          type: string
+          enum:
+          - T
+          - F
+          default: T
+          format: string
+          example: T
+    PagingData:
+      type: object
+      properties:
+        UTBMSCodes:
+          $ref: '#/components/schemas/UTBMSCodesPageData'
     CreateUTBMSCode:
       type: object
       required:
@@ -159,11 +202,20 @@ components:
           default: T
           format: string
           example: T
-    PagingData:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    PagedUTBMSCodes:
       type: object
       properties:
         UTBMSCodes:
-          $ref: '#/components/schemas/UTBMSCodesPageData'
+          type: array
+          items:
+            $ref: '#/components/schemas/UTBMSCode'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     UTBMSCodesPageData:
       type: object
       properties:
@@ -229,58 +281,6 @@ components:
           default: T
           format: string
           example: T
-    PagedUTBMSCodes:
-      type: object
-      properties:
-        UTBMSCodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/UTBMSCode'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    UpdateUTBMSCode:
-      type: object
-      properties:
-        categoryCode:
-          description: The category code to which the UTBMS code is associated.
-          type: string
-          format: string
-          example: Activity codes
-        parentUtbmsCode:
-          description: The parent UTBMS code to which this UTBMS code is associated.
-          type: string
-          format: string
-          example: AA10
-        description:
-          description: A description for the UTBMS code.
-          type: string
-          format: string
-          example: Research
-        overrideDescription:
-          description: A custom description for the time entry description field. Only relevant for Activity codes.
-          type: string
-          format: string
-          example: Case history research.
-        enabled:
-          description: Indicates if the UTBMS code is enabled for use.
-          type: string
-          enum:
-          - T
-          - F
-          default: T
-          format: string
-          example: T
-  requestBodies:
-    UpdateUTBMSCode:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateUTBMSCode'
-    CreateUTBMSCode:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateUTBMSCode'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

@@ -109,20 +109,41 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PagedGenderTypes:
+    UpdateGenderType:
       type: object
+      required:
+      - pronounType
       properties:
-        gendertypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenderType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
     CreateGenderType:
       type: object
       required:
       - genderTypeName
       - pronounType
+      properties:
+        genderTypeName:
+          description: Name of the custom gender type.
+          example: Transgender
+          type: string
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
+    GenderType:
+      type: object
       properties:
         genderTypeName:
           description: Name of the custom gender type.
@@ -147,22 +168,15 @@ components:
       properties:
         gendertypes:
           $ref: '#/components/schemas/GenderTypesPageData'
-    GenderType:
+    PagedGenderTypes:
       type: object
       properties:
-        genderTypeName:
-          description: Name of the custom gender type.
-          example: Transgender
-          type: string
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
+        gendertypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenderType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     GenderTypesPageData:
       type: object
       properties:
@@ -190,20 +204,6 @@ components:
           description: A URL to the next page of custom gender types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=3
-    UpdateGenderType:
-      type: object
-      required:
-      - pronounType
-      properties:
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
   requestBodies:
     UpdateGenderType:
       content:

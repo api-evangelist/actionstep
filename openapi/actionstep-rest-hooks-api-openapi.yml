@@ -111,29 +111,18 @@ paths:
       operationId: deleteResthooksById
       x-operation-id-source: derived
 components:
-  schemas:
+  requestBodies:
+    UpdateRESTHook:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateRESTHook'
     CreateRESTHook:
-      type: object
-      required:
-      - eventName
-      - targetUrl
-      properties:
-        eventName:
-          description: Name of the event.
-          example: ActionDocumentCreated.
-          type: string
-          externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
-            url: https://docs.actionstep.com/webhooks/
-        targetUrl:
-          description: Url to be called.
-          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
-          type: string
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateRESTHook'
+  schemas:
     RESTHook:
       type: object
       properties:
@@ -168,28 +157,15 @@ components:
           example: 2022-05-03 00:09:00+12:00
           format: timestamp
           type: string
-    UpdateRESTHook:
-      type: object
-      required:
-      - eventName
-      - targetUrl
-      properties:
-        eventName:
-          description: Name of the event.
-          example: ActionDocumentCreated.
-          type: string
-          externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
-            url: https://docs.actionstep.com/webhooks/
-        targetUrl:
-          description: Url to be called.
-          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
-          type: string
-    PagingData:
+    PagedRESTHooks:
       type: object
       properties:
         resthooks:
-          $ref: '#/components/schemas/RESTHooksPageData'
+          type: array
+          items:
+            $ref: '#/components/schemas/RESTHook'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     RESTHooksPageData:
       type: object
       properties:
@@ -217,26 +193,50 @@ components:
           description: A URL to the next page of REST hooks.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/resthooks?page=3
-    PagedRESTHooks:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    UpdateRESTHook:
+      type: object
+      required:
+      - eventName
+      - targetUrl
+      properties:
+        eventName:
+          description: Name of the event.
+          example: ActionDocumentCreated.
+          type: string
+          externalDocs:
+            description: For the complete list of supported events please reference the API Developer Portal.
+            url: https://docs.actionstep.com/webhooks/
+        targetUrl:
+          description: Url to be called.
+          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
+          type: string
+    CreateRESTHook:
+      type: object
+      required:
+      - eventName
+      - targetUrl
+      properties:
+        eventName:
+          description: Name of the event.
+          example: ActionDocumentCreated.
+          type: string
+          externalDocs:
+            description: For the complete list of supported events please reference the API Developer Portal.
+            url: https://docs.actionstep.com/webhooks/
+        targetUrl:
+          description: Url to be called.
+          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
+          type: string
+    PagingData:
       type: object
       properties:
         resthooks:
-          type: array
-          items:
-            $ref: '#/components/schemas/RESTHook'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-  requestBodies:
-    UpdateRESTHook:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateRESTHook'
-    CreateRESTHook:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateRESTHook'
+          $ref: '#/components/schemas/RESTHooksPageData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

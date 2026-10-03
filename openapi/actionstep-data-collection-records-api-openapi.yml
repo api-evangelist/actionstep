@@ -95,6 +95,17 @@ components:
             $ref: '#/components/schemas/DataCollectionRecord'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    DataCollectionRecordLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the data collection is associated.
+          example: 822
+          type: integer
+        dataCollection:
+          description: Unique identifier of the data collection to which the data collection record is associated.
+          example: 50
+          type: integer
     DataCollectionRecord:
       type: object
       properties:
@@ -121,38 +132,6 @@ components:
           readOnly: true
         links:
           $ref: '#/components/schemas/DataCollectionRecordLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        datacollectionrecords:
-          $ref: '#/components/schemas/DataCollectionRecordsPageData'
-    DataCollectionRecordLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the data collection is associated.
-          example: 822
-          type: integer
-        dataCollection:
-          description: Unique identifier of the data collection to which the data collection record is associated.
-          example: 50
-          type: integer
-    CreateDataCollectionRecordLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the data collection is associated.
-          example: 822
-          type: integer
-        dataCollection:
-          description: Unique identifier of the data collection to which the data collection record is associated.
-          example: 50
-          type: integer
     CreateDataCollectionRecord:
       type: object
       properties:
@@ -172,6 +151,22 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/CreateDataCollectionRecordLinks'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    CreateDataCollectionRecordLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the data collection is associated.
+          example: 822
+          type: integer
+        dataCollection:
+          description: Unique identifier of the data collection to which the data collection record is associated.
+          example: 50
+          type: integer
     DataCollectionRecordsPageData:
       type: object
       properties:
@@ -199,6 +194,11 @@ components:
           description: A URL to the next page of data collection records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecords?page=3
+    PagingData:
+      type: object
+      properties:
+        datacollectionrecords:
+          $ref: '#/components/schemas/DataCollectionRecordsPageData'
   requestBodies:
     CreateDataCollectionRecord:
       content:

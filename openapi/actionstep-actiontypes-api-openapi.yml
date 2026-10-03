@@ -24,6 +24,27 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ActionTypeLinks:
+      type: object
+      properties:
+        primaryParticipantType:
+          description: Unique identifier of the primary participant type for the Matter type.
+          example: 450
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/ActionTypePageData'
+    PagedActionTypes:
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     ActionType:
       type: object
       properties:
@@ -191,20 +212,6 @@ components:
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        actions:
-          $ref: '#/components/schemas/ActionTypePageData'
-    PagedActionTypes:
-      type: object
-      properties:
-        actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     ActionTypePageData:
       type: object
       properties:
@@ -232,13 +239,6 @@ components:
           description: A URL to the next page of Matter types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actiontypes?page=3
-    ActionTypeLinks:
-      type: object
-      properties:
-        primaryParticipantType:
-          description: Unique identifier of the primary participant type for the Matter type.
-          example: 450
-          type: integer
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

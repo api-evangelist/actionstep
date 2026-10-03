@@ -24,24 +24,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CulturalIdentity:
-      type: object
-      properties:
-        identity:
-          description: Identity value.
-          example: Yes, Aboriginal
-          type: string
-          format: string
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        culturalidentity:
-          $ref: '#/components/schemas/CulturalIdentityPageData'
     CulturalIdentityPageData:
       type: object
       properties:
@@ -78,6 +60,24 @@ components:
             $ref: '#/components/schemas/CulturalIdentity'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    PagingData:
+      type: object
+      properties:
+        culturalidentity:
+          $ref: '#/components/schemas/CulturalIdentityPageData'
+    CulturalIdentity:
+      type: object
+      properties:
+        identity:
+          description: Identity value.
+          example: Yes, Aboriginal
+          type: string
+          format: string
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
