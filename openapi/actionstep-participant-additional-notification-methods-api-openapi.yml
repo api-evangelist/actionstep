@@ -110,6 +110,44 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    CreateParticipantAdditionalNotificationMethod:
+      type: object
+      required:
+      - notificationMethod
+      - address
+      properties:
+        notificationMethod:
+          description: The method of notification.
+          enum:
+          - E-Mail
+          - SMS
+          - Phone
+          - Fax
+          - Mail
+          - Skype
+          - Facebook
+          - IM
+          - Twitter
+          type: string
+          format: string
+          example: Facebook
+        address:
+          description: The address applicable to the notification method.
+          type: string
+          format: string
+          example: john.smith@mycompany.com
+        notes:
+          description: Optional notes for this notification method.
+          type: string
+          format: string
+          example: Phone number of secondary property.
+        links:
+          $ref: '#/components/schemas/CreateParticipantAdditionalNotificationMethodLinks'
+    PagingData:
+      type: object
+      properties:
+        participantadditionalnotificationmethods:
+          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodPageData'
     ParticipantAdditionalNotificationMethodPageData:
       type: object
       properties:
@@ -167,39 +205,6 @@ components:
           example: Phone number of secondary property.
         links:
           $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodLinks'
-    CreateParticipantAdditionalNotificationMethod:
-      type: object
-      required:
-      - notificationMethod
-      - address
-      properties:
-        notificationMethod:
-          description: The method of notification.
-          enum:
-          - E-Mail
-          - SMS
-          - Phone
-          - Fax
-          - Mail
-          - Skype
-          - Facebook
-          - IM
-          - Twitter
-          type: string
-          format: string
-          example: Facebook
-        address:
-          description: The address applicable to the notification method.
-          type: string
-          format: string
-          example: john.smith@mycompany.com
-        notes:
-          description: Optional notes for this notification method.
-          type: string
-          format: string
-          example: Phone number of secondary property.
-        links:
-          $ref: '#/components/schemas/CreateParticipantAdditionalNotificationMethodLinks'
     participantadditionalnotificationmethods:
       type: object
       properties:
@@ -209,6 +214,22 @@ components:
             $ref: '#/components/schemas/ParticipantAdditionalNotificationMethod'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    ParticipantAdditionalNotificationMethodLinks:
+      type: object
+      properties:
+        participant:
+          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          example: 8945
+          type: integer
+    UpdateParticipantAdditionalNotificationMethodLinks:
+      type: object
+      required:
+      - participant
+      properties:
+        participant:
+          description: Unique identifier of the participant to whom this additional notification method is to be associated.
+          example: 8945
+          type: integer
     CreateParticipantAdditionalNotificationMethodLinks:
       type: object
       required:
@@ -218,6 +239,11 @@ components:
           description: Unique identifier of the participant to whom this additional notification method is to be associated.
           example: 8945
           type: integer
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     UpdateParticipantAdditionalNotificationMethod:
       type: object
       required:
@@ -251,40 +277,14 @@ components:
           example: Phone number of secondary property.
         links:
           $ref: '#/components/schemas/UpdateParticipantAdditionalNotificationMethodLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    UpdateParticipantAdditionalNotificationMethodLinks:
-      type: object
-      required:
-      - participant
-      properties:
-        participant:
-          description: Unique identifier of the participant to whom this additional notification method is to be associated.
-          example: 8945
-          type: integer
-    ParticipantAdditionalNotificationMethodLinks:
-      type: object
-      properties:
-        participant:
-          description: Unique identifier of the participant to whom this additional notification method is to be associated.
-          example: 8945
-          type: integer
-    PagingData:
-      type: object
-      properties:
-        participantadditionalnotificationmethods:
-          $ref: '#/components/schemas/ParticipantAdditionalNotificationMethodPageData'
   requestBodies:
-    UpdateParticipantAdditionalNotificationMethod:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateParticipantAdditionalNotificationMethod'
     CreateParticipantAdditionalNotificationMethod:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateParticipantAdditionalNotificationMethod'
+    UpdateParticipantAdditionalNotificationMethod:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateParticipantAdditionalNotificationMethod'

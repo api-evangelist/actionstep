@@ -111,25 +111,7 @@ paths:
       operationId: deleteContactnotesById
       x-operation-id-source: derived
 components:
-  requestBodies:
-    UpdateContactNote:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateContactNote'
-    CreateContactNote:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateContactNote'
   schemas:
-    UpdateContactNoteLinks:
-      type: object
-      properties:
-        participant:
-          description: Unique identifier of the contact to whom the note is associated.
-          example: 546
-          type: integer
     PagedContactNotes:
       type: object
       properties:
@@ -139,21 +121,28 @@ components:
             $ref: '#/components/schemas/ContactNote'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    CreateContactNote:
+    CreateContactNoteLinks:
+      type: object
+      required:
+      - participant
+      properties:
+        participant:
+          description: Unique identifier of the contact to whom the note is associated.
+          example: 546
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        contactnotes:
+          $ref: '#/components/schemas/ContactNotesPageData'
+    UpdateContactNote:
       type: object
       required:
       - text
       properties:
         text:
           description: Content of the contact note.
-          example: Updated AML status notes.
-          type: string
-        source:
-          description: Indicates the source of the contact note.
-          enum:
-          - System
-          - User
-          example: User
+          example: Updated address details.
           type: string
         noteTimestamp:
           description: The date and time for the contact note.
@@ -161,7 +150,14 @@ components:
           format: timestamp
           type: string
         links:
-          $ref: '#/components/schemas/CreateContactNoteLinks'
+          $ref: '#/components/schemas/UpdateContactNoteLinks'
+    UpdateContactNoteLinks:
+      type: object
+      properties:
+        participant:
+          description: Unique identifier of the contact to whom the note is associated.
+          example: 546
+          type: integer
     ContactNote:
       type: object
       properties:
@@ -204,44 +200,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/ContactNoteLinks'
-    CreateContactNoteLinks:
-      type: object
-      required:
-      - participant
-      properties:
-        participant:
-          description: Unique identifier of the contact to whom the note is associated.
-          example: 546
-          type: integer
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    UpdateContactNote:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          description: Content of the contact note.
-          example: Updated address details.
-          type: string
-        noteTimestamp:
-          description: The date and time for the contact note.
-          example: 2023-06-03 00:09:30+12:00
-          format: timestamp
-          type: string
-        links:
-          $ref: '#/components/schemas/UpdateContactNoteLinks'
-    ContactNoteLinks:
-      type: object
-      properties:
-        participant:
-          description: Unique identifier of the contact to whom this note is associated.
-          example: 546
-          type: integer
-          readOnly: true
     ContactNotesPageData:
       type: object
       properties:
@@ -269,11 +227,53 @@ components:
           description: A URL to the next page of contact notes.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/contactnotes?page=3
-    PagingData:
+    CreateContactNote:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          description: Content of the contact note.
+          example: Updated AML status notes.
+          type: string
+        source:
+          description: Indicates the source of the contact note.
+          enum:
+          - System
+          - User
+          example: User
+          type: string
+        noteTimestamp:
+          description: The date and time for the contact note.
+          example: 2023-06-03 00:09:30+12:00
+          format: timestamp
+          type: string
+        links:
+          $ref: '#/components/schemas/CreateContactNoteLinks'
+    ContactNoteLinks:
       type: object
       properties:
-        contactnotes:
-          $ref: '#/components/schemas/ContactNotesPageData'
+        participant:
+          description: Unique identifier of the contact to whom this note is associated.
+          example: 546
+          type: integer
+          readOnly: true
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+  requestBodies:
+    CreateContactNote:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateContactNote'
+    UpdateContactNote:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateContactNote'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

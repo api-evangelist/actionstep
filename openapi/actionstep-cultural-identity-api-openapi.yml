@@ -24,6 +24,11 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PagingData:
+      type: object
+      properties:
+        culturalidentity:
+          $ref: '#/components/schemas/CulturalIdentityPageData'
     CulturalIdentityPageData:
       type: object
       properties:
@@ -65,11 +70,6 @@ components:
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagingData:
-      type: object
-      properties:
-        culturalidentity:
-          $ref: '#/components/schemas/CulturalIdentityPageData'
     CulturalIdentity:
       type: object
       properties:

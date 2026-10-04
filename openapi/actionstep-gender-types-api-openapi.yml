@@ -123,60 +123,11 @@ components:
           - Company
           example: Neutral
           type: string
-    CreateGenderType:
-      type: object
-      required:
-      - genderTypeName
-      - pronounType
-      properties:
-        genderTypeName:
-          description: Name of the custom gender type.
-          example: Transgender
-          type: string
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
-    GenderType:
-      type: object
-      properties:
-        genderTypeName:
-          description: Name of the custom gender type.
-          example: Transgender
-          type: string
-        pronounType:
-          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
-          enum:
-          - Male
-          - Female
-          - Neutral
-          - Company
-          example: Neutral
-          type: string
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
     PagingData:
       type: object
       properties:
         gendertypes:
           $ref: '#/components/schemas/GenderTypesPageData'
-    PagedGenderTypes:
-      type: object
-      properties:
-        gendertypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenderType'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     GenderTypesPageData:
       type: object
       properties:
@@ -204,14 +155,63 @@ components:
           description: A URL to the next page of custom gender types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/gendertypes?page=3
+    GenderType:
+      type: object
+      properties:
+        genderTypeName:
+          description: Name of the custom gender type.
+          example: Transgender
+          type: string
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
+    PagedGenderTypes:
+      type: object
+      properties:
+        gendertypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenderType'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    CreateGenderType:
+      type: object
+      required:
+      - genderTypeName
+      - pronounType
+      properties:
+        genderTypeName:
+          description: Name of the custom gender type.
+          example: Transgender
+          type: string
+        pronounType:
+          description: One of 'Male', 'Female', 'Neutral', or 'Company'.
+          enum:
+          - Male
+          - Female
+          - Neutral
+          - Company
+          example: Neutral
+          type: string
   requestBodies:
-    UpdateGenderType:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateGenderType'
     CreateGenderType:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/CreateGenderType'
+    UpdateGenderType:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateGenderType'

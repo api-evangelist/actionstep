@@ -84,6 +84,29 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ParticipantRelationshipType:
+      type: object
+      properties:
+        category:
+          description: The category for the relationship type.
+          enum:
+          - IndividualToIndividual
+          - IndividualToCompany
+          - CompanyToIndividual
+          - CompanyToCompany
+          type: string
+          format: string
+          example: IndividualToIndividual
+        relationshipType:
+          description: The name for the relationship type.
+          type: string
+          format: string
+          example: Acquaintance
+    PagingData:
+      type: object
+      properties:
+        participantrelationshiptypes:
+          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
     CreateParticipantRelationshipType:
       type: object
       required:
@@ -132,29 +155,6 @@ components:
           description: A URL to the next page of Participant Relationship Types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participantrelationshiptypes?page=3
-    ParticipantRelationshipType:
-      type: object
-      properties:
-        category:
-          description: The category for the relationship type.
-          enum:
-          - IndividualToIndividual
-          - IndividualToCompany
-          - CompanyToIndividual
-          - CompanyToCompany
-          type: string
-          format: string
-          example: IndividualToIndividual
-        relationshipType:
-          description: The name for the relationship type.
-          type: string
-          format: string
-          example: Acquaintance
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
     participantrelationshiptypes:
       type: object
       properties:
@@ -164,11 +164,11 @@ components:
             $ref: '#/components/schemas/ParticipantRelationshipType'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    PagingData:
+    PageMetaData:
       type: object
       properties:
-        participantrelationshiptypes:
-          $ref: '#/components/schemas/ParticipantRelationshipTypePageData'
+        paging:
+          $ref: '#/components/schemas/PagingData'
   requestBodies:
     CreateParticipantRelationshipType:
       content:

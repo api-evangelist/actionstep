@@ -49,6 +49,11 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PagingData:
+      type: object
+      properties:
+        actionfolders:
+          $ref: '#/components/schemas/ActionFolderPageData'
     ActionFolder:
       type: object
       properties:
@@ -62,20 +67,17 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/ActionsFolderLinks'
-    PagedActionFolders:
+    ActionsFolderLinks:
       type: object
       properties:
-        actionfolders:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionFolder'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        action:
+          description: Unique identifier of the associated Matter.
+          example: 4580
+          type: integer
+        parentFolder:
+          description: Unique identifier of a parent folder (if applicable).
+          example: null
+          type: integer
     ActionFolderPageData:
       type: object
       properties:
@@ -103,22 +105,20 @@ components:
           description: A URL to the next page of Matter folders.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionfolders?page=3
-    PagingData:
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    PagedActionFolders:
       type: object
       properties:
         actionfolders:
-          $ref: '#/components/schemas/ActionFolderPageData'
-    ActionsFolderLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the associated Matter.
-          example: 4580
-          type: integer
-        parentFolder:
-          description: Unique identifier of a parent folder (if applicable).
-          example: null
-          type: integer
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionFolder'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

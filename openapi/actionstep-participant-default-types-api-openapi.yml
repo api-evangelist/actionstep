@@ -61,22 +61,20 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CreateParticipantDefaultType:
+    PagingData:
       type: object
       properties:
         participantdefaulttypes:
-          $ref: '#/components/schemas/CreateParticipantDefaultTypeLinks'
-    CreateParticipantDefaultTypeLinksLink:
+          $ref: '#/components/schemas/ParticipantDefaultTypesPageData'
+    ParticipantDefaultType:
       type: object
       properties:
-        participantType:
-          description: Unique identifier of the participant type.
-          example: 31
-          type: integer
-        participant:
-          description: Unique identifier of the participant.
-          example: 1024
-          type: integer
+        id:
+          description: Unique identifier for a participant default type. The identifier is a composite value composed from the participant identifier and the participant type identifier, separated by "--".
+          example: 1024--31
+          type: string
+        links:
+          $ref: '#/components/schemas/ParticipantDefaultTypeLinks'
     ParticipantDefaultTypesPageData:
       type: object
       properties:
@@ -104,16 +102,6 @@ components:
           description: A URL to the next page of participant default types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participantdefaulttypes?page=3
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    CreateParticipantDefaultTypeLinks:
-      type: object
-      properties:
-        links:
-          $ref: '#/components/schemas/CreateParticipantDefaultTypeLinksLink'
     ParticipantDefaultTypeLinks:
       type: object
       properties:
@@ -125,20 +113,11 @@ components:
           description: Unique identifier of the participant.
           example: 1024
           type: integer
-    PagingData:
+    CreateParticipantDefaultType:
       type: object
       properties:
         participantdefaulttypes:
-          $ref: '#/components/schemas/ParticipantDefaultTypesPageData'
-    ParticipantDefaultType:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for a participant default type. The identifier is a composite value composed from the participant identifier and the participant type identifier, separated by "--".
-          example: 1024--31
-          type: string
-        links:
-          $ref: '#/components/schemas/ParticipantDefaultTypeLinks'
+          $ref: '#/components/schemas/CreateParticipantDefaultTypeLinks'
     PagedParticipantDefaultTypes:
       type: object
       properties:
@@ -148,6 +127,27 @@ components:
             $ref: '#/components/schemas/ParticipantDefaultType'
         meta:
           $ref: '#/components/schemas/PageMetaData'
+    CreateParticipantDefaultTypeLinks:
+      type: object
+      properties:
+        links:
+          $ref: '#/components/schemas/CreateParticipantDefaultTypeLinksLink'
+    CreateParticipantDefaultTypeLinksLink:
+      type: object
+      properties:
+        participantType:
+          description: Unique identifier of the participant type.
+          example: 31
+          type: integer
+        participant:
+          description: Unique identifier of the participant.
+          example: 1024
+          type: integer
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
   requestBodies:
     AddParticipantDefaultType:
       content:

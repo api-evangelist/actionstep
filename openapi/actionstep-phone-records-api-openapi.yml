@@ -112,21 +112,20 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    CreatePhoneRecordLinks:
+    PagedPhoneRecords:
       type: object
       properties:
-        action:
-          description: Unique identifier of the matter to which the phone record is associated.
-          example: 321845
-          type: integer
-        fromParticipant:
-          description: Unique identifier for a participant from whom the call was received.
-          example: 8945
-          type: integer
-        toParticipant:
-          description: Unique identifier for a participant to whom the call was made.
-          example: 4912
-          type: integer
+        phonerecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhoneRecord'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PagingData:
+      type: object
+      properties:
+        phonerecords:
+          $ref: '#/components/schemas/PhoneRecordPageData'
     CreatePhoneRecord:
       type: object
       required:
@@ -184,35 +183,6 @@ components:
           example: Call completed
         links:
           $ref: '#/components/schemas/CreatePhoneRecordLinks'
-    PhoneRecordLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the phone record is associated.
-          example: 321845
-          type: integer
-        fromParticipant:
-          description: Unique identifier for a participant from whom the call was received.
-          example: 8945
-          type: integer
-        toParticipant:
-          description: Unique identifier for a participant to whom the call was made.
-          example: 4912
-          type: integer
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    PagedPhoneRecords:
-      type: object
-      properties:
-        phonerecords:
-          type: array
-          items:
-            $ref: '#/components/schemas/PhoneRecord'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     PhoneRecord:
       type: object
       properties:
@@ -272,7 +242,7 @@ components:
           example: Call completed
         links:
           $ref: '#/components/schemas/PhoneRecordLinks'
-    UpdatePhoneRecordLinks:
+    CreatePhoneRecordLinks:
       type: object
       properties:
         action:
@@ -287,11 +257,21 @@ components:
           description: Unique identifier for a participant to whom the call was made.
           example: 4912
           type: integer
-    PagingData:
+    PhoneRecordLinks:
       type: object
       properties:
-        phonerecords:
-          $ref: '#/components/schemas/PhoneRecordPageData'
+        action:
+          description: Unique identifier of the matter to which the phone record is associated.
+          example: 321845
+          type: integer
+        fromParticipant:
+          description: Unique identifier for a participant from whom the call was received.
+          example: 8945
+          type: integer
+        toParticipant:
+          description: Unique identifier for a participant to whom the call was made.
+          example: 4912
+          type: integer
     UpdatePhoneRecord:
       type: object
       properties:
@@ -345,6 +325,21 @@ components:
           example: Call completed
         links:
           $ref: '#/components/schemas/UpdatePhoneRecordLinks'
+    UpdatePhoneRecordLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the phone record is associated.
+          example: 321845
+          type: integer
+        fromParticipant:
+          description: Unique identifier for a participant from whom the call was received.
+          example: 8945
+          type: integer
+        toParticipant:
+          description: Unique identifier for a participant to whom the call was made.
+          example: 4912
+          type: integer
     PhoneRecordPageData:
       type: object
       properties:
@@ -372,14 +367,19 @@ components:
           description: A URL to the next page of phone records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/phonerecords?page=3
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
   requestBodies:
-    UpdatePhoneRecord:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdatePhoneRecord'
     CreatePhoneRecord:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/CreatePhoneRecord'
+    UpdatePhoneRecord:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdatePhoneRecord'

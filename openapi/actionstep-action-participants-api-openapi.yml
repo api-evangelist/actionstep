@@ -99,26 +99,38 @@ components:
           description: Unique identifier of the participant.
           example: 11
           type: integer
+    PagingData:
+      type: object
+      properties:
+        actionparticipants:
+          $ref: '#/components/schemas/ActionParticipantsPageData'
     CreateActionParticipants:
       type: object
       properties:
         actionparticipants:
           $ref: '#/components/schemas/CreateActionParticipantsLinks'
-    CreateActionParticipantsLinksLink:
+    ActionParticipants:
       type: object
       properties:
-        action:
-          description: Unique identifier of the associated action.
-          example: 1024
+        id:
+          description: Unique identifier for the Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by "--".
+          example: 1024--31--11
+          type: string
+        participantNumber:
+          description: The order the Matter participants were added to an action.
+          example: 3
           type: integer
-        participantType:
-          description: Unique identifier of the participant type.
-          example: 31
-          type: integer
-        participant:
-          description: Unique identifier of the participant.
-          example: 11
-          type: integer
+        links:
+          $ref: '#/components/schemas/ActionParticipantsLinks'
+    PagedActionParticipants:
+      type: object
+      properties:
+        actionparticipants:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionParticipants'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     ActionParticipantsPageData:
       type: object
       properties:
@@ -146,43 +158,31 @@ components:
           description: A URL to the next page of Matter participants.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionparticipants?page=3
-    ActionParticipants:
+    CreateActionParticipantsLinksLink:
       type: object
       properties:
-        id:
-          description: Unique identifier for the Matter participant. The identifier is a composite value composed from the Matter identifier, the participant type identifier, and the participant identifier, separated by "--".
-          example: 1024--31--11
-          type: string
-        participantNumber:
-          description: The order the Matter participants were added to an action.
-          example: 3
+        action:
+          description: Unique identifier of the associated action.
+          example: 1024
           type: integer
-        links:
-          $ref: '#/components/schemas/ActionParticipantsLinks'
-    CreateActionParticipantsLinks:
-      type: object
-      properties:
-        links:
-          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
+        participantType:
+          description: Unique identifier of the participant type.
+          example: 31
+          type: integer
+        participant:
+          description: Unique identifier of the participant.
+          example: 11
+          type: integer
     PageMetaData:
       type: object
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    PagedActionParticipants:
+    CreateActionParticipantsLinks:
       type: object
       properties:
-        actionparticipants:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionParticipants'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    PagingData:
-      type: object
-      properties:
-        actionparticipants:
-          $ref: '#/components/schemas/ActionParticipantsPageData'
+        links:
+          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
   requestBodies:
     CreateActionParticipants:
       content:

@@ -108,18 +108,25 @@ paths:
       operationId: deleteParticipantdatafielddropdownchoicesById
       x-operation-id-source: derived
 components:
-  requestBodies:
-    CreateParticipantDataFieldDropdownChoice:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateParticipantDataFieldDropdownChoice'
-    UpdateParticipantDataFieldDropdownChoice:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/UpdateParticipantDataFieldDropdownChoice'
   schemas:
+    UpdateParticipantDataFieldDropdownChoice:
+      type: object
+      properties:
+        value:
+          description: The value that will be copied when the participant data field dropdown choice is selected.
+          type: string
+          example: red
+        listOrder:
+          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
+          type: integer
+          example: 5
+        isDefault:
+          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
+          type: string
+          enum:
+          - T
+          - F
+          example: T
     CreateParticipantDataFieldDropdownChoiceLinks:
       type: object
       properties:
@@ -128,34 +135,11 @@ components:
           type: integer
           format: string
           example: 2300
-    ParticipantDataFieldDropdownChoiceLinks:
-      type: object
-      properties:
-        participantType:
-          description: Unique identifier for the underlying participant type to which this data field dropdown choice is associated.
-          type: integer
-          format: string
-          example: 7383
-          readOnly: true
-        participantDataField:
-          description: Unique identifier for the participant data field associated with this data field dropdown choice.
-          type: integer
-          format: string
-          example: 2300
-    ParticipantDataFieldDropdownChoices:
+    PagingData:
       type: object
       properties:
         participantdatafielddropdownchoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+          $ref: '#/components/schemas/ParticipantDataFieldDropdownChoicePageData'
     ParticipantDataFieldDropdownChoicePageData:
       type: object
       properties:
@@ -183,29 +167,15 @@ components:
           description: A URL to the next page of custom Participant Data Field Dropdown Choices.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/participantdatafielddropdownchoices?page=3
-    UpdateParticipantDataFieldDropdownChoice:
-      type: object
-      properties:
-        value:
-          description: The value that will be copied when the participant data field dropdown choice is selected.
-          type: string
-          example: red
-        listOrder:
-          description: The order in which the participant data field dropdown choice appears in the dropdown list. If a listOrder value shares the same value as another choice, the choices are displayed in name order.
-          type: integer
-          example: 5
-        isDefault:
-          description: Indicates if the choice item is the default selected item displayed in the dropdown list. A list can only contain one default item for single select dropdown, but can have multiple defaults for a multi-select dropdown.
-          type: string
-          enum:
-          - T
-          - F
-          example: T
-    PagingData:
+    ParticipantDataFieldDropdownChoices:
       type: object
       properties:
         participantdatafielddropdownchoices:
-          $ref: '#/components/schemas/ParticipantDataFieldDropdownChoicePageData'
+          type: array
+          items:
+            $ref: '#/components/schemas/ParticipantDataFieldDropdownChoice'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     CreateParticipantDataFieldDropdownChoice:
       type: object
       required:
@@ -260,3 +230,33 @@ components:
           example: T
         links:
           $ref: '#/components/schemas/ParticipantDataFieldDropdownChoiceLinks'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    ParticipantDataFieldDropdownChoiceLinks:
+      type: object
+      properties:
+        participantType:
+          description: Unique identifier for the underlying participant type to which this data field dropdown choice is associated.
+          type: integer
+          format: string
+          example: 7383
+          readOnly: true
+        participantDataField:
+          description: Unique identifier for the participant data field associated with this data field dropdown choice.
+          type: integer
+          format: string
+          example: 2300
+  requestBodies:
+    UpdateParticipantDataFieldDropdownChoice:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateParticipantDataFieldDropdownChoice'
+    CreateParticipantDataFieldDropdownChoice:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateParticipantDataFieldDropdownChoice'
