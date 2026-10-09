@@ -53,3 +53,65 @@ plans:
 - name: Implementation
   price_text: Get a Quote
   period: none
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units:
+  - seat
+  plans:
+  - name: Practice Management
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Legal Accounting
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Builder
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Capture
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Trace – AI Time Capture
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Acumen – Embedded Analytics
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Implementation
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
