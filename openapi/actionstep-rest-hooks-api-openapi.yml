@@ -112,11 +112,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PagingData:
-      type: object
-      properties:
-        resthooks:
-          $ref: '#/components/schemas/RESTHooksPageData'
     RESTHooksPageData:
       type: object
       properties:
@@ -153,23 +148,6 @@ components:
             $ref: '#/components/schemas/RESTHook'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    UpdateRESTHook:
-      type: object
-      required:
-      - eventName
-      - targetUrl
-      properties:
-        eventName:
-          description: Name of the event.
-          example: ActionDocumentCreated.
-          type: string
-          externalDocs:
-            description: For the complete list of supported events please reference the API Developer Portal.
-            url: https://docs.actionstep.com/webhooks/
-        targetUrl:
-          description: Url to be called.
-          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
-          type: string
     RESTHook:
       type: object
       properties:
@@ -204,11 +182,11 @@ components:
           example: 2022-05-03 00:09:00+12:00
           format: timestamp
           type: string
-    PageMetaData:
+    PagingData:
       type: object
       properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
+        resthooks:
+          $ref: '#/components/schemas/RESTHooksPageData'
     CreateRESTHook:
       type: object
       required:
@@ -226,17 +204,39 @@ components:
           description: Url to be called.
           example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
           type: string
+    UpdateRESTHook:
+      type: object
+      required:
+      - eventName
+      - targetUrl
+      properties:
+        eventName:
+          description: Name of the event.
+          example: ActionDocumentCreated.
+          type: string
+          externalDocs:
+            description: For the complete list of supported events please reference the API Developer Portal.
+            url: https://docs.actionstep.com/webhooks/
+        targetUrl:
+          description: Url to be called.
+          example: https://0486-222-152-188-245.ngrok-free.app/api/resthook
+          type: string
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
   requestBodies:
-    CreateRESTHook:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateRESTHook'
     UpdateRESTHook:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/UpdateRESTHook'
+    CreateRESTHook:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateRESTHook'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

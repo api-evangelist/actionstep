@@ -84,31 +84,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ActionParticipantsLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the associated action.
-          example: 1024
-          type: integer
-        participantType:
-          description: Unique identifier of the participant type.
-          example: 31
-          type: integer
-        participant:
-          description: Unique identifier of the participant.
-          example: 11
-          type: integer
-    PagingData:
-      type: object
-      properties:
-        actionparticipants:
-          $ref: '#/components/schemas/ActionParticipantsPageData'
-    CreateActionParticipants:
-      type: object
-      properties:
-        actionparticipants:
-          $ref: '#/components/schemas/CreateActionParticipantsLinks'
     ActionParticipants:
       type: object
       properties:
@@ -122,15 +97,16 @@ components:
           type: integer
         links:
           $ref: '#/components/schemas/ActionParticipantsLinks'
-    PagedActionParticipants:
+    CreateActionParticipantsLinks:
+      type: object
+      properties:
+        links:
+          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
+    CreateActionParticipants:
       type: object
       properties:
         actionparticipants:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionParticipants'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/CreateActionParticipantsLinks'
     ActionParticipantsPageData:
       type: object
       properties:
@@ -158,7 +134,36 @@ components:
           description: A URL to the next page of Matter participants.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionparticipants?page=3
+    PagingData:
+      type: object
+      properties:
+        actionparticipants:
+          $ref: '#/components/schemas/ActionParticipantsPageData'
+    PagedActionParticipants:
+      type: object
+      properties:
+        actionparticipants:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionParticipants'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     CreateActionParticipantsLinksLink:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the associated action.
+          example: 1024
+          type: integer
+        participantType:
+          description: Unique identifier of the participant type.
+          example: 31
+          type: integer
+        participant:
+          description: Unique identifier of the participant.
+          example: 11
+          type: integer
+    ActionParticipantsLinks:
       type: object
       properties:
         action:
@@ -178,11 +183,6 @@ components:
       properties:
         paging:
           $ref: '#/components/schemas/PagingData'
-    CreateActionParticipantsLinks:
-      type: object
-      properties:
-        links:
-          $ref: '#/components/schemas/CreateActionParticipantsLinksLink'
   requestBodies:
     CreateActionParticipants:
       content:

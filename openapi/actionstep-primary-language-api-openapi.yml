@@ -24,6 +24,23 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PrimaryLanguage:
+      type: object
+      properties:
+        language:
+          description: Language name.
+          example: Alngith
+          type: string
+          format: string
+    PagedPrimaryLanguage:
+      type: object
+      properties:
+        primarylanguage:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrimaryLanguage'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
     PrimaryLanguagePageData:
       type: object
       properties:
@@ -56,23 +73,6 @@ components:
       properties:
         primarylanguage:
           $ref: '#/components/schemas/PrimaryLanguagePageData'
-    PrimaryLanguage:
-      type: object
-      properties:
-        language:
-          description: Language name.
-          example: Alngith
-          type: string
-          format: string
-    PagedPrimaryLanguage:
-      type: object
-      properties:
-        primarylanguage:
-          type: array
-          items:
-            $ref: '#/components/schemas/PrimaryLanguage'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     PageMetaData:
       type: object
       properties:

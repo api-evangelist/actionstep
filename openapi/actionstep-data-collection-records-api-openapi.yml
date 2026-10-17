@@ -85,18 +85,13 @@ paths:
       operationId: deleteDatacollectionrecordsById
       x-operation-id-source: derived
 components:
+  requestBodies:
+    CreateDataCollectionRecord:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateDataCollectionRecord'
   schemas:
-    DataCollectionRecordLinks:
-      type: object
-      properties:
-        action:
-          description: Unique identifier of the matter to which the data collection is associated.
-          example: 822
-          type: integer
-        dataCollection:
-          description: Unique identifier of the data collection to which the data collection record is associated.
-          example: 50
-          type: integer
     CreateDataCollectionRecordLinks:
       type: object
       properties:
@@ -108,11 +103,6 @@ components:
           description: Unique identifier of the data collection to which the data collection record is associated.
           example: 50
           type: integer
-    PagingData:
-      type: object
-      properties:
-        datacollectionrecords:
-          $ref: '#/components/schemas/DataCollectionRecordsPageData'
     DataCollectionRecordsPageData:
       type: object
       properties:
@@ -140,15 +130,46 @@ components:
           description: A URL to the next page of data collection records.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/datacollectionrecords?page=3
-    PagedDataCollectionRecords:
+    DataCollectionRecordLinks:
+      type: object
+      properties:
+        action:
+          description: Unique identifier of the matter to which the data collection is associated.
+          example: 822
+          type: integer
+        dataCollection:
+          description: Unique identifier of the data collection to which the data collection record is associated.
+          example: 50
+          type: integer
+    PagingData:
       type: object
       properties:
         datacollectionrecords:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataCollectionRecord'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+          $ref: '#/components/schemas/DataCollectionRecordsPageData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
+    CreateDataCollectionRecord:
+      type: object
+      properties:
+        canWrite:
+          description: Indicates if the data collection record can be written to.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        canDelete:
+          description: Indicates if the data collection record can be deleted.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        links:
+          $ref: '#/components/schemas/CreateDataCollectionRecordLinks'
     DataCollectionRecord:
       type: object
       properties:
@@ -175,36 +196,15 @@ components:
           readOnly: true
         links:
           $ref: '#/components/schemas/DataCollectionRecordLinks'
-    CreateDataCollectionRecord:
+    PagedDataCollectionRecords:
       type: object
       properties:
-        canWrite:
-          description: Indicates if the data collection record can be written to.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        canDelete:
-          description: Indicates if the data collection record can be deleted.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        links:
-          $ref: '#/components/schemas/CreateDataCollectionRecordLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-  requestBodies:
-    CreateDataCollectionRecord:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateDataCollectionRecord'
+        datacollectionrecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataCollectionRecord'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/

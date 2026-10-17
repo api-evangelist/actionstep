@@ -112,41 +112,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    UpdateDataCollection:
-      type: object
-      properties:
-        name:
-          description: Name for the data collection.
-          example: AMLData
-          type: string
-        description:
-          description: Description for the data collection.
-          example: AML status and progress values.
-          type: string
-        multipleRecords:
-          description: Indicates if the data collection supports multiple records of values.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        order:
-          description: The display order compared to other data collections.
-          example: 5
-          type: integer
-        label:
-          description: The display label for the data collection.
-          example: AML Certification
-          type: string
-        alwaysShowDescriptions:
-          description: Indicates if the data collection description should always be displayed.
-          enum:
-          - T
-          - F
-          example: F
-          type: string
-        links:
-          $ref: '#/components/schemas/UpdateDataCollectionLinks'
     DataCollectionsPageData:
       type: object
       properties:
@@ -174,11 +139,6 @@ components:
           description: A URL to the next page of data collections.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/datacollections?page=3
-    PagingData:
-      type: object
-      properties:
-        datacollections:
-          $ref: '#/components/schemas/DataCollectionsPageData'
     DataCollection:
       type: object
       properties:
@@ -219,15 +179,13 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/DataCollectionLinks'
-    PagedDataCollections:
+    UpdateDataCollectionLinks:
       type: object
       properties:
-        datacollections:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataCollection'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
+        actionType:
+          description: Unique identifier of the matter type to which the data collection is associated.
+          example: 822
+          type: integer
     CreateDataCollection:
       type: object
       required:
@@ -266,13 +224,46 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/CreateDataCollectionLinks'
-    UpdateDataCollectionLinks:
+    PagingData:
       type: object
       properties:
-        actionType:
-          description: Unique identifier of the matter type to which the data collection is associated.
-          example: 822
+        datacollections:
+          $ref: '#/components/schemas/DataCollectionsPageData'
+    UpdateDataCollection:
+      type: object
+      properties:
+        name:
+          description: Name for the data collection.
+          example: AMLData
+          type: string
+        description:
+          description: Description for the data collection.
+          example: AML status and progress values.
+          type: string
+        multipleRecords:
+          description: Indicates if the data collection supports multiple records of values.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        order:
+          description: The display order compared to other data collections.
+          example: 5
           type: integer
+        label:
+          description: The display label for the data collection.
+          example: AML Certification
+          type: string
+        alwaysShowDescriptions:
+          description: Indicates if the data collection description should always be displayed.
+          enum:
+          - T
+          - F
+          example: F
+          type: string
+        links:
+          $ref: '#/components/schemas/UpdateDataCollectionLinks'
     DataCollectionLinks:
       type: object
       properties:
@@ -280,6 +271,20 @@ components:
           description: Unique identifier of the matter type to which the data collection is associated.
           example: 822
           type: integer
+    PagedDataCollections:
+      type: object
+      properties:
+        datacollections:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataCollection'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     CreateDataCollectionLinks:
       type: object
       required:
@@ -289,11 +294,6 @@ components:
           description: Unique identifier of the matter type to which the data collection is associated.
           example: 822
           type: integer
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
   requestBodies:
     CreateDataCollection:
       content:

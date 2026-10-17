@@ -75,6 +75,38 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Links:
+      type: object
+      properties:
+        defaultRate:
+          description: Unique identifier for the default rate applicable to this matter.
+          example: 3
+          type: integer
+        currency:
+          description: ISO 3 character code for the default billing currency.
+          example: USD
+          type: string
+          readOnly: true
+        salesTaxRate:
+          description: Unique identifier for the sales tax rate applicable to the bill settings.
+          example: 3945
+          type: integer
+    UpdateLinks:
+      type: object
+      properties:
+        defaultRate:
+          description: Unique identifier for the default rate applicable to this matter.
+          example: 3
+          type: integer
+        salesTaxRate:
+          description: Unique identifier for the sales tax rate applicable to the bill settings.
+          example: 3945
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        actionbillsettings:
+          $ref: '#/components/schemas/ActionBillSettingsPageData'
     UpdateBillSettings:
       type: object
       properties:
@@ -153,36 +185,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/UpdateLinks'
-    PagingData:
-      type: object
-      properties:
-        actionbillsettings:
-          $ref: '#/components/schemas/ActionBillSettingsPageData'
-    Links:
-      type: object
-      properties:
-        defaultRate:
-          description: Unique identifier for the default rate applicable to this matter.
-          example: 3
-          type: integer
-        currency:
-          description: ISO 3 character code for the default billing currency.
-          example: USD
-          type: string
-          readOnly: true
-        salesTaxRate:
-          description: Unique identifier for the sales tax rate applicable to the bill settings.
-          example: 3945
-          type: integer
-    PagedActionBillSettings:
-      type: object
-      properties:
-        actionbillsettings:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActionBillSettings'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
     ActionBillSettingsPageData:
       type: object
       properties:
@@ -210,6 +212,20 @@ components:
           description: A URL to the next page of matter bill settings.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actionbillsettings?page=3
+    PagedActionBillSettings:
+      type: object
+      properties:
+        actionbillsettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionBillSettings'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     ActionBillSettings:
       type: object
       properties:
@@ -300,22 +316,6 @@ components:
           type: string
         links:
           $ref: '#/components/schemas/Links'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    UpdateLinks:
-      type: object
-      properties:
-        defaultRate:
-          description: Unique identifier for the default rate applicable to this matter.
-          example: 3
-          type: integer
-        salesTaxRate:
-          description: Unique identifier for the sales tax rate applicable to the bill settings.
-          example: 3945
-          type: integer
   requestBodies:
     UpdateActionBillSettings:
       content:

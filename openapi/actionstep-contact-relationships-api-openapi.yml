@@ -85,7 +85,41 @@ paths:
       operationId: deleteContactrelationshipsById
       x-operation-id-source: derived
 components:
+  requestBodies:
+    CreateContactRelationship:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateContactRelationship'
   schemas:
+    CreateContactRelationship:
+      type: object
+      required:
+      - relationship
+      properties:
+        relationship:
+          description: The relationship name between the two contacts.
+          type: string
+          format: string
+          example: Father
+        links:
+          $ref: '#/components/schemas/CreateContactRelationshipLinks'
+    ContactRelationship:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
+          type: string
+          format: string
+          example: Father-41854-845258
+          readOnly: true
+        relationship:
+          description: The relationship name between the two contacts.
+          type: string
+          format: string
+          example: Father
+        links:
+          $ref: '#/components/schemas/ContactRelationshipLinks'
     ContactRelationshipsPageData:
       type: object
       properties:
@@ -118,6 +152,20 @@ components:
       properties:
         contactrelationships:
           $ref: '#/components/schemas/ContactRelationshipsPageData'
+    PagedContactRelationships:
+      type: object
+      properties:
+        contactrelationships:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactRelationship'
+        meta:
+          $ref: '#/components/schemas/PageMetaData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     ContactRelationshipLinks:
       type: object
       properties:
@@ -145,54 +193,6 @@ components:
           description: Unique identifier for the contact to which a relationship is to be established.
           example: 321845
           type: integer
-    PagedContactRelationships:
-      type: object
-      properties:
-        contactrelationships:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactRelationship'
-        meta:
-          $ref: '#/components/schemas/PageMetaData'
-    ContactRelationship:
-      type: object
-      properties:
-        id:
-          description: Unique identifier for a single contact relationship record. The identifier is composed from the relationship, fromContact, and toContact properties separated by "--".
-          type: string
-          format: string
-          example: Father-41854-845258
-          readOnly: true
-        relationship:
-          description: The relationship name between the two contacts.
-          type: string
-          format: string
-          example: Father
-        links:
-          $ref: '#/components/schemas/ContactRelationshipLinks'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
-    CreateContactRelationship:
-      type: object
-      required:
-      - relationship
-      properties:
-        relationship:
-          description: The relationship name between the two contacts.
-          type: string
-          format: string
-          example: Father
-        links:
-          $ref: '#/components/schemas/CreateContactRelationshipLinks'
-  requestBodies:
-    CreateContactRelationship:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/CreateContactRelationship'
 externalDocs:
   description: Tutorial - Working with Contact Relationships
   url: https://docs.actionstep.com/tutorial-contact-relationships/

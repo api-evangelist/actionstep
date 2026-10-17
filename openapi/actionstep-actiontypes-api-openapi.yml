@@ -51,18 +51,6 @@ components:
           description: A URL to the next page of Matter types.
           type: string
           example: https://ap-southeast-2.actionstep.com/api/rest/actiontypes?page=3
-    PagingData:
-      type: object
-      properties:
-        actions:
-          $ref: '#/components/schemas/ActionTypePageData'
-    ActionTypeLinks:
-      type: object
-      properties:
-        primaryParticipantType:
-          description: Unique identifier of the primary participant type for the Matter type.
-          example: 450
-          type: integer
     ActionType:
       type: object
       properties:
@@ -225,6 +213,23 @@ components:
           example: T
         links:
           $ref: '#/components/schemas/ActionTypeLinks'
+    ActionTypeLinks:
+      type: object
+      properties:
+        primaryParticipantType:
+          description: Unique identifier of the primary participant type for the Matter type.
+          example: 450
+          type: integer
+    PagingData:
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/ActionTypePageData'
+    PageMetaData:
+      type: object
+      properties:
+        paging:
+          $ref: '#/components/schemas/PagingData'
     PagedActionTypes:
       type: object
       properties:
@@ -234,11 +239,6 @@ components:
             $ref: '#/components/schemas/ActionType'
         meta:
           $ref: '#/components/schemas/PageMetaData'
-    PageMetaData:
-      type: object
-      properties:
-        paging:
-          $ref: '#/components/schemas/PagingData'
 externalDocs:
   description: API Developer Portal - Constructing API Requests
   url: https://docs.actionstep.com/api-requests/
